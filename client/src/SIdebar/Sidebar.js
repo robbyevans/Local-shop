@@ -1,5 +1,6 @@
-import React from 'react';
+
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import '../SIdebar/Sidebar.css'
 import {
     FaTh,
@@ -9,7 +10,7 @@ import {
     FaSignOutAlt
 }from "react-icons/fa";
 
-const Sidebar = () => {
+const Sidebar = ({children}) => {
 
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
