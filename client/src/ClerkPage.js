@@ -42,9 +42,9 @@ function ClerkPage() {
 
 
   return (
-    <div className="input-form ">
-    <h2>Add Event/Activity</h2>
-    <form className="new_event" onSubmit={handleSubmit}>
+    <div className="clerk-input">
+    <h2>Add Items</h2>
+    <form className="item-form" onSubmit={handleSubmit}>
       
       <input
         type="text"
