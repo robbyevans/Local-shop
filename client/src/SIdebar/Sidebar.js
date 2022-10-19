@@ -4,8 +4,6 @@ import '../SIdebar/Sidebar.css'
 import {
     FaTh,
     FaBars,
-    FaUserAlt,
-    FaRegChartBar,
     FaCommentAlt,
     FaShoppingBag,
     FaSignOutAlt
