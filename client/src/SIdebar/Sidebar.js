@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+    FaTh,
+    FaBars,
+    FaUserAlt,
+    FaRegChartBar,
+    FaCommentAlt,
+    FaShoppingBag,
+    FaThList
+}from "react-icons/fa";
 
 const Sidebar = () => {
 
@@ -6,37 +15,33 @@ const Sidebar = () => {
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/",
+            // path:"/",
             name:"Dashboard",
             icon:<FaTh/>
         },
         {
-            path:"/about",
-            name:"About",
-            icon:<FaUserAlt/>
-        },
-        {
-            path:"/analytics",
-            name:"Analytics",
-            icon:<FaRegChartBar/>
-        },
-        {
-            path:"/comment",
-            name:"Comment",
-            icon:<FaCommentAlt/>
-        },
-        {
             path:"/product",
-            name:"Product",
+            name:" Add Item",
             icon:<FaShoppingBag/>
         },
         {
+            path:"/product",
+            name:"Inventory",
+            icon:<FaShoppingBag/>
+        },
+        {
+            path:"/comment",
+            name:"Request Item",
+            icon:<FaCommentAlt/>
+        },
+
+        {
             path:"/productList",
-            name:"Product List",
-            icon:<FaThList/>
+            name:"Log out",
+            icon:<FaSignOutAlt/>
         }
     ]
-    
+
     return (
         <div>
             
