@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #ebeff2;
 }
 
 .App-logo {
@@ -32,15 +33,25 @@
   flex-direction: row;
   margin: 20px;
 }
+.clerk-banner{
+  text-align: center;
+  border: 1px soild blue;
+  height: 60px;
+  background-color: #194761;
+  margin-top: -25px;
+  padding:20px;
+  color: #fff;
+}
 .clerk-navbar{
   display: flex;
   flex-direction: column;
   margin: 10px;
-  margin-top: 20px;
+  margin-top: -20px;
   padding-left: 5px;
-  height:60vh;
-  border: 1px solid red;
+  height:90vh;
+
   background-color: #194761;
+  margin-left: -20px;
 }
 .clerk-input{
   display: flex;
@@ -48,19 +59,20 @@
   border: 1px solid red;
   align-items: center;
   justify-content: center;
-  width: 40%;
-  margin-top: 20px;
-  margin-left: 20px;
+  width: 55%;
+  margin-top: 0px;
+  margin-left: 10px;
 }
 .item-form input{
   display: block;
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
   border: 1px solid grey;
   width: 100%;
 }
 .add-btn{
   margin: 1rem;
+  padding: 10px;
 
 }
 
