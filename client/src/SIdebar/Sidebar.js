@@ -5,6 +5,7 @@ import '../SIdebar/Sidebar.css'
 import {
     FaTh,
     FaBars,
+    FaWarehouse,
     FaCommentAlt,
     FaShoppingBag,
     FaSignOutAlt
@@ -20,27 +21,17 @@ const Sidebar = ({children}) => {
             name:"Dashboard",
             icon:<FaTh/>
         },
+      
         {
-            path:"/product",
-            name:" Add Item",
-            icon:<FaShoppingBag/>
-        },
-        {
-            path:"/product",
+            path:"/inventory",
             name:"Inventory",
             icon:<FaShoppingBag/>
         },
         {
-            path:"/comment",
-            name:"Request Item",
-            icon:<FaCommentAlt/>
+            path:"/order",
+            name:"Order Item",
+            icon:<FaWarehouse/>
         },
-
-        {
-            path:"/productList",
-            name:"Log out",
-            icon:<FaSignOutAlt/>
-        }
     ]
 
     return (
