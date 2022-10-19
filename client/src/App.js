@@ -1,30 +1,25 @@
-// import logo from './logo.svg';
- import './App.css';
+//import logo from './logo.svg';
+import './App.css';
 //import ClerkPage from './ClerkPage';
+import Navbar from './Navbar/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import Sidebar from './SIdebar/Sidebar';
-import Inventory from './Inventory/Inventory';
-import Order from './Order/Order';
-import Dashboard from './Dashboard/Dashboard';
+import Home from './pages/Home';
+import Order from './pages/Order';
+import Inventory from './pages/Inventory'
 
 function App() {
-    return (
-        // 
-        //   <ClerkPage/>
-        // 
-        //<div className="App"></div>
-        <BrowserRouter>
-      <Sidebar>
-        <Routes>
-          <Route path="/" exact element={<Dashboard />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/order" element={<Order/>} />
-        </Routes>
-      </Sidebar>
-    </BrowserRouter>
- 
-    );
+  return (
+
+<BrowserRouter>
+<Navbar />
+  <Routes>
+  <Route path='/' exact component={Home} />
+        <Route path='/orders' component={Order} />
+        <Route path='/inventory' component={Inventory} />
+  </Routes>
+
+</BrowserRouter>
+  );
 }
 
 export default App;
