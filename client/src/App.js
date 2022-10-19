@@ -2,23 +2,24 @@
 import './App.css';
 //import ClerkPage from './ClerkPage';
 import Navbar from './Navbar/Navbar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Order from './pages/Order';
 import Inventory from './pages/Inventory'
 
 function App() {
   return (
-
-<BrowserRouter>
-<Navbar />
-  <Routes>
-  <Route path='/' exact component={Home} />
+<>
+    <Router>
+    <Navbar />
+    <Switch>
+     <Route path='/' exact component={Home} />
         <Route path='/orders' component={Order} />
         <Route path='/inventory' component={Inventory} />
-  </Routes>
+        </Switch>
+      </Router>
 
-</BrowserRouter>
+      </>
   );
 }
 
