@@ -1,6 +1,6 @@
 import React from 'react';
 import React, { useState } from 'react'
-import '../SIdebar/sidebar.css'
+import '../SIdebar/Sidebar.css'
 import {
     FaTh,
     FaBars,
@@ -8,7 +8,7 @@ import {
     FaRegChartBar,
     FaCommentAlt,
     FaShoppingBag,
-    FaThList
+    FaSignOutAlt
 }from "react-icons/fa";
 
 const Sidebar = () => {
