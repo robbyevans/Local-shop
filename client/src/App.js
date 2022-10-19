@@ -18,8 +18,8 @@ function App() {
       <Sidebar>
         <Routes>
           <Route path="/" exact element={<Dashboard />} />
-          <Route path="/comment" element={<Inventory />} />
-          <Route path="/analytics" element={<Order/>} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/order" element={<Order/>} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
