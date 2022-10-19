@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 
-function Admin({ onHandleAddReview }) {
+function Admin({ onHandleAddClerk }) {
     const [formData, setFormData] = useState ({
         full_name: "",
         email: "",
@@ -17,7 +17,7 @@ function Admin({ onHandleAddReview }) {
     
             e.target.reset();
     
-            fetch("/myreviews", {
+            fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -28,7 +28,7 @@ function Admin({ onHandleAddReview }) {
             })
                 .then((resp) => resp.json())
                 .then((data) => {
-                    onHandleAddReview(data)
+                    onHandleAddClerk(data)
                     setFormData({...formData, full_name: "", email:"", password:""})
                 })
     
