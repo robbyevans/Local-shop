@@ -141,6 +141,9 @@ function MerchantPage() {
               <hr />
             </div>
           </nav>
+          <div className="col py-3">
+            <h4>Dashboard white space</h4>
+          </div>
         </div>
       </div>
     </div>
