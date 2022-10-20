@@ -18,6 +18,21 @@ function MainBar() {
                 Home
               </Link>
          </li>
+         <li>
+         <Link to='/merchant' onClick={closeMobileMenu}>
+                Merchant
+              </Link>
+         </li>
+         <li>
+         <Link to='/admin' onClick={closeMobileMenu}>
+                Admin
+              </Link>
+         </li>
+         <li>
+         <Link to='/clerk' onClick={closeMobileMenu}>
+                Clerk
+              </Link>
+         </li>
 
 
           </ul>
