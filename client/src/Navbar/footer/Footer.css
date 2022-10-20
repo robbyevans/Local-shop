@@ -1,0 +1,11 @@
+.legal {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    border-top: 1px solid rgb(63, 62, 62);
+    color: white;
+}
+
+.legal p {
+    opacity: 0.5;
+}
