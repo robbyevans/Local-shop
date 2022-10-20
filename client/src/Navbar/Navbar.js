@@ -38,7 +38,7 @@ function Navbar() {
                
               );
             })}
-            <li><button>log out</button></li>
+            <li><button className='primarybtn'>log out</button></li>
             
             
           </ul>
