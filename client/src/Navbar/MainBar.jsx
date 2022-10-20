@@ -9,9 +9,13 @@ function MainBar() {
           </div>
    
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+         <li>
+         <Link to='/' onClick={closeMobileMenu}>
+                Home
+              </Link>
+         </li>
 
 
-            
           </ul>
          </div>
     </nav>
