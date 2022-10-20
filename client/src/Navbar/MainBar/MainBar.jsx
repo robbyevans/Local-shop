@@ -26,7 +26,7 @@ function MainBar() {
               </Link>
          </li>
          <li>
-         <Link to='/merchant' onClick={closeMobileMenu}>
+         <Link to='/sign-in' onClick={closeMobileMenu}>
                 Merchant
               </Link>
          </li>
