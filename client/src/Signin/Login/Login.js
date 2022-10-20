@@ -1,7 +1,8 @@
 import React, { useState }from 'react'
-import "../Login/design.css"
+import { Link } from "react-router-dom"
+import "../../Signin/design.css"
 
-const AdminLogin = ({setUser}) => {
+const Login = ({setUser}) => {
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
 
@@ -23,6 +24,7 @@ const AdminLogin = ({setUser}) => {
 
   return (
     <>
+   
       <section className='forms top'>
         <div className='container'>
           <div className='sign-box'>
@@ -54,7 +56,9 @@ const AdminLogin = ({setUser}) => {
               <button type='submit' className='primary-btn'>
                 Sign In
               </button>
-              
+              <p>
+                Don't have account? <Link to='/register'> <br />Become a Member!</Link>
+              </p>
             </form>
           </div>
         </div>
@@ -65,4 +69,4 @@ const AdminLogin = ({setUser}) => {
   )
 }
 
-export default AdminLogin
+export default Login
