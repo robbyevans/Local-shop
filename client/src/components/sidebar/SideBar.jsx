@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom'
 import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
 import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import Inventory from '../inventory/Inventory'
-import ClerkForm from '../clerk/ClerkForm';
+import ClerkForm from '../clerks/ClerkForm';
+import Monthly from '../analytics/Monthly';
 
 const SideBar = () => {
   return (
@@ -19,12 +24,19 @@ const SideBar = () => {
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li className="nav-item">
                         <a href="#" className="nav-link align-middle px-0">
-                            <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline">INVENTORY</span>
+                           <Inventory2OutlinedIcon/><span className="ms-1 d-none d-sm-inline">INVENTORY</span>
                         </a>
                     </li>
+                    
+                    <li className="nav-item">
+                        <Link to="/analytics" className="nav-link align-middle px-0">
+                           <TimelineOutlinedIcon/><span className="ms-1 d-none d-sm-inline">ANALYTICS</span>
+                        </Link>
+                    </li>
+                    
                     <li>
                         <a href="#" className="nav-link px-0 align-middle">
-                            <i className="fs-4 bi-table"></i> <span className="ms-1 d-none d-sm-inline">ORDER REQUESTS</span></a>
+                            <ShoppingCartCheckoutOutlinedIcon/> <span className="ms-1 d-none d-sm-inline">ORDER REQUESTS</span></a>
                     </li>
                     {/* <li>
                         <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
@@ -39,19 +51,20 @@ const SideBar = () => {
                         </ul>
                     </li> */}
                     <li>
-                        <a href="#" className="nav-link px-0 align-middle">
-                        <TopicOutlinedIcon/> <span className="ms-1 d-none d-sm-inline">REPORTS</span></a>
+                        <Link to="/reports" className="nav-link px-0 align-middle">
+                        <TopicOutlinedIcon/> <span className="ms-1 d-none d-sm-inline">REPORTS</span></Link>
                     </li>
                     
                     <li>
-                        <a href="#" className="nav-link px-0 align-middle">
-                      <span className="ms-1 d-none d-sm-inline">CLERKS</span></a>
+                              <Link to="clerks" className="nav-link px-0 align-middle">
+                                  <PeopleAltOutlinedIcon/>
+                      <span className="ms-1 d-none d-sm-inline">CLERKS</span></Link>
                     </li>
                    
                     
                     <li>
-                        <a href="#" className="nav-link px-0 align-middle">
-                            <PowerSettingsNewOutlinedIcon/> <span className="ms-1 d-none d-sm-inline">LOGOUT</span> </a>
+                        <Link href="#" className="nav-link px-0 align-middle">
+                            <PowerSettingsNewOutlinedIcon/> <span className="ms-1 d-none d-sm-inline">LOGOUT</span> </Link>
                     </li>
                 </ul>
                 <hr/>
@@ -60,7 +73,8 @@ const SideBar = () => {
               <div className="col-md-12 py-3 offset-md-1">
                  
                   <Inventory/>
-                   <Inventory/>
+                  <Monthly/>
+                  <hr/>
                   <ClerkForm/>
                   
                   <div className="clerks"></div>
