@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import OrderForm from './pages/Order/OrderForm';
 import InventoryForm from './pages/Inventory/inventoryform';
 
+
 function App() {
   return (
 <>

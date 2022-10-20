@@ -21,22 +21,22 @@ function MainBar() {
               </Link>
          </li>
          <li>
-         <Link to='/' onClick={closeMobileMenu}>
+         <Link to='/mlog-in' onClick={closeMobileMenu}>
                 Home
               </Link>
          </li>
          <li>
-         <Link to='/sign-in' onClick={closeMobileMenu}>
+         <Link to='/mlog-in' onClick={closeMobileMenu}>
                 Merchant
               </Link>
          </li>
          <li>
-         <Link to='/admin' onClick={closeMobileMenu}>
+         <Link to='/alog-in' onClick={closeMobileMenu}>
                 Admin
               </Link>
          </li>
          <li>
-         <Link to='/clerk' onClick={closeMobileMenu}>
+         <Link to='/clog-in' onClick={closeMobileMenu}>
                 Clerk
               </Link>
          </li>

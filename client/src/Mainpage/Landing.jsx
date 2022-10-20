@@ -7,6 +7,8 @@ import AdminLogin from '../Sign-in/AdminLogin/AdminLogin'
 import ClerkLogin from '../Sign-in/ClerkLogin/ClerkLogin'
 import Register from '../Register/Register'
 import Login from '../Sign-in/Login/Login'
+import Footer from '../Navbar/footer/Footer'
+import Home from '../Navbar/Home'
 function Landing() {
   return (
     <>
