@@ -3,9 +3,9 @@ import './App.css';
 //import ClerkPage from './ClerkPage';
 import Navbar from './Navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Order from './pages/Order';
-import Inventory from './pages/Inventory'
+import Home from './pages/Home/Home';
+import OrderForm from './pages/Order/OrderForm';
+import InventoryForm from './pages/Inventory/inventoryform';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
     <Navbar />
     <Switch>
      <Route path='/' exact component={Home} />
-        <Route path='/orders' component={Order} />
-        <Route path='/inventory' component={Inventory} />
+        <Route path='/orders' component={OrderForm} />
+        <Route path='/inventory' component={InventoryForm} />
         </Switch>
       </Router>
 
