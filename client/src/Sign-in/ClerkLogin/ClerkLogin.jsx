@@ -1,7 +1,7 @@
 import React, { useState }from 'react'
 import "./design.css"
 
-const AdminLogin = ({setUser}) => {
+const ClerkLogin = ({setUser}) => {
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
 
@@ -54,7 +54,7 @@ const AdminLogin = ({setUser}) => {
               <button type='submit' className='primary-btn'>
                 Sign In
               </button>
-              
+            
             </form>
           </div>
         </div>
@@ -65,4 +65,4 @@ const AdminLogin = ({setUser}) => {
   )
 }
 
-export default AdminLogin
+export default ClerkLogin
