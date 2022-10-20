@@ -1,4 +1,5 @@
 import React, { useState }from 'react'
+import { Link } from "react-router-dom"
 
 function MainBar() {
     const [click, setClick] = useState(false)
@@ -13,6 +14,11 @@ function MainBar() {
           </div>
    
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+         <li>
+         <Link to='/' onClick={closeMobileMenu}>
+               LOCALSHOP
+              </Link>
+         </li>
          <li>
          <Link to='/' onClick={closeMobileMenu}>
                 Home
