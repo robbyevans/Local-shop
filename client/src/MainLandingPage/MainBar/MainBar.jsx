@@ -16,9 +16,7 @@ function MainBar() {
    
           <ul className={click ? "nav-menu active" : "nav-menu"}>
          <li>
-         <Link to='/' onClick={closeMobileMenu}>
-               LOCALSHOP
-              </Link>
+         <h1>LocalShop</h1>
          </li>
          <li>
          <Link to='/mlog-in' onClick={closeMobileMenu}>

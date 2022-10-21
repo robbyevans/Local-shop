@@ -2,7 +2,7 @@ import React, { useState }from 'react'
 import { Link } from "react-router-dom"
 import "../../Signin/design.css"
 
-const Login = ({setUser}) => {
+const MerchantLogIn = ({setUser}) => {
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
 
@@ -69,4 +69,4 @@ const Login = ({setUser}) => {
   )
 }
 
-export default Login
+export default MerchantLogIn
