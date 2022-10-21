@@ -1,6 +1,6 @@
 
 import './App.css';
-import Landing from './Mainpage/Landing';
+import Landing from './MainLandingPage/Landing';
 
 
 
