@@ -2,11 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 
-import MainBar from '../Navbar/MainBar/MainBar'
-import ClerkLogin from '../Signin/ClerkLogin/ClerkLogin'
+import MainBar from './MainBar/MainBar'
+import ClerkLogin from './Signin/ClerkLogin/ClerkLogin'
 import Register from '../Register/Register'
-import Login from '../Signin/Login/Login'
-import Footer from '../Navbar/footer/Footer'
+import MerchantLogIn from './Signin/MerchantLogin/MerchantLogIn'
+import Footer from './footer/Footer'
 
 function Landing() {
   return (
@@ -15,7 +15,7 @@ function Landing() {
         <MainBar />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/mlog-in' component={Login} />
+          <Route path='/mlog-in' component={MerchantLogIn} />
           <Route path='/alog-in' component={AdminLogin} />
           <Route path='/clog-in' component={ClerkLogin} />
           <Route path='/Register' component={Register} />
