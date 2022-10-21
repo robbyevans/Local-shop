@@ -1,7 +1,4 @@
-
-
 import React, { useState }from 'react'
-import { Link } from "react-router-dom"
 
 const AdminLogin= ({setUser}) => {
 
@@ -43,9 +40,7 @@ const AdminLogin= ({setUser}) => {
                 placeholder='password'
                 onChange={(e) => setPassword(e.target.value)} 
           />
-           <p>
-                Don't have account? <Link to='/register'> <br />Become a Member!</Link>
-              </p>
+          
             <button type='submit'>Log In</button>
           </form>
         </div>
@@ -53,5 +48,6 @@ const AdminLogin= ({setUser}) => {
     </>
   )
 }
+
 
 export default AdminLogin
