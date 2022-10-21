@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-import '../'
+import '../MainLandingPage/design.css'
 
 import MainBar from './MainBar/MainBar'
 import Footer from './footer/Footer'
