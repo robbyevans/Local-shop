@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from "react";
 import AdminForm from "../components/AdminForm";
-import AdminList from '../components/AdminList';
+import AdminList from "../components/AdminList";
 import StoreReports from "../components/StoreReports";
 
-function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
- const[showAdmin, setSetShowAdmin] =useState(false)
- const[showAdminList, setSetShowAdminList] =useState(false)
- const[showStoreReports, setShowStoreReports] = useState(false)
+function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin }) {
+  const [showAdmin, setSetShowAdmin] = useState(false);
+  const [showAdminList, setSetShowAdminList] = useState(false);
+  const [showStoreReports, setShowStoreReports] = useState(false);
 
- let adminsUrl = "http://localhost:3000/admins"
- let storesUrl = "http://localhost:3000/stores"
+  let adminsUrl = "http://localhost:3000/admins";
+  let storesUrl = "http://localhost:3000/stores";
 
- //fetch admins from db
- useEffect(() => {
-   fetch(`${adminsUrl}`).then((r) => {
-     if (r.ok) {
-       r.json().then((admins) => getAdmins(admins));
-     }
-   });
-   }, []);
+  //fetch admins from db
+  useEffect(() => {
+    fetch(`${adminsUrl}`).then((r) => {
+      if (r.ok) {
+        r.json().then((admins) => getAdmins(admins));
+      }
+    });
+  }, []);
 
-   //fetch stores from db
-   useEffect(() => {
-     fetch(`${storesUrl}`).then((r) => {
-       if (r.ok) {
-         r.json().then((stores) => getmStores(stores));
-       }
-     });
-     }, []);
+  //fetch stores from db
+  useEffect(() => {
+    fetch(`${storesUrl}`).then((r) => {
+      if (r.ok) {
+        r.json().then((stores) => getmStores(stores));
+      }
+    });
+  }, []);
 
   return (
     <div>
@@ -128,31 +128,43 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                 id="menu"
               >
-               
-                  <div>
-                <li className="nav-item"  onClick={()=> {
-                       setShowStoreReports(false)
-                      setSetShowAdmin(true)} } >
-                  <a href="#" className="nav-link align-middle px-0">
-                    <i className="fs-4 bi-house"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Admin</span>
-                  </a>
-                </li>
-            
+                <div>
+                  <li
+                    className="nav-item"
+                    onClick={() => {
+                      setShowStoreReports(false);
+                      setSetShowAdmin(true);
+                    }}
+                  >
+                    <a
+                      href="#"
+                      className="nav-link align-middle px-0 text-white"
+                    >
+                      <i className="fs-4 bi-house"></i>{" "}
+                      <span className="ms-1 d-none d-sm-inline">Admin</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      className="nav-link px-0 align-middle text-white"
+                    >
+                      <i className="fs-4 bi-table"></i>{" "}
+                      <span
+                        onClick={() => {
+                          setSetShowAdmin(false);
+                          setShowStoreReports(true);
+                        }}
+                        className="ms-1 d-none d-sm-inline"
+                      >
+                        Store Reports
+                      </span>
+                    </a>
+                  </li>
+                </div>
                 <li>
-                  <a href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-table"></i>{" "}
-                    <span onClick={()=>{
-                       setSetShowAdmin(false)
-                       setShowStoreReports(true)
-                    }}  className="ms-1 d-none d-sm-inline">
-                      Store Reports
-                    </span>
-                  </a>
-                </li>
-                </div>             
-                <li>
-                  <a href="#" className="nav-link px-0 align-middle">
+                  <a href="#" className="nav-link px-0 align-middle text-white">
                     <i className="fs-4 bi-people"></i>{" "}
                     <span className="ms-1 d-none d-sm-inline">Logout</span>{" "}
                   </a>
@@ -162,20 +174,10 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
             </div>
           </nav>
           <div className="col py-3">
+            {showAdmin ? <AdminForm onAddAdmin={onAddAdmin} /> : null}
 
-            {showAdmin ?(
-              <AdminForm onAddAdmin={onAddAdmin}/>
-            ): null}
-
-            {showAdminList ? (
-            <AdminList admins={admins}/>
-            ) : null}
-            {showStoreReports ? (
-            <StoreReports mStores= {mStores}/>
-            ):null}
-      
-      
-
+            {showAdminList ? <AdminList admins={admins} /> : null}
+            {showStoreReports ? <StoreReports mStores={mStores} /> : null}
           </div>
         </div>
       </div>

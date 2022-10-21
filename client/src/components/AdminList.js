@@ -1,7 +1,6 @@
 import React from "react";
 
-function AdminList({admins}) {
-
+function AdminList({ admins }) {
   //map admins to table
   return (
     <div className="container">
@@ -21,22 +20,34 @@ function AdminList({admins}) {
             <td>Dancun Oluoch</td>
             <td>dancun@gmail.com</td>
             <td>Store 1</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
+            <td>
+              <button className="btn btn-primary">Deactivate</button>
+            </td>
+            <td>
+              <button className="btn btn-danger">Delete</button>
+            </td>
           </tr>
           <tr>
             <td>Geoffrey Oluoch</td>
             <td>geoffrey@gmail.com</td>
             <td>Store 2</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
+            <td>
+              <button className="btn btn-primary">Deactivate</button>
+            </td>
+            <td>
+              <button className="btn btn-danger">Delete</button>
+            </td>
           </tr>
           <tr>
             <td>Evans Rutto</td>
             <td>evans@gmail.com</td>
             <td>Store 3</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
+            <td>
+              <button className="btn btn-primary">Deactivate</button>
+            </td>
+            <td>
+              <button className="btn btn-danger">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
