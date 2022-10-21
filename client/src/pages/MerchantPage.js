@@ -2,13 +2,35 @@ import React, { useState } from "react";
 import AdminForm from "../components/AdminForm";
 import AdminList from '../components/AdminList';
 import StoreReports from "../components/StoreReports";
-import StoreReportsTable from '../components/StoreReportsTable'
+import ProductsTable from '../components/ProductsTable'
 
-function MerchantPage() {
+function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
  const[showAdmin, setSetShowAdmin] =useState(false)
  const[showAdminList, setSetShowAdminList] =useState(false)
  const[showStoreReports, setShowStoreReports] = useState(false)
  const[showReportsTable, setShowStoreReportsTable] = useState(false)
+
+ let adminsUrl = "https://url"
+ let storesUrl = "https://url"
+
+ //fetch admins from db
+ useEffect(() => {
+   fetch(`${adminsUrl}`).then((r) => {
+     if (r.ok) {
+       r.json().then((admins) => getAdmins(admins));
+     }
+   });
+   }, []);
+
+   //fetch stores from db
+   useEffect(() => {
+     fetch(`${storesUrl}`).then((r) => {
+       if (r.ok) {
+         r.json().then((stores) => getmStores(stores));
+       }
+     });
+     }, []);
+
   return (
     <div>
       {/* top navigation bar */}
@@ -172,13 +194,13 @@ function MerchantPage() {
           <div className="col py-3">
 
             {showAdminList ? (
-            <AdminList/>
+            <AdminList admins={admins}/>
             ) : null}
             {showStoreReports ? (
-            <StoreReports/>
+            <StoreReports mStores= {mStores}/>
             ):null}
             {showReportsTable ? (
-            <StoreReportsTable/>
+            <ProductsTable/>
             ) :null}
       
 

@@ -1,6 +1,8 @@
 import React from "react";
 
-function AdminList() {
+function AdminList({admins}) {
+
+  //map admins to table
   return (
     <div className="container">
       <h3>Admins List</h3>
