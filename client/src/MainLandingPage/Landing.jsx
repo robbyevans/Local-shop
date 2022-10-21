@@ -9,7 +9,7 @@ import Register from './RegisterMerchant/Register'
 import MerchantLogIn from './Signin/MerchantLogin/MerchantLogIn'
 import AdminLogin from './Signin/AdminLogin/AdminLogin'
 import ClerkLogin from './Signin/ClerkLogin/ClerkLogin'
-import Home from './ShowCase'
+import ShowCase from './ShowCase'
 
 function Landing() {
   return (
@@ -17,7 +17,7 @@ function Landing() {
       <Router>
         <MainBar />
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route path='/' exact component={ShowCase } />
           <Route path='/mlog-in' component={MerchantLogIn} />
           <Route path='/alog-in' component={AdminLogin} />
           <Route path='/clog-in' component={ClerkLogin} />
