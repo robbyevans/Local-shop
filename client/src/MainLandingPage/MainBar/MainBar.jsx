@@ -6,7 +6,7 @@ const MainBar = () => {
   return (
     <header className='header'>
       <div>
-        <Link className='links' to='/'>
+        <Link className='link2' to='/'>
           LocalShop
         </Link>
       </div>
