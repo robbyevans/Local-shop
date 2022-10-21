@@ -11,7 +11,7 @@ function StoreCard({store}) {
         <div className="col-12 col-md-6 col-lg-4" onClick={handleClick}>
         <div className="card">
           <img
-            src="./images/europe.jpg"
+            src=""
             className="card-img-top"
             alt="A Street in Europe"
           ></img>

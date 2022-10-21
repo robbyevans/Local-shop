@@ -1,4 +1,5 @@
 import React from "react";
+import StoreCard from "./StoreCard";
 
 function StoreReports({mStores}) {
   const renderStores = mStores.map((store)=>{

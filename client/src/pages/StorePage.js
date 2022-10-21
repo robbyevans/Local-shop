@@ -4,12 +4,12 @@ import {useParams } from 'react-router-dom';
 function StorePage() {
     const params = useParams()
     const storeId = params.storeId
+    console.log(storeId)
 
-    const[mStore, setmStore] = useState()
-    let storesUrl = ""
+    const[mStore, setmStore] = useState({})
     //gets specific store using id
     useEffect(() =>{
-         fetch(`${storesUrl}/${storeId}`)
+         fetch(`http://localhost:3000/stores/${storeId}`)
         .then(r => r.json())
         .then(data => {
             setmStore(data)
@@ -22,9 +22,11 @@ function StorePage() {
 
     },[storeId])
 
+    console.log(mStore)
+
     return (
         <div>
-            {/* render report of store with store data*/}
+            {mStore.name}
         </div>
     );
 }

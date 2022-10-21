@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AdminForm from "../components/AdminForm";
 import AdminList from '../components/AdminList';
 import StoreReports from "../components/StoreReports";
@@ -10,8 +10,8 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
  const[showStoreReports, setShowStoreReports] = useState(false)
  const[showReportsTable, setShowStoreReportsTable] = useState(false)
 
- let adminsUrl = "https://url"
- let storesUrl = "https://url"
+ let adminsUrl = "http://localhost:3000/admins"
+ let storesUrl = "http://localhost:3000/stores"
 
  //fetch admins from db
  useEffect(() => {
