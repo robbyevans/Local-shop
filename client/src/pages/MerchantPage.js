@@ -179,7 +179,7 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
           <div className="col py-3">
 
             {showAdmin ?(
-              <AdminForm/>
+              <AdminForm onAddAdmin={onAddAdmin}/>
             ): null}
 
             {showAdminList ? (
