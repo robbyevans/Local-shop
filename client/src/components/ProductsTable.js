@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function ProductsTable({storeId}) {
+  console.log(storeId)
   const[products, setProducts]= useState([])
 
 
@@ -11,7 +12,7 @@ function ProductsTable({storeId}) {
         setProducts(data.items));
       }
     });
-  }, []);
+  });
 
   console.log(products)
 
