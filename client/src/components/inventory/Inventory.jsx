@@ -4,11 +4,48 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 
 const Inventory = () => {
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    price: '',
+    instock: '',
+    spoilt:'',
+    status: '',
+    quantity: '',
+    sellingPrice: '',
+    buyingPrice:''
+  })
 
   // const [loading, setLoading] = useState(false)
   const [inventories, setInventories] = useState([])
- 
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createInventory();
+    console.log(formData);
+  }
+
+  //function adding inventory
+  const createInventory = (data) => {
+    fetch("http://localhost:3000/inventories", {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(data)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+    })
+  }
+  
+  //handling form field state
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]:e.target.value})
+  }
+ 
+//fetch inventories
   useEffect(() => {
     fetch("http://localhost:3000/inventories")
       .then((response) => response.json())
@@ -34,73 +71,91 @@ const Inventory = () => {
             {/*modal body */}
             <div className="modal-body">
             <form action="">
-        <div className="row">
-          <div className="col my-2">
-            <input type="text"
-              name="name"
-              placeholder='Item Name'
-              className="form-control"
-            />
-          </div>
-          <div className="col my-2">
-            <input type="number"
-              className="form-control"
-              name="price"
-              placeholder='Price'
-            />
-          </div>
-          
-        </div>
-        <div className="row">
-          <div className="col">
-            <input type="text"
-              name="quantity"
-              placeholder='quantity'
-              className="form-control"
-            />
-          </div>
-          <div className="col">
-            <input type="number"
-              className="form-control"
-              name="spoilt"
-              placeholder='spoilt'
-            />
-          </div>
-          
-        </div>
-        <div className="row">
-          <div className="col my-2">
-            <input type="text"
-              name="sellingPrice"
-              placeholder='Selling Price'
-              className="form-control"
-            />
-          </div>
-          <div className="col my-2">
-            <input type="number"
-              className="form-control"
-              name="buyingPrice"
-              placeholder='Buying Price'
-            />
-          </div>
-          
-        </div>
-        <div className="row">
-          <div className="col my-2">
-            <input type="text"
-              name="name"
-              placeholder='payment status'
-              className="form-control"
-            />
-          </div>
-          <div className="col">
-            <input type="submit"
+                <div className="row">
+                  <div className="col my-2">
+                    <input type="text"
+                      name="name"
+                      placeholder='Item Name'
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col my-2">
+                    <input type="number"
+                      className="form-control"
+                      name="price"
+                      value={formData.price}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='Price'
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <input type="text"
+                      name="quantity"
+                      value={formData.quantity}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='quantity'
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col">
+                    <input type="text"
+                      name="instock"
+                      value={formData.instock}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='instock'
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col">
+                    <input type="number"
+                      className="form-control"
+                      value={formData.spoilt}
+                      name="spoilt"
+                      placeholder='spoilt'
+                      onChange={(e) => handleChange(e)}
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col my-2">
+                    <input type="text"
+                      value={formData.sellingPrice}
+                      onChange={(e) => handleChange(e)}
+                      name="sellingPrice"
+                      placeholder='Selling Price'
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col my-2">
+                    <input type="number"
+                      className="form-control"
+                      name="buyingPrice"
+                      value={formData.buyingPrice}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='Buying Price'
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col my-2">
+                    <input type="text"
+                      name="status"
+                      value={formData.status}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='payment status'
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col">
+                    <input type="submit"
               className="btn btn-primary btn-block form-control"
-            />
-          </div>
+                    />
+                  </div>
           
-        </div>
-      </form>
+                </div>
+              </form>
             </div>
             {/*modal footer */}
             <div className="modal-footer">
