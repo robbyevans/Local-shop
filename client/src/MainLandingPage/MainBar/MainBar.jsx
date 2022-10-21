@@ -1,48 +1,33 @@
-import React, { useState }from 'react'
-import { Link } from "react-router-dom"
-import '../MainBar/MainBar.css'
 
-function MainBar() {
-    const [click, setClick] = useState(false)
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-    const handleClick = () => setClick(!click)
-    const closeMobileMenu = () => setClick(false)
+const MainBar = () => {
   return (
-    <nav className='navbar'>
-         <div className='container flex_space'>
-         <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? "fas fa-times" : " fas fa-bars"}></i>
-          </div>
-   
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-         <li>
-         <h1>LocalShop</h1>
-         </li>
-         <li>
-         <Link to='/mlog-in' onClick={closeMobileMenu}>
-                Home
-              </Link>
-         </li>
-         <li>
-         <Link to='/mlog-in' onClick={closeMobileMenu}>
+    <header className='header'>
+      <div>
+        <Link className='links' to='/'>
+          LocalShop
+        </Link>
+      </div>
+
+      <nav className='navbar'>
+        <ul>
+        <Link to='/mlog-in' onClick={closeMobileMenu}>
                 Merchant
-              </Link>
-         </li>
-         <li>
-         <Link to='/alog-in' onClick={closeMobileMenu}>
-                Admin
-              </Link>
-         </li>
-         <li>
-         <Link to='/clog-in' onClick={closeMobileMenu}>
+        </Link>
+       <Link to='/alog-in' onClick={closeMobileMenu}>
+                 Admin
+         </Link>
+          <Link className='links' to='/signup'>
+           Clerk
+          </Link>
+          <Link to='/clog-in' onClick={closeMobileMenu}>
                 Clerk
-              </Link>
-         </li>
-
-
-          </ul>
-         </div>
-    </nav>
+         </Link>
+        </ul>
+      </nav>
+    </header>
   )
 }
 
