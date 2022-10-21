@@ -1,5 +1,5 @@
 // import React, { useState }from 'react'
-// import { Link } from "react-router-dom"
+// 
 // import "../../design.css"
 
 // const MerchantLogIn = ({setUser}) => {
@@ -71,6 +71,7 @@
 
 
 import React, { useState }from 'react'
+import { Link } from "react-router-dom"
 
 const MerchantLogIn = ({setUser}) => {
 
@@ -112,7 +113,7 @@ const MerchantLogIn = ({setUser}) => {
                 placeholder='password'
                 onChange={(e) => setPassword(e.target.value)} 
           />
-           <p> Don't have account? <Link to='/register'> <br />Become a Member!</Link></p>
+           <p> Don't have account? <Link className='link'  to='/register'> Become a Member!</Link></p>
             <button type='submit'>Log In</button>
           </form>
         </div>
