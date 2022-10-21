@@ -1,6 +1,8 @@
 import React from "react";
 
 function AdminList({ admins }) {
+  console.log(admins);
+
   //map admins to table
   return (
     <div className="container">
@@ -16,39 +18,21 @@ function AdminList({ admins }) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dancun Oluoch</td>
-            <td>dancun@gmail.com</td>
-            <td>Store 1</td>
-            <td>
-              <button className="btn btn-primary">Deactivate</button>
-            </td>
-            <td>
-              <button className="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Geoffrey Oluoch</td>
-            <td>geoffrey@gmail.com</td>
-            <td>Store 2</td>
-            <td>
-              <button className="btn btn-primary">Deactivate</button>
-            </td>
-            <td>
-              <button className="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Evans Rutto</td>
-            <td>evans@gmail.com</td>
-            <td>Store 3</td>
-            <td>
-              <button className="btn btn-primary">Deactivate</button>
-            </td>
-            <td>
-              <button className="btn btn-danger">Delete</button>
-            </td>
-          </tr>
+          {admins.map((admin) => {
+            return (
+              <tr key={admin.id}>
+                <td>{admin.fullname}</td>
+                <td>{admin.email}</td>
+                <td>{admin.store}</td>
+                <td>
+                  <button className="btn btn-primary">Deactivate</button>
+                </td>
+                <td>
+                  <button className="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
