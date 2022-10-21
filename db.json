@@ -2,39 +2,47 @@
   "admins": [
     {
       "id": 1,
-      "fullname":"Fred Matiang", 
-      "email":"matiangs@gmail.com",
-      "store":"hakunamatata"
+      "fullname": "Fred Matiang",
+      "email": "matiangs@gmail.com",
+      "store": "hakunamatata"
     },
     {
       "id": 2,
-      "fullname":"Fred Matiangi", 
-      "email":"matiangs0@gmail.com",
-      "store":"hakunamatata1"
+      "fullname": "Fred Matiangi",
+      "email": "matiangs0@gmail.com",
+      "store": "hakunamatata1"
+    },
+    {
+      "fullname": "james",
+      "email": "james@gmail.com",
+      "store": "store 3",
+      "id": 3
     }
   ],
   "stores": [
     {
       "id": 1,
-      "name":"hakunamatata", 
-      "items":[
+      "name": "hakunamatata",
+      "items": [
         {
-        "id":1,
-        "name":"one", 
-        "quantity":10, 
-        "paymentstatus":"paid"
-      }]
+          "id": 1,
+          "name": "one",
+          "quantity": 10,
+          "paymentstatus": "paid"
+        }
+      ]
     },
-      {
-        "id": 2,
-        "name":"hakunamatata2", 
-        "items":[
-          {
-          "id":1,
-          "name":"one", 
-          "quantity":10, 
-          "paymentstatus":"notpaid"
-        }]
-      }
+    {
+      "id": 2,
+      "name": "hakunamatata2",
+      "items": [
+        {
+          "id": 1,
+          "name": "one",
+          "quantity": 10,
+          "paymentstatus": "notpaid"
+        }
+      ]
+    }
   ]
 }

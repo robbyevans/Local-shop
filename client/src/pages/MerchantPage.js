@@ -3,26 +3,23 @@ import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 
 function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin }) {
-  let adminsUrl = "http://localhost:3000/admins";
-  let storesUrl = "http://localhost:3000/stores";
-
   //fetch admins from db
   useEffect(() => {
-    fetch(`${adminsUrl}`).then((r) => {
+    fetch(`http://localhost:3000/admins`).then((r) => {
       if (r.ok) {
         r.json().then((admins) => getAdmins(admins));
       }
     });
-  });
+  }, [getAdmins]);
 
   //fetch stores from db
   useEffect(() => {
-    fetch(`${storesUrl}`).then((r) => {
+    fetch(`http://localhost:3000/stores`).then((r) => {
       if (r.ok) {
         r.json().then((stores) => getmStores(stores));
       }
     });
-  });
+  }, [getmStores]);
   console.log(mStores);
   return (
     <div>
