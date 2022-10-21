@@ -1,55 +1,180 @@
-.sign-box {
-  width: 50%;
-  margin: auto;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  padding: 40px;
-}
-.forms form div {
-  margin: 10px 0;
-}
-.forms form .flex input {
-  width: 20px;
-  height: 20px;
-  margin-right: 15px;
-}
-.forms p {
-  font-size: 13px;
-}
-.forms form label {
-  margin: 8px;
-}
-.forms form span {
-  margin-top: 10px;
-  color: crimson;
-  font-size: 13px;
-}
-.forms form button {
-  width: 100%;
-  margin: 20px 0;
-}
-.forms form a {
-  color: blue;
-  font-size: 13px;
+img {
+    max-width: 100%;
 }
 
-/*----------show-data---------*/
-.show-data h1 {
-  color: #31b675;
-  margin: 0 0 20px 0;
+p {
+    line-height: 1.8;
 }
-.show-data h3 {
-  display: flex;
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-.show-data h3 p {
-  font-weight: 400;
-  margin-left: 5px;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #16212d;
 }
-.show-data .sign-box {
-  margin-top: 50px;
+
+.header .links {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
 }
-/*----------show-data---------*/
-@media screen and (max-width: 768px) {
-  .sign-box {
-    width: 80%;
-  }
+
+.showcase {
+    background: url('') no-repeat center/cover;
+    height: 650px;
+}
+
+.showcase .showcase-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    text-align: center;
+    color: #fff;
+}
+
+.showcase .showcase-overlay h1 {
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.destinations {
+    padding: 50px;
+    text-align: center;
+}
+
+.destinations h3 {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.destinations .grid div {
+    background-color: #f1f1f1;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.destinations .grid div img {
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #333;
+    padding: 40px;
+}
+
+.footer ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer ul li {
+    margin: 0 20px;
+}
+
+.footer ul li button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.footer ul li button:hover {
+    background-color: #2c7f86;
+}
+
+.legal {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    border-top: 1px solid rgb(63, 62, 62);
+    color: white;
+}
+
+.legal p {
+    opacity: 0.5;
+}
+
+
+/* Login and SignUp */
+
+.login .form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.login .form-control input {
+    margin: 5px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    width: 80vw;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.login .form-control button {
+    background-color: #2c7f86;
+    padding: 8px;
+    border: 2px solid #2c7f86;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.login .form-control button:hover {
+    background-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .showcase {
+        background-position: top;
+    }
+    .showcase .showcase-overlay h1 {
+        font-size: 64px;
+    }
+    .showcase .showcase-overlay p {
+        font-size: 18px;
+    }
+    .destinations .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .destinations .grid div img {
+        height: 150px;
+        width: 300px;
+    }
+    .footer ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .login .form-control input {
+        width: 50vw;
+    }
 }
