@@ -3,7 +3,7 @@ import React from "react";
 function StoreReportsTable() {
   return (
     <div className="container">
-      <h3>Store Reports Table</h3>
+      <h3>Product Table</h3>
       <table className="table table-bordered">
         <thead>
           <tr>

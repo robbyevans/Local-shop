@@ -32,7 +32,7 @@ function AdminForm({onAddAdmin}) {
   return (
     <div>
       <div className="text-center mt-5">
-        <form style ="max-width:300px; margin:auto;" onSubmit={handleSubmit}>
+        <form className ="max-width:300px; margin:auto;" onSubmit={handleSubmit}>
           <h1 className='h3 mb-3 font-weight-normal'>Please Enter your details</h1>
 
           <label htmlFor="fullName" className="sr-only">Full Name</label>

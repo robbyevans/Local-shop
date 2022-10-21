@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams } from 'react-router-dom';
+import ProductTable from '../components/ProductsTable'
 
 function StorePage() {
     const params = useParams()
@@ -27,6 +28,8 @@ function StorePage() {
     return (
         <div>
             {mStore.name}
+            <p>paid and not paid</p>
+            <ProductTable/>
         </div>
     );
 }

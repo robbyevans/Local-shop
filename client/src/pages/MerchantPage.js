@@ -165,22 +165,7 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
                     </span>
                   </a>
                 </li>
-
-                <li>
-                  <a href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-table"></i>{" "}
-                    <span onClick={()=>{
-                       setSetShowAdmin(false)
-                       setShowStoreReports(false)
-                       setShowStoreReportsTable(true)
-                       setSetShowAdminList(false)
-                    }} className="ms-1 d-none d-sm-inline">
-                      Store Reports Table
-                    </span>
-                  </a>
-                </li>
-                </div>
-             
+                </div>             
                 <li>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-people"></i>{" "}
@@ -193,15 +178,17 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
           </nav>
           <div className="col py-3">
 
+            {showAdmin ?(
+              <AdminForm/>
+            ): null}
+
             {showAdminList ? (
             <AdminList admins={admins}/>
             ) : null}
             {showStoreReports ? (
             <StoreReports mStores= {mStores}/>
             ):null}
-            {showReportsTable ? (
-            <ProductsTable/>
-            ) :null}
+      
       
 
           </div>
