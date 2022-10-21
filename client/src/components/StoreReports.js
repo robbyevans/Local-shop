@@ -2,7 +2,8 @@ import React from "react";
 import StoreCard from "./StoreCard";
 
 function StoreReports({mStores}) {
-  const renderStores = mStores.map((store)=>{
+  console.log(mStores)
+ const renderStores = mStores.map((store)=>{
     return <StoreCard key={store.id} store={store}/>
 })
 
@@ -11,7 +12,6 @@ function StoreReports({mStores}) {
       <div className="row g-3">
 
             {renderStores}
-
       </div>
     </div>
   );

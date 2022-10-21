@@ -3,14 +3,13 @@ import { useState, useCallback } from "react";
 import { Route, Routes } from "react-router";
 import MerchantPage from "./pages/MerchantPage";
 import StorePage from "./pages/StorePage";
-import AdminList from './components/AdminList';
  
 
 
 function App() {
-  const [admins, setAdmins] = useState();
+  const [admins, setAdmins] = useState([]);
   //mStores meaning merchant stores
-  const [mStores, setmStores] = useState();
+  const [mStores, setmStores] = useState([]);
 
   const getAdmins = useCallback((admins) => {
     setAdmins(admins);
@@ -29,7 +28,6 @@ function App() {
       <Routes>
         <Route path="/merchantpage"element={<MerchantPage admins={admins} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
-        <Route path="/adminform" element={<AdminList/>}></Route>
       </Routes>
     </div>
   );

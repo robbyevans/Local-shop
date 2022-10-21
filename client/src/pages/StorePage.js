@@ -27,6 +27,7 @@ function StorePage() {
 
     return (
         <div>
+          
             {mStore.name}
             <p>paid and not paid</p>
             <ProductTable/>

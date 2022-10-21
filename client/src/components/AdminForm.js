@@ -1,18 +1,17 @@
 import React, {useState} from 'react'
 import AdminList from './AdminList'
 
-function AdminForm({onAddAdmin}) {
-  const[name, setName]= useState()
-  const [email, setEmail] = useState()
-  const [store, setStore] =useState()
+function AdminForm({onAddAdmin, admins}) {
+  const[fullname, setFullname]= useState("")
+  const [email, setEmail] = useState("")
+  const [store, setStore] =useState("")
 
-  let adminsUrl =""
   function handleSubmit(event){
       event.preventDefault();
-      fetch(`${adminsUrl}`, {
+      fetch("http://localhost:3000/admins", {
            method: "POST",
             body: JSON.stringify({
-             name:name,   
+             fullname:fullname,   
              email:email,
              store: store
               
@@ -23,9 +22,10 @@ function AdminForm({onAddAdmin}) {
   })
   .then(response => response.json())
   .then((data)=> {
+    console.log(data)
       onAddAdmin(data)
   });
-  setName("")
+  setFullname("")
   setEmail("")
   setStore("")
   }
@@ -37,7 +37,7 @@ function AdminForm({onAddAdmin}) {
           <h1 className='h3 mb-3 font-weight-normal'>Please Enter your details</h1>
 
           <label htmlFor="fullName" className="sr-only">Full Name</label>
-          <input type="text" id="fullName" className="form-control" placeholder="Full Name" required autofocus value={name} onChange={(e)=> setName(e.target.value)}></input>
+          <input type="text" id="fullName" className="form-control" placeholder="Full Name" required autofocus value={fullname} onChange={(e)=> setFullname(e.target.value)}></input>
           
           <label htmlFor="emailAddress" className="sr-only">Email Address</label>
           <input type="email" id="emailAddress" className="form-control" placeholder="Email Address" required autofocus value={email} onChange={(e)=> setEmail(e.target.value)}></input>
@@ -53,7 +53,7 @@ function AdminForm({onAddAdmin}) {
           </div>
         </form>
       </div>
-      <AdminList/>
+      <AdminList admins={admins}/>
     </div>
   )
 }
