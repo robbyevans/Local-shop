@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home() {
+function ShowCase() {
   return (
     <section className='showcase'>
       <div className='showcase-overlay'>
@@ -13,4 +13,4 @@ function Home() {
   )
 }
 
-export default Home
+export default ShowCase

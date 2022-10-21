@@ -9,7 +9,7 @@ import Register from './RegisterMerchant/Register'
 import MerchantLogIn from './Signin/MerchantLogin/MerchantLogIn'
 import AdminLogin from './Signin/AdminLogin/AdminLogin'
 import ClerkLogin from './Signin/ClerkLogin/ClerkLogin'
-import Home from './Home'
+import Home from './ShowCase'
 
 function Landing() {
   return (
