@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AdminForm from "./AdminForm";
 import StoreReports from "./StoreReports";
 
-function SideBar({ onAddAdmin, admins, mStores }) {
+function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
   const [showAdmin, setSetShowAdmin] = useState(true);
   return (
     <div>
@@ -15,9 +15,7 @@ function SideBar({ onAddAdmin, admins, mStores }) {
                 href="/"
                 className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
               >
-                <span className="fs-5 d-none d-sm-inline">
-                  Merchant Dashboard
-                </span>
+              
               </a>
               <ul
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
@@ -68,9 +66,9 @@ function SideBar({ onAddAdmin, admins, mStores }) {
           </nav>
           <div className="col py-3">
             {showAdmin ? (
-              <AdminForm onAddAdmin={onAddAdmin} admins={admins} />
+              <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} />
             ) : (
-              <StoreReports mStores={mStores} />
+              <StoreReports mStores={mStores}  />
             )}
           </div>
         </div>

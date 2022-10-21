@@ -29,7 +29,7 @@ function StorePage() {
         <div>
             {mStore.name}
             <p>paid and not paid</p>
-            <ProductTable/>
+            <ProductTable storeId={storeId}/>
         </div>
     );
 }

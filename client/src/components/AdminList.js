@@ -1,6 +1,7 @@
 import React from "react";
+import axios from 'axios';
 
-function AdminList({ admins }) {
+function AdminList({ admins, onDeleteAdmin }) {
   console.log(admins);
 
   //map admins to table
@@ -19,16 +20,29 @@ function AdminList({ admins }) {
         </thead>
         <tbody>
           {admins.map((admin) => {
+
+            function handleDelete(){
+              axios.delete(`http://localhost:3000/admins/${admin.id}`)
+              .then(()=>{
+                 
+                  onDeleteAdmin(admin)
+              })
+            }
+
+            function handleDeactivate(){
+              
+            }
+
             return (
               <tr key={admin.id}>
                 <td>{admin.fullname}</td>
                 <td>{admin.email}</td>
                 <td>{admin.store}</td>
                 <td>
-                  <button className="btn btn-primary">Deactivate</button>
+                  <button onClick={handleDeactivate} className="btn btn-primary">Deactivate</button>
                 </td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button onClick={handleDelete} className="btn btn-danger">Delete</button>
                 </td>
               </tr>
             );

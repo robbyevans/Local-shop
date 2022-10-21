@@ -22,11 +22,15 @@ function App() {
   function onAddAdmin(newAdmin) {
     setAdmins([...admins, newAdmin]);
   }
+  function onDeleteAdmin(deletedAdmin){
+    const newAdmins = admins.filter(admin=> admin.id!== deletedAdmin.id);
+    setAdmins(newAdmins)
+  }
 
   return (
     <div>
       <Routes>
-        <Route path="/merchantpage"element={<MerchantPage admins={admins} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
+        <Route path="/merchantpage"element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </div>

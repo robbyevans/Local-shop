@@ -1,12 +1,6 @@
 {
   "admins": [
     {
-      "id": 1,
-      "fullname": "Fred Matiang",
-      "email": "matiangs@gmail.com",
-      "store": "hakunamatata"
-    },
-    {
       "id": 2,
       "fullname": "Fred Matiangi",
       "email": "matiangs0@gmail.com",
@@ -17,6 +11,12 @@
       "email": "james@gmail.com",
       "store": "store 3",
       "id": 3
+    },
+    {
+      "fullname": "peter ndumia",
+      "email": "ndumia@gmail.com",
+      "store": "one stop",
+      "id": 4
     }
   ],
   "stores": [

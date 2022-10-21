@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminList from "./AdminList";
 
-function AdminForm({ onAddAdmin, admins }) {
+function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [store, setStore] = useState("");
@@ -34,7 +34,7 @@ function AdminForm({ onAddAdmin, admins }) {
       <div className="text-center mt-5">
         <form className="max-width:240px; margin:auto;" onSubmit={handleSubmit}>
           <h1 className="h3 mb-3 font-weight-normal">
-            Please Enter your details
+            Please enter admin details
           </h1>
 
           <label htmlFor="fullName" className="sr-only">
@@ -94,7 +94,7 @@ function AdminForm({ onAddAdmin, admins }) {
           </div>
         </form>
       </div>
-      <AdminList admins={admins} />
+      <AdminList admins={admins} onDeleteAdmin={onDeleteAdmin} />
     </div>
   );
 }
