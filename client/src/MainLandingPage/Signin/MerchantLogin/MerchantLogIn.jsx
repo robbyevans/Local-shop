@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import { Link } from "react-router-dom"
-import "../../Signin/design.css"
+import "../../design.css"
 
 const MerchantLogIn = ({setUser}) => {
   const[username, setUsername] = useState("");

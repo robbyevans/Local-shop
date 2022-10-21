@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-
 import MainBar from './MainBar/MainBar'
-import ClerkLogin from './Signin/ClerkLogin/ClerkLogin'
-import Register from '../Register/Register'
-import MerchantLogIn from './Signin/MerchantLogin/MerchantLogIn'
 import Footer from './footer/Footer'
+import Register from './RegisterMerchant/Register'
+import MerchantLogIn from './Signin/MerchantLogin/MerchantLogIn'
+import AdminLogin from './Signin/AdminLogin/AdminLogin'
+import ClerkLogin from './Signin/ClerkLogin/ClerkLogin'
+import Home from './Home'
 
 function Landing() {
   return (
