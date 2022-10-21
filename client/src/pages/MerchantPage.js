@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import AdminForm from "../components/AdminForm";
 import AdminList from '../components/AdminList';
 import StoreReports from "../components/StoreReports";
-import ProductsTable from '../components/ProductsTable'
 
 function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
  const[showAdmin, setSetShowAdmin] =useState(false)
  const[showAdminList, setSetShowAdminList] =useState(false)
  const[showStoreReports, setShowStoreReports] = useState(false)
- const[showReportsTable, setShowStoreReportsTable] = useState(false)
 
  let adminsUrl = "http://localhost:3000/admins"
  let storesUrl = "http://localhost:3000/stores"
@@ -134,32 +132,19 @@ function MerchantPage({admins, getAdmins, mStores, getmStores, onAddAdmin}) {
                   <div>
                 <li className="nav-item"  onClick={()=> {
                        setShowStoreReports(false)
-                       setShowStoreReportsTable(false)
-                       setSetShowAdminList(false)
                       setSetShowAdmin(true)} } >
                   <a href="#" className="nav-link align-middle px-0">
                     <i className="fs-4 bi-house"></i>{" "}
                     <span className="ms-1 d-none d-sm-inline">Admin</span>
                   </a>
                 </li>
-                <li  >
-                  <a onClick={()=> {
-                     setSetShowAdmin(false)
-                     setShowStoreReports(false)
-                     setShowStoreReportsTable(false)
-                      setSetShowAdminList(true)}} href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-table"></i>{" "}
-                    <span  className="ms-1 d-none d-sm-inline">Admins List</span>
-                  </a>
-                </li>
+            
                 <li>
                   <a href="#" className="nav-link px-0 align-middle">
                     <i className="fs-4 bi-table"></i>{" "}
                     <span onClick={()=>{
                        setSetShowAdmin(false)
                        setShowStoreReports(true)
-                       setShowStoreReportsTable(false)
-                       setSetShowAdminList(false)
                     }}  className="ms-1 d-none d-sm-inline">
                       Store Reports
                     </span>

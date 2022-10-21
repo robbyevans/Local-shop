@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import AdminList from './AdminList'
 
 function AdminForm({onAddAdmin}) {
   const[name, setName]= useState()
@@ -52,6 +53,7 @@ function AdminForm({onAddAdmin}) {
           </div>
         </form>
       </div>
+      <AdminList/>
     </div>
   )
 }
