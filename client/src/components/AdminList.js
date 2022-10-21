@@ -8,7 +8,7 @@ function AdminList({ admins, onDeleteAdmin }) {
   return (
     <div className="container">
       <h3>Admins List</h3>
-      <table className="table table-bordered">
+      <table className="table table-info table-bordered">
         <thead>
           <tr>
             <th>Full Name</th>
