@@ -13,16 +13,14 @@ const MainBar = () => {
 
       <nav className='navbar'>
         <ul>
-        <Link to='/mlog-in' onClick={closeMobileMenu}>
+        <Link className='links' to='/mlog-in'>
                 Merchant
         </Link>
-       <Link to='/alog-in' onClick={closeMobileMenu}>
+       <Link className='links' to='/alog-in'>
                  Admin
          </Link>
-          <Link className='links' to='/signup'>
-           Clerk
-          </Link>
-          <Link to='/clog-in' onClick={closeMobileMenu}>
+         
+          <Link  className='links' to='/clog-in'>
                 Clerk
          </Link>
         </ul>
