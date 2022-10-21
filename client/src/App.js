@@ -1,19 +1,46 @@
 import './App.css';
-import {Route, Routes } from 'react-router-dom';
-import SideBar from './components/sidebar/SideBar';
-import Login from './components/login/Login';
-import Monthly from './components/analytics/Monthly';
+import { useState, useCallback } from "react";
+import { Route, Routes } from "react-router";
+import MerchantPage from "./pages/MerchantPage";
+import StorePage from "./pages/StorePage";
+import SideBar from "./components/sidebar/SideBar"
+
+
 
 function App() {
+  const [admins, setAdmins] = useState();
+  //mStores meaning merchant stores
+  const [mStores, setmStores] = useState();
+
+  const getAdmins = useCallback((admins) => {
+    setAdmins(admins);
+  }, []);
+
+  const getmStores = useCallback((mStores) => {
+    setmStores(mStores);
+  }, []);
+
+  function onAddAdmin(newAdmin) {
+    setAdmins([...admins, newAdmin]);
+  }
+
   return (
     <div>
       <Routes>
-        <Route>
-         
-        </Route>
-        <Route exact path="/" element={<Login />} />
-        <Route path="/admin" element={<SideBar />} />
-        <Route path='/analytics' element={<Monthly/>}/>
+        <Route exact path="/" element={<SideBar/>} />
+        <Route
+          path="/merchantpage"
+          element={
+            <MerchantPage
+              admins={admins}
+              getAdmins={getAdmins}
+              mStores={mStores}
+              getmStores={getmStores}
+              onAddAdmin={onAddAdmin}
+            />
+          }
+        ></Route>
+        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </div>
   );
