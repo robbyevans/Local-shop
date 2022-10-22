@@ -34,8 +34,11 @@ function App() {
 
   return (
     <Grid container>
-      <SideBar/>
+      <SideBar />
       <Routes>
+      <Route exact path="/" element={<ClerkForm/>}/>
+      <Route path="/analytics" element={<InventoryAnalytics/>}/>
+      <Route path="/inventories" element={<Inventory/>} />
         <Route path="/merchantpage"element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
