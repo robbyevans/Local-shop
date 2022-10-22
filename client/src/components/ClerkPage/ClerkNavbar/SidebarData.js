@@ -3,22 +3,30 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 
-export const SidebarData = [{
+export const SidebarData = [
+    {
         title: 'Home',
         path: '/',
         icon: < AiIcons.AiFillHome / > ,
         cName: 'nav-text'
     },
     {
-        title: 'Orders',
-        path: '/orders',
+        title: 'Add items+',
+        path: '/addItems',
         icon: < IoIcons.IoIosPaper / > ,
         cName: 'nav-text'
     },
     {
+        title: 'Request Items+',
+        path: '/addRequests',
+        icon: < IoIcons.IoIosPaper / > ,
+        cName: 'nav-text'
+    },
+
+    {/* {
         title: 'Inventory',
-        path: '/inventory',
+        path: '/oldPage',
         icon: < FaIcons.FaCartPlus / > ,
         cName: 'nav-text'
-    }
+    } */}
 ];
