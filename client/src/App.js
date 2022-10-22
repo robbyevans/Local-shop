@@ -1,16 +1,19 @@
 import React from 'react'
-import './App.css';
 import Landing from './MainLandingPage/Landing';
-
-
-
+import ClerklandingPage from "./ClerkLandingPage"
+import './App.css';
+import Merchant from './Merchant';
 function App() {
+
+
   return (
+  
     <div className="App">
-    <Landing />
+       <Landing />
+       <ClerklandingPage/>
+        <Merchant/>
     </div>
-      
-  );
+  )
 }
 
-export default App;
+export default App

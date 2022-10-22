@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Route, Routes } from "react-router";
 
 import '../MainLandingPage/design.css'
 
@@ -14,18 +14,18 @@ import ShowCase from './ShowCase'
 function Landing() {
   return (
     <>
-      <Router>
+      
         <MainBar />
-        <Switch>
+        <Routes>
           <Route path='/' exact component={ShowCase } />
           <Route path='/mlog-in' component={MerchantLogIn} />
           <Route path='/alog-in' component={AdminLogin} />
           <Route path='/clog-in' component={ClerkLogin} />
           <Route path='/Register' component={Register} />
 
-        </Switch>
+        </Routes>
         <Footer />
-      </Router>
+      
     </>
   )
 }
