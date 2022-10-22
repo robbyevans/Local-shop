@@ -1,3 +1,5 @@
+import React from 'react'
+import ClerklandingPage from "./ClerkLandingPage"
 import './App.css';
 import Grid from '@mui/material/Grid'
 import { useState, useCallback } from "react";
@@ -48,10 +50,12 @@ function App() {
 function App() {
 
   return (
+  
     <div className="App">
+      <ClerklandingPage/>
         <Merchant/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
