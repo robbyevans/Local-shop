@@ -18,7 +18,6 @@ function App() {
   const [mStores, setmStores] = useState();
 
   const getAdmins = useCallback((admins) => {
-    setAdmins(admins);
   }, []);
 
   const getmStores = useCallback((mStores) => {
@@ -28,27 +27,16 @@ function App() {
   function onAddAdmin(newAdmin) {
     setAdmins([...admins, newAdmin]);
   }
+  function onDeleteAdmin(deletedAdmin){
+    const newAdmins = admins.filter(admin=> admin.id!== deletedAdmin.id);
+    setAdmins(newAdmins)
+  }
 
   return (
     <Grid container>
       <SideBar/>
       <Routes>
-        <Route path="/inventories" element={<Inventory />} />
-        <Route path="/clerks" element={<DataTable />} />
-        <Route path="/analytics" element={<InventoryAnalytics />} />
-        
-        <Route
-          path="/merchantpage"
-          element={
-            <MerchantPage
-              admins={admins}
-              getAdmins={getAdmins}
-              mStores={mStores}
-              getmStores={getmStores}
-              onAddAdmin={onAddAdmin}
-            />
-          }
-        ></Route>
+        <Route path="/merchantpage"element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </Grid>

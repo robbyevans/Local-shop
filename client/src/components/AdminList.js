@@ -1,10 +1,14 @@
 import React from "react";
+import axios from 'axios';
 
-function AdminList() {
+function AdminList({ admins, onDeleteAdmin }) {
+  console.log(admins);
+
+  //map admins to table
   return (
     <div className="container">
       <h3>Admins List</h3>
-      <table className="table table-bordered">
+      <table className="table table-info table-bordered">
         <thead>
           <tr>
             <th>Full Name</th>
@@ -15,27 +19,34 @@ function AdminList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dancun Oluoch</td>
-            <td>dancun@gmail.com</td>
-            <td>Store 1</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
-          </tr>
-          <tr>
-            <td>Geoffrey Oluoch</td>
-            <td>geoffrey@gmail.com</td>
-            <td>Store 2</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
-          </tr>
-          <tr>
-            <td>Evans Rutto</td>
-            <td>evans@gmail.com</td>
-            <td>Store 3</td>
-            <td>Deactivate</td>
-            <td>Delete</td>
-          </tr>
+          {admins.map((admin) => {
+
+            function handleDelete(){
+              axios.delete(`http://localhost:3000/admins/${admin.id}`)
+              .then(()=>{
+                 
+                  onDeleteAdmin(admin)
+              })
+            }
+
+            function handleDeactivate(){
+              
+            }
+
+            return (
+              <tr key={admin.id}>
+                <td>{admin.fullname}</td>
+                <td>{admin.email}</td>
+                <td>{admin.store}</td>
+                <td>
+                  <button onClick={handleDeactivate} className="btn btn-primary">Deactivate</button>
+                </td>
+                <td>
+                  <button onClick={handleDelete} className="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
