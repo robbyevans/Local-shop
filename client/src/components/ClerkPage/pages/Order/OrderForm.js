@@ -1,11 +1,11 @@
 import React from "react"
 
 import Order from "./Order";
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 const OrderForm= () => {
 
-  const history = useHistory();
+  // const history = useHistory();
 
   function addOrderHandler(OrderDetails){
     fetch('https://localshop-bbbe2-default-rtdb.firebaseio.com/order.json',
@@ -18,7 +18,7 @@ const OrderForm= () => {
      }
     }
     ).then(() => {
-      history.replace('/');
+      // history.replace('/');
     });
 }
   return (
