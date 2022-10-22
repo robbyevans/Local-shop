@@ -39,7 +39,7 @@ const ClerkForm = () => {
           <div className="row">
               <div className="col-md-4 offset-md-2">
                   <form action="">
-                      <h3 className='text-center'>Add Clerk</h3>
+                      <h3 className='text-center mt-3'>Add Clerk</h3>
                       <div className="form-group">
                           <label htmlFor="name">Full Name</label>
                           <input

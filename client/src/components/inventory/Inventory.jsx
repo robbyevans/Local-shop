@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 // import Spinner from '../../common/spinner/Spinner'
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import Grid from '@mui/material/Grid'
+import { DataGrid } from '@mui/x-data-grid';
+
 
 
 const Inventory = () => {
@@ -55,10 +58,16 @@ const Inventory = () => {
   }, [])
   
   return (
+    <Grid item xs={8}>
       <div className='container'>
-      <h3>Inventory</h3>
-
-      <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button>
+        <div className="row mt-5">
+          <div className="col-md-6">
+            <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button>
+          </div>
+          <div className="col-md-6">
+          <h3>Inventory</h3>
+          </div>
+        </div>
 
       <div className="modal" id="form-modal">
         <div className="modal-dialog modal-dialog-centered">
@@ -192,7 +201,8 @@ const Inventory = () => {
         </tbody>
       </table>
           
-    </div>
+      </div>
+      </Grid>  
   )
 }
 
