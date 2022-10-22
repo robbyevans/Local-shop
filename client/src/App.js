@@ -12,9 +12,6 @@ import ClerkForm from './components/clerks/ClerkForm'
 import DataTable from './common/datatable/DataTable'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import Merchant from './Merchant';
-function App() {
-
-
 
 function App() {
   const [admins, setAdmins] = useState();
@@ -49,5 +46,10 @@ function App() {
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </Grid>
+    <div className="App">
+  
+    </div>
+  );
+}
 
 export default App;
