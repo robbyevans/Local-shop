@@ -1,10 +1,15 @@
 import React from 'react'
 import ClerklandingPage from "./ClerkLandingPage"
-
+import './App.css';
+import Merchant from './Merchant';
 function App() {
+
+
   return (
-    <div>
+  
+    <div className="App">
       <ClerklandingPage/>
+        <Merchant/>
     </div>
   )
 }
