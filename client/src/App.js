@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid'
 import { useState, useCallback } from "react";
 import { Route, Routes } from "react-router";
 import MerchantPage from "./pages/MerchantPage";
+import Merchant from './Merchant';
 import StorePage from "./pages/StorePage";
 import SideBar from "./components/sidebar/SideBar"
 import Inventory from './components/inventory/Inventory'
@@ -43,6 +44,14 @@ function App() {
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </Grid>
+
+function App() {
+
+
+  return (
+    <div className="App">
+        <Merchant/>
+    </div>
   );
 }
 
