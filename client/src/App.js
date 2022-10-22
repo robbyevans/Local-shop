@@ -9,6 +9,7 @@ import Inventory from './components/inventory/Inventory'
 import ClerkForm from './components/clerks/ClerkForm'
 import DataTable from './common/datatable/DataTable'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
+import Merchant from './Merchant';
 
 
 
@@ -43,9 +44,8 @@ function App() {
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </Grid>
-import Merchant from './Merchant';
-function App() {
 
+function App() {
 
   return (
     <div className="App">
