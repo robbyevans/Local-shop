@@ -107,7 +107,7 @@ const MerchantLogIn = ({setUser}) => {
     <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='form-control'>
+          <form className='formation-control'>
           <input type="text"
                 id="username"
                 placeholder='username'

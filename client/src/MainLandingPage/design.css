@@ -81,7 +81,7 @@ body {
     opacity: 0.5;
 }
 /* Login and SignUp */
-.login .form-control {
+.login .formation-control {
     display: flex;
     flex-direction: column;
 }
@@ -89,7 +89,7 @@ body {
     font-size: 19px;
     text-decoration: none;
 }
-.login .form-control input {
+.login .formation-control input {
     margin: 5px 0;
     padding: 12px;
     border: none;
@@ -102,7 +102,7 @@ body {
 .linkp {
     color: #fff;
 }
-.login .form-control button {
+.login .formation-control button {
     background-color: #060B26;
     padding: 8px;
     border: 2px solid #060B26;
@@ -117,7 +117,7 @@ body {
     cursor: pointer;
     transition: background-color 0.4s;
 }
-.login .form-control button:hover {
+.login .formation-control button:hover {
     background-color: transparent;
 }
 @media (min-width: 768px) {
@@ -143,7 +143,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
     }
-    .login .form-control input {
+    .login .formation-control input {
         width: 50vw;
     }
 }
