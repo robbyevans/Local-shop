@@ -12,8 +12,6 @@ import ClerkForm from './components/clerks/ClerkForm'
 import DataTable from './common/datatable/DataTable'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import Merchant from './Merchant';
-function App() {
-
 
 
 function App() {
@@ -31,8 +29,8 @@ function App() {
   function onAddAdmin(newAdmin) {
     setAdmins([...admins, newAdmin]);
   }
-  function onDeleteAdmin(deletedAdmin){
-    const newAdmins = admins.filter(admin=> admin.id!== deletedAdmin.id);
+  function onDeleteAdmin(deletedAdmin) {
+    const newAdmins = admins.filter(admin => admin.id !== deletedAdmin.id);
     setAdmins(newAdmins)
   }
 
@@ -40,14 +38,16 @@ function App() {
     <Grid container>
       <SideBar />
       <Routes>
-      <Route exact path="/" element={<ClerkForm/>}/>
-      <ClerklandingPage/>
-        <Merchant/>
-      <Route path="/analytics" element={<InventoryAnalytics/>}/>
-      <Route path="/inventories" element={<Inventory/>} />
-        <Route path="/merchantpage"element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
+        
+        <Route exact path="/" element={<ClerkForm />} />
+        <ClerklandingPage />
+        <Merchant />
+        <Route path="/analytics" element={<InventoryAnalytics />} />
+        <Route path="/inventories" element={<Inventory />} />
+        <Route path="/merchantpage" element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin} />}></Route>
         <Route path="/storepage/:storeId" element={<StorePage />}></Route>
       </Routes>
     </Grid>
-
+  )
+}
 export default App;

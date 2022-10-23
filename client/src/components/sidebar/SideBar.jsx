@@ -4,13 +4,9 @@ import Typography from '@mui/material/Typography';
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { ListItemIcon } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-
 import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
-import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
