@@ -18,11 +18,11 @@ function App() {
 
     <ClerkNavbar />
     <Routes>
-     <Route path='/home' exact element={Home} />
-        <Route path='/orders' element={OrderForm} />
-        <Route path='/addItems' element={Table} />
-        <Route path='/addRequests' element={RequestTable} />
-        <Route path='/oldPage' element={ClerkPage} />
+     <Route path='/home' exact element={<Home/>} />
+        {/* <Route path='/orders' element={<OrderForm/>} /> */}
+        <Route path='/addItems' element={<Table/>} />
+        <Route path='/addRequests' element={<RequestTable/>} />
+        <Route path='/oldPage' element={<ClerkPage/>} />
 
         </Routes>
 
