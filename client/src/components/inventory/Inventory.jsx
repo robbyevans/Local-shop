@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 // import Spinner from '../../common/spinner/Spinner'
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
-import { DataGrid } from '@mui/x-data-grid';
+import SideBar from '../sidebar/SideBar';
+import InventoryAnalytics from '../analytics/InventoryAnalytics';
+// import { DataGrid } from '@mui/x-data-grid';
 
 
 
@@ -58,6 +60,10 @@ const Inventory = () => {
   }, [])
   
   return (
+    <>
+    <SideBar/>
+    <InventoryAnalytics/>
+   
     <Grid item xs={8}>
       <div className='container'>
         <div className="row mt-5">
@@ -79,7 +85,7 @@ const Inventory = () => {
             </div>
             {/*modal body */}
             <div className="modal-body">
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col my-2">
                     <input type="text"
@@ -203,6 +209,7 @@ const Inventory = () => {
           
       </div>
       </Grid>  
+      </>
   )
 }
 

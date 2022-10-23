@@ -1,53 +1,22 @@
 import React from 'react'
-import ClerklandingPage from "./ClerkLandingPage"
+import { Route, Routes } from 'react-router';
 import './App.css';
-import Grid from '@mui/material/Grid'
-import { useState, useCallback } from "react";
-import { Route, Routes } from "react-router";
-import MerchantPage from "./pages/MerchantPage";
-import StorePage from "./pages/StorePage";
-import SideBar from "./components/sidebar/SideBar"
+import AdminBase from './components/adminbase/AdminBase';
 import Inventory from './components/inventory/Inventory'
-import ClerkForm from './components/clerks/ClerkForm'
-import DataTable from './common/datatable/DataTable'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
-import Merchant from './Merchant';
-
 
 function App() {
-  const [admins, setAdmins] = useState();
-  //mStores meaning merchant stores
-  const [mStores, setmStores] = useState();
-
-  const getAdmins = useCallback((admins) => {
-  }, []);
-
-  const getmStores = useCallback((mStores) => {
-    setmStores(mStores);
-  }, []);
-
-  function onAddAdmin(newAdmin) {
-    setAdmins([...admins, newAdmin]);
-  }
-  function onDeleteAdmin(deletedAdmin) {
-    const newAdmins = admins.filter(admin => admin.id !== deletedAdmin.id);
-    setAdmins(newAdmins)
-  }
 
   return (
-    <Grid container>
-      <SideBar />
+  
+    <div className="App">
       <Routes>
-        
-        <Route exact path="/" element={<ClerkForm />} />
-        <ClerklandingPage />
-        <Merchant />
-        <Route path="/analytics" element={<InventoryAnalytics />} />
+        <Route path='/admin' element={<AdminBase/>}/>
         <Route path="/inventories" element={<Inventory />} />
-        <Route path="/merchantpage" element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin} />}></Route>
-        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
+        <Route path='/analytics' element={<InventoryAnalytics/>}/>
       </Routes>
-    </Grid>
+      
+    </div>
   )
 }
 export default App;

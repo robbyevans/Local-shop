@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import Spinner from '../../common/spinner/Spinner'
+import React, {useEffect } from 'react'
+// import Spinner from '../../common/spinner/Spinner'
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import Grid from '@mui/material/Grid'
@@ -14,8 +14,8 @@ ChartJS.register(
 
 const InventoryAnalytics = () => {
 
-  const[loading, setLoading] = useState(false)
-  const[chart, setChart] = useState([])
+  // const[loading, setLoading] = useState(false)
+  // const[chart, setChart] = useState([])
 
   useEffect(() => {
     const fetchInventories = async () => {
@@ -23,8 +23,8 @@ const InventoryAnalytics = () => {
       const data = await response.json()
       return data;
       // setLoading(true)
-      setChart(data)
-      console.log(data)
+  
+  
       // .then((response)=>response.json())
       //   .then((data) => {
       //     setLoading(true)
@@ -44,7 +44,7 @@ const InventoryAnalytics = () => {
     // labels: chart?.data?.map(inventory=>inventory.name),
     datasets: [
       {
-        label: `${chart?.data?.length} Items`,
+        label: "Inventories",
         // data: chart?.data?.map(inventory=>inventory.price),
         data:[30, 27, 45, 39, 50, 76],
         backgroundColor: [
@@ -83,13 +83,13 @@ const InventoryAnalytics = () => {
   }
   return (
     <Grid item xs={8}>
-      {loading ? <Spinner /> :
+     
         <Bar
         data={data}
         options={options}
         height={400}
       />
-      }
+      
 
     </Grid>
   )
