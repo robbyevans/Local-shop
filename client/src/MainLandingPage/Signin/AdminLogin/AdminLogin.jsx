@@ -1,5 +1,7 @@
 import React, { useState }from 'react'
 import { useNavigate } from 'react-router';
+import Footer from '../../footer/Footer';
+import MainBar from '../../MainBar/MainBar';
 
 const AdminLogin= ({setUser}) => {
 
@@ -30,6 +32,7 @@ const AdminLogin= ({setUser}) => {
 
   return (
     <>
+    <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
           <form className='form-control'>
@@ -52,7 +55,7 @@ const AdminLogin= ({setUser}) => {
           </form>
         </div>
       </section>
-  
+  <Footer/>
     </>
   )
 }

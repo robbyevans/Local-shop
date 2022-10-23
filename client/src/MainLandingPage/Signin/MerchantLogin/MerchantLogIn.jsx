@@ -73,6 +73,8 @@
 import React, { useState }from 'react'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router';
+import MainBar from '../../MainBar/MainBar';
+import Footer from '../../footer/Footer';
 
 const MerchantLogIn = ({setUser}) => {
 
@@ -102,6 +104,7 @@ const MerchantLogIn = ({setUser}) => {
 
   return (
     <>
+    <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
           <form className='form-control'>
@@ -124,6 +127,7 @@ const MerchantLogIn = ({setUser}) => {
           </form>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

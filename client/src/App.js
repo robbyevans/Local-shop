@@ -13,6 +13,7 @@ import MerchantLogIn from './MainLandingPage/Signin/MerchantLogin/MerchantLogIn'
 import AdminLogin from './MainLandingPage/Signin/AdminLogin/AdminLogin';
 import ClerkLogin from './MainLandingPage/Signin/ClerkLogin/ClerkLogin';
 import Register from './MainLandingPage/RegisterMerchant/Register';
+import "./MainLandingPage/design.css"
 function App() {
 
 
