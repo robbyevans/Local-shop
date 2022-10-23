@@ -148,6 +148,12 @@ form td:last-child {
   display: flex;
   justify-content: space-evenly;
 }
+.merchant-sidebar{
+  background-color: #060b26;
+}
+.merchant-navbar{
+  background-color: #060b26;
+}
 /* .actual-table{
   font-size: 20px;
 } */
