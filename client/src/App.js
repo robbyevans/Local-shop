@@ -20,14 +20,23 @@ function App() {
   
     <div className="App">
       <Routes>
-       <Route path="/landingpage" element={<Landing/>}></Route>
-       <Route path="/clerklandingpage" element={<ClerklandingPage/>}></Route>
-       <Route path="/merchantlandingpage" element={<Merchant/>}></Route>
+       <Route exact path="/" element={<Landing/>}></Route>
+       <Route path="/clerk" element={<ClerklandingPage/>}></Route>
+       <Route path="/merchant" element={<Merchant/>}></Route>
+
+
+       
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
+
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
        <Route path='/addRequests' element={<RequestTable/>} />
+
+       
        <Route path='/oldPage' element={<ClerkPage/>} />
+
+
+
        <Route path='/mlog-in' element={<MerchantLogIn/>} />
        <Route path='/alog-in' element={<AdminLogin/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />

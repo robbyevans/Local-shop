@@ -72,11 +72,17 @@
 
 import React, { useState }from 'react'
 import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router';
 
 const MerchantLogIn = ({setUser}) => {
 
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
+  const navigate=useNavigate()
+  function handleClick(){
+    navigate("/merchant")
+
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -114,7 +120,7 @@ const MerchantLogIn = ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
            <p> Don't have account? <Link className='linkp'  to='/register'> Become a Member!</Link></p>
-            <button type='submit'>Log In</button>
+            <button onClick={handleClick} type='submit'>Log In</button>
           </form>
         </div>
       </section>

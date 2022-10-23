@@ -1,9 +1,16 @@
 import React, { useState }from 'react'
+import { useNavigate } from 'react-router';
 
 const AdminLogin= ({setUser}) => {
 
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
+
+  const navigate=useNavigate()
+  function handleClick(){
+    navigate("/admin")
+
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -41,10 +48,11 @@ const AdminLogin= ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
           
-            <button type='submit'>Log In</button>
+            <button onClick={handleClick}  type='submit'>Log In</button>
           </form>
         </div>
       </section>
+  
     </>
   )
 }
