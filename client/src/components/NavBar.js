@@ -4,7 +4,7 @@ function NavBar() {
     return (
         <div>
              {/* top navigation bar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top merchant-navbar">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
