@@ -7,7 +7,11 @@ function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDe
   useEffect(() => {
     fetch(`/admins`).then((r) => {
       if (r.ok) {
-        r.json().then((admins) => getAdmins(admins));
+        r.json().then((admins) => {
+        console.log(admins);
+        getAdmins(admins)
+         }
+        );
       }
     });
   }, [getAdmins]);
