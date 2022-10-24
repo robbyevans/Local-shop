@@ -22,7 +22,6 @@ function ClerkLandingPage() {
           <Route path='/addItems' element={<Table/>} />
           <Route path='/addRequests' element={<RequestTable/>} />
           <Route path='/oldPage' element={<ClerkPage/>} />*/}
-
         </Routes>
 
 
