@@ -8,7 +8,7 @@ function StoreReports({mStores}) {
 })
 
   return (
-    <div className="container">
+    <div className="container store-wrap">
       <div className="row g-3">
 
             {renderStores}

@@ -120,7 +120,8 @@ td {
   font-size: 18px;
 }
 .actual-table th{
-  background-color: #194761;
+  background-color: #060b26;
+  color: #fff;
 }
 /* th {
 color: #fff;
@@ -130,6 +131,10 @@ color: #fff;
 .actual-table td {
   border: 1px solid #fff;
   background-color: rgb(205, 235, 253);
+}
+.admin-form input{
+ width: 70%;
+ margin-left: 150px;
 }
 
 /* form {
@@ -153,6 +158,9 @@ form td:last-child {
 }
 .merchant-navbar{
   background-color: #060b26;
+}
+.store-wrap{
+  margin-top: 50px;
 }
 /* .actual-table{
   font-size: 20px;

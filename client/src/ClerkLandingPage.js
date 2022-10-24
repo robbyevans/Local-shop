@@ -2,6 +2,7 @@ import './clerk.css';
 import ClerkNavbar from './components/ClerkPage/ClerkNavbar/Navbar';
 import { Route, Routes } from "react-router";
 import Home from './components/ClerkPage/pages/Home/Home';
+import Table from "./components/ClerkPage/ItemsTables/Table"
 {/*import ClerkPage from './ClerkPage';
 import logo from './logo.svg';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -15,8 +16,9 @@ import ClerkPage from './components/ClerkPage/ClerkPagex';*/}
 function ClerkLandingPage() {
   return (
 <>
-    <ClerkNavbar />
+    {/* <ClerkNavbar /> */}
         <Routes>
+        <Route exact path='/' element={<Table/>} />
           {/*<Route exact path='/home' element={<Home/>} />
           <Route path='/orders' element={<OrderForm/>} />
           <Route path='/addItems' element={<Table/>} />

@@ -22,7 +22,7 @@ function RequestTable() {
 
   });
 
-  console.log(request)
+  // console.log(request)
 
   const [editFormData, setEditFormData] = useState({
     name: "",
@@ -31,14 +31,14 @@ function RequestTable() {
     date: "",
   });
 
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("http://127.0.0.1:3000/requests").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((item) => setRequest(item));
-  //     }
-  //   });
-  // },[]);
+//populating the table with data from database
+  useEffect(() => {
+    fetch("/requests").then((r) => {
+      if (r.ok) {
+        r.json().then((item) => setRequest(item));
+      }
+    });
+  },[]);
 
   const [editItemId, setEditContactId] = useState(null);
 
@@ -71,13 +71,27 @@ function RequestTable() {
 
     const newItem = {
       id: nanoid(),
-      name: addFormData.name,
-      item: addFormData.item,
+      clerk_name: addFormData.name,
+      item_name: addFormData.item,
       quantity: addFormData.quantity,
       date: addFormData.date
     };
 
     const newItems = [...request, newItem];
+    //POSTING TO THE DATABASE
+
+    fetch("/requests", {
+      method: "POST",
+      headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),   
+    })
+      .then((r) => r.json())
+      .then((newItem) => {
+        setRequest(newItem);
+      });
+
     setRequest(newItems);
   };
 
