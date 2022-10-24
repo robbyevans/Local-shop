@@ -14,6 +14,16 @@ function RequestTable() {
   //<<<<-----table functions---->>>
   
   const [request, setRequest] = useState(data);
+
+  //populating the table with data from database
+    useEffect(() => {
+      fetch("/requests").then((r) => {
+        if (r.ok) {
+          r.json().then((item) => setRequest(item));
+        }
+      });
+    },[]);
+
   const [addFormData, setAddFormData] = useState({
     name: "",
     item: "",
@@ -22,7 +32,7 @@ function RequestTable() {
 
   });
 
-  // console.log(request)
+
 
   const [editFormData, setEditFormData] = useState({
     name: "",
@@ -31,14 +41,6 @@ function RequestTable() {
     date: "",
   });
 
-//populating the table with data from database
-  useEffect(() => {
-    fetch("/requests").then((r) => {
-      if (r.ok) {
-        r.json().then((item) => setRequest(item));
-      }
-    });
-  },[]);
 
   const [editItemId, setEditContactId] = useState(null);
 
@@ -78,6 +80,7 @@ function RequestTable() {
     };
 
     const newItems = [...request, newItem];
+
     //POSTING TO THE DATABASE
 
     fetch("/requests", {
@@ -89,7 +92,7 @@ function RequestTable() {
     })
       .then((r) => r.json())
       .then((newItem) => {
-        setRequest(newItem);
+        // console.log(newItem);
       });
 
     setRequest(newItems);
