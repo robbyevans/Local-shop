@@ -6,6 +6,8 @@ import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 
+import ClerkNavbar from '../ClerkNavbar/Navbar';
+
 function RequestTable() {
 
 
@@ -130,10 +132,11 @@ function RequestTable() {
   //<<<<<------end of table- functions------>>>>
 
   return (
-
-
-    //<<<<<---table item--->>
+<>
+    <ClerkNavbar/>
+   
     <div className="app-container">
+     
       <div className="table-title">
         <h2>Request Items</h2>
       </div>
@@ -207,6 +210,7 @@ function RequestTable() {
       </form>
 
     </div>
+    </>
   );
 };
 

@@ -40,6 +40,7 @@ const Inventory = (props) => {
  
   return (
     <>
+       
       <section className='contact mtop'>
       
           <div className='main-content'>

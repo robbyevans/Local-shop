@@ -1,9 +1,20 @@
 import React, { useState }from 'react'
+import { useNavigate } from 'react-router';
+import Footer from '../../footer/Footer';
+import MainBar from '../../MainBar/MainBar';
 
 const ClerkLogin = ({setUser}) => {
 
+  
+
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
+
+  const navigate=useNavigate()
+  function handleClick(){
+    navigate("/clerk")
+
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,9 +34,10 @@ const ClerkLogin = ({setUser}) => {
 
   return (
     <>
+    <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='form-control'>
+          <form className='formation-control'>
           <input type="text"
                 id="username"
                 placeholder='username'
@@ -41,10 +53,11 @@ const ClerkLogin = ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
           
-            <button type='submit'>Log In</button>
+            <button onClick={handleClick} type='submit'>Log In</button>
           </form>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

@@ -5,6 +5,7 @@ import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 // import { useHistory } from 'react-router-dom';
+import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 const Table = () => {
   // const history = useHistory();
@@ -198,10 +199,10 @@ const Table = () => {
 
   return (
 
-
-    //<<<<<---table item--->>
+<>
+    <ClerkNavBar/>
     <div className="app-container">
-
+     
             {/* //<<<<--- table input form-->> */}
           <div className="table-title">
             <h2>Add items</h2>
@@ -293,6 +294,7 @@ const Table = () => {
       {/* end of table  */}
 
     </div>
+    </>
   );
 };
 
