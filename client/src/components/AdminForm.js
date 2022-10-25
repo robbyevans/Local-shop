@@ -32,7 +32,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
   return (
     <div>
       <div className="text-center mt-5">
-        <form className="max-width:240px; margin:auto;" onSubmit={handleSubmit}>
+        <form className="max-width:240px; margin:auto; admin-form" onSubmit={handleSubmit}>
           <h1 className="h3 mb-3 font-weight-normal">
             Please enter admin details
           </h1>

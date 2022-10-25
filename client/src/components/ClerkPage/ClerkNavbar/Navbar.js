@@ -31,14 +31,14 @@ function Navbar() {
                
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
-                    {item.icon}
+                    <div className='icon'>{item.icon}</div>
                     <span>{item.title}</span>
                   </Link>
                 </li>
                
               );
             })}
-            <li><button className='primarybtn'>log out</button></li>
+            <li><button className='nav-btn'>log out</button></li>
             
             
           </ul>
