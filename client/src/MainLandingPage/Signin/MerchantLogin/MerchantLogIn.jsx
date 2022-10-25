@@ -72,11 +72,19 @@
 
 import React, { useState }from 'react'
 import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router';
+import MainBar from '../../MainBar/MainBar';
+import Footer from '../../footer/Footer';
 
 const MerchantLogIn = ({setUser}) => {
 
   const[username, setUsername] = useState("");
   const[password, setPassword] = useState("");
+  const navigate=useNavigate()
+  function handleClick(){
+    navigate("/merchant")
+
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -96,9 +104,10 @@ const MerchantLogIn = ({setUser}) => {
 
   return (
     <>
+    <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='form-control'>
+          <form className='formation-control'>
           <input type="text"
                 id="username"
                 placeholder='username'
@@ -114,10 +123,11 @@ const MerchantLogIn = ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
            <p> Don't have account? <Link className='linkp'  to='/register'> Become a Member!</Link></p>
-            <button type='submit'>Log In</button>
+            <button onClick={handleClick} type='submit'>Log In</button>
           </form>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

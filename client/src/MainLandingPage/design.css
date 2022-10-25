@@ -1,30 +1,25 @@
-img {
-    max-width: 100%;
+img{
+max-width: 100%;
 }
-
 p {
     line-height: 1.9;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #060b26;
+    background-color: #060B26;
 }
-
 .header .links {
     margin: 0 30px;
     color: #fff;
     font-size: 20px;
     text-decoration: none;
 }
-
 .links2 {
     margin: 0 30px;
     color: #fff;
@@ -32,12 +27,10 @@ body {
     font-weight: 300;
     text-decoration: none;
 }
-
 .showcase {
     background: url('https://images.pexels.com/photos/187041/pexels-photo-187041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center/cover;
     height: 650px;
 }
-
 .showcase .showcase-overlay {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
@@ -48,43 +41,35 @@ body {
     text-align: center;
     color: #fff;
 }
-
 .showcase .showcase-overlay h1 {
     font-size: 36px;
     padding-bottom: 20px;
 }
-
 .destinations {
     padding: 50px;
     text-align: center;
 }
-
 .destinations h3 {
     font-size: 30px;
     padding: 10px;
     text-align: center;
 }
-
 .destinations .grid div {
-    background-color: #f1f1f1;
+    background-color: #F1F1F1;
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 10px;
 }
-
 .destinations .grid div img {
     border-radius: 10px;
 }
-
 .footer {
     background-color: #333;
     padding: 40px;
 }
-
 .footer ul li button:hover {
-    background-color: #2c7f86;
+    background-color: #2C7F86;
 }
-
 .legal {
     text-align: center;
     padding: 15px;
@@ -92,25 +77,19 @@ body {
     border-top: 1px solid rgb(63, 62, 62);
     color: white;
 }
-
 .legal p {
     opacity: 0.5;
 }
-
-
 /* Login and SignUp */
-
-.login .form-control {
+.login .formation-control {
     display: flex;
     flex-direction: column;
 }
-
 .link {
     font-size: 19px;
     text-decoration: none;
 }
-
-.login .form-control input {
+.login .formation-control input {
     margin: 5px 0;
     padding: 12px;
     border: none;
@@ -120,15 +99,13 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
 }
-
 .linkp {
     color: #fff;
 }
-
-.login .form-control button {
-    background-color: #060b26;
+.login .formation-control button {
+    background-color: #060B26;
     padding: 8px;
-    border: 2px solid #060b26;
+    border: 2px solid #060B26;
     color: #fff;
     font-family: inherit;
     border-radius: 10px;
@@ -140,11 +117,9 @@ body {
     cursor: pointer;
     transition: background-color 0.4s;
 }
-
-.login .form-control button:hover {
+.login .formation-control button:hover {
     background-color: transparent;
 }
-
 @media (min-width: 768px) {
     .showcase {
         background-position: top;
@@ -168,7 +143,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
     }
-    .login .form-control input {
+    .login .formation-control input {
         width: 50vw;
     }
 }

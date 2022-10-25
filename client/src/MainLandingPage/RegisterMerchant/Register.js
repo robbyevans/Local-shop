@@ -1,5 +1,7 @@
 
 import React, {useState} from 'react'
+import Footer from '../footer/Footer';
+import MainBar from '../MainBar/MainBar';
 
 const Register = ({ setUser }) => {
 
@@ -33,9 +35,10 @@ const Register = ({ setUser }) => {
     }
   return (
     <>
+    <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='form-control'>
+          <form className='formation-control'>
           <input type='text' name='username'  placeholder='Username' value ={username} required id="username" onChange={(e) => setUsername(e.target.value)} />
               <input type='text' name='firstname'  placeholder='FirstName' value ={firstname} required id="firstname" onChange={(e) => setFirstname(e.target.value)}/>
               <input type='text' name='lastname' placeholder='LastName' value ={lastname} required id="lastname" onChange={(e) => setLastname(e.target.value)} />
@@ -45,6 +48,7 @@ const Register = ({ setUser }) => {
           </form>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

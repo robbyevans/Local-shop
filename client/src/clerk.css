@@ -1,4 +1,4 @@
-.App {
+.clerk {
   text-align: center;
   background-color: #ebeff2;
 }
@@ -112,25 +112,38 @@ table {
   margin-top: 30px;
 }
 
-th,
+.actual-table th,
 td {
   border: 1px solid #ffffff;
   text-align: left;
   padding: 8px;
-  font-size: 32px;
+  font-size: 18px;
 }
-
-th {
+.actual-table th{
+  background-color: #060b26;
+  color: #fff;
+}
+/* th {
 color: #fff;
   background-color: #060b26;
-}
+} */
 
-td {
-
+.actual-table td {
+  border: 1px solid #fff;
   background-color: rgb(205, 235, 253);
 }
+.admin-form input{
+ width: 70%;
+ margin-left: 150px;
+}
 
-form {
+/* form {
+  display: flex;
+  gap: 5px;
+  margin-left: 50px;
+} */
+
+.app-container form{
   display: flex;
   gap: 5px;
   margin-left: 50px;
@@ -140,7 +153,18 @@ form td:last-child {
   display: flex;
   justify-content: space-evenly;
 }
-
-form * {
-  font-size: 20px;
+.merchant-sidebar{
+  background-color: #060b26;
 }
+.merchant-navbar{
+  background-color: #060b26;
+}
+.store-wrap{
+  margin-top: 50px;
+}
+/* .actual-table{
+  font-size: 20px;
+} */
+/* form * {
+  font-size: 20px;
+} */

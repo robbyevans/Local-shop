@@ -7,8 +7,8 @@ const ReadOnlyRow = ({ items, handleEditClick, handleDeleteClick }) => {
               <td>{items.quantity}</td>
               <td>{items.inStock}</td>
               <td>{items.spoilt}</td>
-              <td>{items.buyingPrice}</td>
-              <td>{items.sellingPrice}</td>
+              <td>{items.BuyingPrice}</td>
+              <td>{items.SellingPrice}</td>
       <td>
         <button
           type="button"
