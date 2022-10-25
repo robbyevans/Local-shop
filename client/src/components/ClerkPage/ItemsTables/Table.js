@@ -123,7 +123,7 @@ const Table = () => {
   })
     .then((r) => r.json())
     .then((newItem) => {
-      setItems(newItem);
+      // setItems(newItem);
     });
     setItems(newItems);
   };
