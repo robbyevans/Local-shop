@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :users, only: [:index, :show, :create, :update, :destroy]
+  resources :users, param: :_email
   resources :stores
   resources :merchant_users
   resources :admins, only: [:create, :index, :update, :destroy]
