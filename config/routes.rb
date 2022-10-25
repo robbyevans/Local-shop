@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :users
+  resources :users, only: [:index, :show, :create, :update, :destroy]
   resources :stores
   resources :merchant_users
   resources :admins, only: [:create, :index, :update, :destroy]
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post '/auth/login', to: 'authentication#login'
   get '/*a', to: 'application#not_found'
-  
+
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
