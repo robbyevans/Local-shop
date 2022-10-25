@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react'
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
 import SideBar from '../sidebar/SideBar';
-import InventoryAnalytics from '../analytics/InventoryAnalytics';
+// import InventoryAnalytics from '../analytics/InventoryAnalytics';
 // import { DataGrid } from '@mui/x-data-grid';
+import ClerkForm from '../clerks/ClerkForm';
 
 
 
@@ -61,14 +62,14 @@ const Inventory = () => {
   
   return (
     <>
-    <SideBar/>
-    <InventoryAnalytics/>
+      <SideBar />
+      <ClerkForm/>
    
     <Grid item xs={8}>
       <div className='container'>
         <div className="row mt-5">
           <div className="col-md-6">
-            <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button>
+            {/* <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button> */}
           </div>
           <div className="col-md-6">
           <h3>Inventory</h3>

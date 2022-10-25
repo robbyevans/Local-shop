@@ -7,6 +7,7 @@ import Inventory from './components/inventory/Inventory'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import SideBar from './components/sidebar/SideBar';
 
+
 function App() {
 
   return (
