@@ -177,10 +177,16 @@ const Table = () => {
 
   const handleDeleteClick = (contactId) => {
     const newItems = [...items];
-
     const index = items.findIndex((item) => item.id === contactId);
-
     newItems.splice(index, 1);
+
+    fetch(`/items/${contactId}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        // setRequest(spice);
+      }
+    });
 
     setItems(newItems);
   };

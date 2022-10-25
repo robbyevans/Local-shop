@@ -57,7 +57,7 @@ function RequestTable() {
     setAddFormData(newFormData);
   };
 
-  
+
 
   const handleEditFormChange = (event) => {
     event.preventDefault();
@@ -142,10 +142,18 @@ function RequestTable() {
 
   const handleDeleteClick = (contactId) => {
     const newItems = [...request];
-
     const index = request.findIndex((item) => item.id === contactId);
-
     newItems.splice(index, 1);
+
+    // console.log(contactId)
+
+    fetch(`/requests/${contactId}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        // setRequest(spice);
+      }
+    });
 
     setRequest(newItems);
   };

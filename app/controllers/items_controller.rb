@@ -10,8 +10,18 @@ class ItemsController < ApplicationController
     render json:items, status: :created
   end
 
+  def destroy
+    item=find_item
+    item.destroy
+    head :no_content
+  end
+
   private
   def item_params
     params.permit(:name, :quantity,:inStock,:BuyingPrice,:SellingPrice)
+  end
+
+  def find_item
+    Item.find(params[:id])
   end
 end
