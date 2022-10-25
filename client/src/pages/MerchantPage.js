@@ -5,16 +5,18 @@ import SideBar from "../components/SideBar";
 function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin }) {
   //fetch admins from db
   useEffect(() => {
-    fetch(`http://localhost:3000/admins`).then((r) => {
+    fetch("/admins").then((r) => {
       if (r.ok) {
-        r.json().then((admins) => getAdmins(admins));
+        r.json().then((admins) => {
+          getAdmins(admins);
+        }); 
       }
     });
   }, [getAdmins]);
 
   //fetch stores from db
   useEffect(() => {
-    fetch(`http://localhost:3000/stores`).then((r) => {
+    fetch("/admins").then((r) => {
       if (r.ok) {
         r.json().then((stores) => getmStores(stores));
       }

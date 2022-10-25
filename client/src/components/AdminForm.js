@@ -8,10 +8,10 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:3000/admins", {
+    fetch("/admins", {
       method: "POST",
       body: JSON.stringify({
-        fullname: fullname,
+        full_name: fullname,
         email: email,
         store: store,
       }),

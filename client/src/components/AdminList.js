@@ -22,7 +22,7 @@ function AdminList({ admins, onDeleteAdmin }) {
           {admins.map((admin) => {
 
             function handleDelete(){
-              axios.delete(`http://localhost:3000/admins/${admin.id}`)
+              axios.delete(`/admins/${admin.id}`)
               .then(()=>{
                  
                   onDeleteAdmin(admin)
@@ -35,7 +35,7 @@ function AdminList({ admins, onDeleteAdmin }) {
 
             return (
               <tr key={admin.id}>
-                <td>{admin.fullname}</td>
+                <td>{admin.full_name}</td>
                 <td>{admin.email}</td>
                 <td>{admin.store}</td>
                 <td>
