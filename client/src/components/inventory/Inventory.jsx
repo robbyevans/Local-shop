@@ -80,7 +80,7 @@ const Inventory = () => {
           <div className="modal-content">
             {/* modal header */}
             <div className="modal-header">
-              <h3 className="modal-title">New Inventory</h3>
+              <h3 className="modal-title ">New Inventory</h3>
               <button className="btn-close" data-bs-dismiss="modal"></button>
             </div>
             {/*modal body */}
@@ -164,8 +164,8 @@ const Inventory = () => {
                     />
                   </div>
                   <div className="col">
-                    <input type="submit"
-              className="btn btn-primary btn-block form-control"
+                        <input type="submit"
+                          className="btn btn-primary btn-block form-control mt-2"
                     />
                   </div>
           

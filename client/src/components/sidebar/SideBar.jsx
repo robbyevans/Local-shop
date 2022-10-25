@@ -14,7 +14,7 @@ import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import { useNavigate } from 'react-router-dom';
 
-const SideBar = () => {
+const SideBar = ({children}) => {
 
     let navigate = useNavigate()
     const drawerWidth = 240
@@ -79,7 +79,8 @@ const SideBar = () => {
                         </ListItem>
                   ))}
               </List>
-          </Drawer>
+      </Drawer>
+      {children}
           
     </div>
   )

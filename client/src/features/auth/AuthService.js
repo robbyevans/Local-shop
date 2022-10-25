@@ -2,7 +2,7 @@ import axios from "axios";
 
 const REGISTER_URL = "http://localhost:3000/api/users/signup"
 const LOGIN_URL = "http://localhost:3000/api/users/login"
-const ACTIVATE_URL = "http://localhost:3000/api/users/activate"
+// const ACTIVATE_URL = "http://localhost:3000/api/users/activate"
 
 //Register admins
 const register = async (adminInfo) => {
@@ -24,7 +24,7 @@ const login = async (adminInfo) => {
         },
     };
 
-    const response = await axios.post(LOGIN_URL, userData, config)
+    const response = await axios.post(LOGIN_URL, adminInfo, config)
     if (response.data) {
         localStorage.setItem("user", JSON.stringify(response.data))
     }
