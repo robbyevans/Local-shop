@@ -23,6 +23,11 @@ class UsersController < ApplicationController
                status: :unprocessable_entity
       end
     end
+
+    def create_admin
+      admin = Admin.create(admin_params)
+      render json: admin, status: :created
+    end
   
     # PUT /users/{username}
     def update
@@ -50,4 +55,7 @@ class UsersController < ApplicationController
          :full_name, :email, :password, :password_confirmation, :role
       )
     end
+    def admin_params
+      params.permit(:full_name, :email, :password,:store, :status, :token)
+  end
 end
