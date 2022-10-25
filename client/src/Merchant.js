@@ -12,6 +12,7 @@ function Merchant() {
     const getAdmins = useCallback((admins) => {
       setAdmins(admins);
     }, []);
+
   
     const getmStores = useCallback((mStores) => {
       setmStores(mStores);

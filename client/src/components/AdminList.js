@@ -35,7 +35,7 @@ function AdminList({ admins, onDeleteAdmin }) {
 
             return (
               <tr key={admin.id}>
-                <td>{admin.fullname}</td>
+                <td>{admin.full_name}</td>
                 <td>{admin.email}</td>
                 <td>{admin.store}</td>
                 <td>

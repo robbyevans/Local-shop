@@ -11,7 +11,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
     fetch("/admins", {
       method: "POST",
       body: JSON.stringify({
-        fullname: fullname,
+        full_name: fullname,
         email: email,
         store: store,
       }),
