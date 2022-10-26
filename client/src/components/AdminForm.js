@@ -3,10 +3,10 @@ import AdminList from "./AdminList";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
 
-function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
+function AdminForm({ onAddAdmin, admins,onDeleteAdmin, mStores}) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [store, setStore] = useState("");
+  const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
 
   function handleSubmit(event) {
@@ -16,7 +16,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
       body: JSON.stringify({
         full_name: fullname,
         email: email,
-        store: store,
+        store_id: storeId,
         status: "active",
         token: ""
       }),
@@ -31,8 +31,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
       });
     setFullname("");
     setEmail("");
-    setStore("");
-    setPassword("")
+    setPassword("");
   }
 
   return (
@@ -91,13 +90,16 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
                     />
                   </div>
                   <div className="col">
-                    <input type="text"
-                      name="store"
-                      placeholder="store"
-                      className="form-control"
-                      value={store}
-                      onChange={(e) => setStore(e.target.value)}
-                    />
+                  <select value={storeId} onChange = {(e)=> setStoreId(e.target.value)}>
+                  {mStores.map((store) => {
+
+                    console.log(store)
+                   
+                     return <option value={store.id}>{store.store_name}</option>
+
+                })}
+
+            </select>
                   </div>
                 
                 </div>

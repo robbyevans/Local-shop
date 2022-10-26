@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 
-function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin }) {
+function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
   //fetch admins from db
   useEffect(() => {
     fetch("/admins").then((r) => {
@@ -16,7 +16,7 @@ function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDe
 
   //fetch stores from db
   useEffect(() => {
-    fetch("/admins").then((r) => {
+    fetch("/stores").then((r) => {
       if (r.ok) {
         r.json().then((stores) => getmStores(stores));
       }
@@ -29,7 +29,7 @@ function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDe
 
       {/* sidebar dashboard */}
 
-      <SideBar onAddAdmin={onAddAdmin} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} />
+      <SideBar onAddAdmin={onAddAdmin} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} onAddStore={onAddStore} />
     </div>
   );
 }

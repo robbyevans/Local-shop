@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import AdminForm from "./AdminForm";
+import StoreForm from "./StoreForm";
 import StoreReports from "./StoreReports";
 
-function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
+function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
   const [showAdmin, setSetShowAdmin] = useState(true);
   return (
     <div>
@@ -33,7 +34,7 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
                       className="nav-link align-middle px-0 text-white"
                     >
                       <i className="fs-4 bi-house"></i>{" "}
-                      <span className="ms-1 d-none d-sm-inline">Admin</span>
+                      <span className="ms-1 d-none d-sm-inline">Admins</span>
                     </a>
                   </li>
 
@@ -49,7 +50,7 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
                         }}
                         className="ms-1 d-none d-sm-inline"
                       >
-                        Store Reports
+                        Stores
                       </span>
                     </a>
                   </li>
@@ -66,9 +67,9 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
           </nav>
           <div className="col py-3">
             {showAdmin ? (
-              <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} />
+              <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} mStores={mStores} />
             ) : (
-              <StoreReports mStores={mStores}  />
+              <StoreReports mStores={mStores} onAddStore={onAddStore}  /> 
             )}
           </div>
         </div>

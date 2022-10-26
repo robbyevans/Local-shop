@@ -25,7 +25,7 @@ class AdminsController < ApplicationController
 
     private 
     def admin_params
-        params.permit(:full_name, :email, :password, :store, :status, :token)
+        params.permit(:full_name, :email, :password, :store_id, :status, :token)
     end
     def admin_update_params
         params.permit(:status)

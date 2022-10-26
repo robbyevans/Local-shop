@@ -13,7 +13,6 @@ function AdminList({ admins, onDeleteAdmin }) {
           <tr>
             <th>Full Name</th>
             <th>Email</th>
-            <th>Store</th>
             <th>Deactivate</th>
             <th>Delete</th>
           </tr>
@@ -37,7 +36,6 @@ function AdminList({ admins, onDeleteAdmin }) {
               <tr key={admin.id}>
                 <td>{admin.full_name}</td>
                 <td>{admin.email}</td>
-                <td>{admin.store}</td>
                 <td>
                   <button onClick={handleDeactivate} className="btn btn-primary">Deactivate</button>
                 </td>
