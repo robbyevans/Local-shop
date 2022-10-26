@@ -8,12 +8,14 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch("/admins", {
+    fetch("/create_admin", {
       method: "POST",
       body: JSON.stringify({
         full_name: fullname,
         email: email,
         store: store,
+        status: "active",
+        token: ""
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

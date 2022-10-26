@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router";
 import MerchantPage from "./pages/MerchantPage";
 //import StorePage from "./pages/StorePage";
 
-function Merchant() {
+function Merchant({user}) {
     const [admins, setAdmins] = useState([]);
     //mStores meaning merchant stores
     const [mStores, setmStores] = useState([]);
