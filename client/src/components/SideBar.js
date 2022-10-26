@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import AdminForm from "./AdminForm";
-import StoreForm from "./StoreForm";
 import StoreReports from "./StoreReports";
 
 function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
   const [showAdmin, setSetShowAdmin] = useState(true);
+
+  function handleLogout(){
+
+  }
   return (
     <div>
       {/* sidebar dashboard */}
@@ -55,13 +58,8 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
                     </a>
                   </li>
                 </div>
-                <li>
-                  <a href="#" className="nav-link px-0 align-middle text-white">
-                    <i className="fs-4 bi-people"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Logout</span>{" "}
-                  </a>
-                </li>
               </ul>
+              <button onClick={handleLogout} className="merchant-log-out">Log out</button>
               <hr />
             </div>
           </nav>
