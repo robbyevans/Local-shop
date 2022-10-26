@@ -53,7 +53,7 @@ const Inventory = () => {
  
 //fetch inventories
   useEffect(() => {
-    fetch("http://localhost:3000/inventories")
+    fetch("/items")
       .then((response) => response.json())
       .then((data) => {
       setInventories(data)

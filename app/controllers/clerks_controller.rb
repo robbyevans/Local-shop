@@ -1,33 +1,53 @@
 class ClerksController < ApplicationController
-  def show
-    clerk = Clerk.create(clerk_params)
-    render json:clerks, status: :ok
-  end   
+  rescue_from ActiveRecord::RecordNotFound, with: :render_error
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  #  before_action :authorize
+
+      def index
+         render json: Clerk.all,status: :ok
+      end
+
+      def show
+          clerk = find_clerk
+          render json: clerk, status: :ok
+      end
+
+       def update
+          clerk = find_clerk
+          Clerk.update(clerk_params)
+          render json: clerk
+      end
+
+      def create
+          clerk = Clerk.create(clerk_params)
+          render json: clerk, status: :created
+      end
+
+      def destroy
+          clerk = find_clerk
+          clerk.destroy
+          head :no_content
+      end
 
 
-    def index
-    clerks = Clerk.all
-    render json:clerks, status: :ok
-  end
+      private
+      def render_error
+          render json: { error: "Clerk not found" }, status: :not_found
+       end
 
-  def create
-    clerks = Clerk.create(clerk_params)
-    render json:clerks, status: :created
-  end
+      def find_clerk
+           Clerk.find(params[:id])
+      end
 
+      def clerk_params
+          params.permit(:full_name, :email, :password_digest)
+      end
 
-  def destroy
-    clerk = find_clerk
-    Clerk.destroy
-    head :no_content
-  end
+      def render_unprocessable_entity_response(invalid)
+          render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+      end
 
-  private
-  def clerk_params
-    params.permit(:full_name, :email,:password_digest)
-  end
-
-  def find_clerk
-    Clerk.find(params[:id])
-  end
+      def authorize
+      return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :client_id
+      end
 end
