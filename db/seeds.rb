@@ -33,4 +33,29 @@ puts "seeding item table..."
 
 end
 
-puts "awesome🥳"
+puts "seeding clerk table..."
+ clerks = Clerk.create([
+  {
+      full_name: "Christina Low",
+      email: "christinal@clerk.com",
+      password_digest: "christinalc@clerk1"
+  },
+  {
+    full_name: "Jurian Clerk",
+    email: "jurianc@clerk.com",
+    password_digest: "jurianc@clerk2"
+  },
+  {
+    full_name: "Christina Low",
+    email: "christinal@clerk.com",
+    password_digest: "christinalc@clerk3"
+  },
+  {
+    full_name: "Stanley Ford",
+    email: "stanleyf@clerk.com",
+    password_digest: "stanleyf@clerk4"
+  }
+])
+
+
+ 

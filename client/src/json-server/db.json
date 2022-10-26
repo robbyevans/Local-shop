@@ -39,6 +39,16 @@
       "buyingPrice": 60,
       "sellingPrice": 70,
       "status": "paid"
+    },
+    {
+      "id": 5,
+      "name": "Maize Flour",
+      "quantity": 100,
+      "spoilt": 5,
+      "instock": 50,
+      "buyingPrice": 60,
+      "sellingPrice": 70,
+      "status": "not paid"
     }
   ],
   "admins": [

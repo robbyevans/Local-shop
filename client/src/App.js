@@ -1,4 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {store} from '../src/app/store'
+import { Provider } from 'react-redux';
 import './App.css';
 import Merchant from './Merchant';
 import { Route, Routes } from "react-router";
@@ -12,21 +14,23 @@ import AdminLogin from './MainLandingPage/Signin/AdminLogin/AdminLogin';
 import ClerkLogin from './MainLandingPage/Signin/ClerkLogin/ClerkLogin';
 import Register from './MainLandingPage/RegisterMerchant/Register';
 import "./MainLandingPage/design.css"
-import AdminBase from './components/adminbase/AdminBase';
 import Inventory from './components/inventory/Inventory'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import ClerkLandingPage from './ClerkLandingPage';
 import Landing from './MainLandingPage/Landing'
 
+
 function App() {
 
+  const[user, setUser]= useState(null)
   return (
   
     <div className="App">
+      <Provider store={store}>
       <Routes>
        <Route exact path="/" element={<Landing/> }></Route>
        <Route path="/clerk" element={<ClerkLandingPage/>}></Route>
-       <Route path="/merchant" element={<Merchant/>}></Route>
+          <Route path="/merchant" element={<Merchant user={user} />}></Route>
 
 
        
@@ -41,16 +45,14 @@ function App() {
 
 
 
-       <Route path='/mlog-in' element={<MerchantLogIn/>} />
+       <Route path='/mlog-in' element={<MerchantLogIn setUser={setUser}/>} />
        <Route path='/alog-in' element={<AdminLogin/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
-       <Route path='/Register' element={<Register/>} />
-      
-        <Route path='/admin' element={<AdminBase/>}/>
+       <Route path='/Register' element={<Register setUser={setUser}/>} />
         <Route path="/inventories" element={<Inventory />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
-      </Routes>
-      
+        </Routes>
+        </Provider>
     </div>
   )
 }

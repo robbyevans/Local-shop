@@ -8,7 +8,7 @@ function AdminList({ admins, onDeleteAdmin }) {
   return (
     <div className="container">
       <h3>Admins List</h3>
-      <table className="table table-info table-bordered">
+      <table className="table table-info table-bordered table-sm merchant-table-font">
         <thead>
           <tr>
             <th>Full Name</th>
@@ -18,11 +18,11 @@ function AdminList({ admins, onDeleteAdmin }) {
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {admins.map((admin) => {
 
             function handleDelete(){
-              axios.delete(`http://localhost:3000/admins/${admin.id}`)
+              axios.delete(`/admins/${admin.id}`)
               .then(()=>{
                  
                   onDeleteAdmin(admin)
@@ -35,14 +35,14 @@ function AdminList({ admins, onDeleteAdmin }) {
 
             return (
               <tr key={admin.id}>
-                <td>{admin.fullname}</td>
+                <td >{admin.full_name}</td>
                 <td>{admin.email}</td>
-                <td>{admin.store}</td>
+                <td>{admin.store_id}</td>
                 <td>
-                  <button onClick={handleDeactivate} className="btn btn-primary">Deactivate</button>
+                  <button onClick={handleDeactivate} className="btn btn-sm btn-primary">Deactivate</button>
                 </td>
                 <td>
-                  <button onClick={handleDelete} className="btn btn-danger">Delete</button>
+                  <button onClick={handleDelete} className="btn btn-sm btn-danger">Delete</button>
                 </td>
               </tr>
             );
