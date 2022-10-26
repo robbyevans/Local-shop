@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2022_10_26_174532) do
     t.string "token"
   end
 
+  create_table "clerks", force: :cascade do |t|
+    t.string "full_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"

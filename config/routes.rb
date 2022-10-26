@@ -9,6 +9,18 @@ Rails.application.routes.draw do
   post "/login", to: "merchantsessions#create"
   delete "/logout", to: "mechantsessions#destroy"
 
+  resources :clerks, only: [:index, :show, :create, :update, :destroy ]
+  resources :requested_items
+  resources :items
+
+  # get"/clerks", to: "clerks#index"
+  # get"/clerks/:do", to: "clerks#show"
+  # post"/clerks", to: "clerks#create"
+  # delete"/clerks/:id", to: "clerks#destroy"
+
+  get"/items", to: "items#index"
+  post"/items", to: "items#create"
+  delete"/items/:id", to: "items#destroy"
 
   post '/auth/login', to: 'authentication#login'
   get '/*a', to: 'application#not_found'
