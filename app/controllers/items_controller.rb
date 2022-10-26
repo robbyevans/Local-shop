@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.permit(:name, :quantity,:inStock,:BuyingPrice,:SellingPrice)
+    params.permit(:name, :quantity,:inStock,:BuyingPrice,:SellingPrice,:paid)
   end
 
   def find_item

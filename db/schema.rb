@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_24_081224) do
+ActiveRecord::Schema.define(version: 2022_10_26_125758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "image"
-    t.string "description"
-    t.date "date"
-    t.string "location"
-    t.float "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -33,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_10_24_081224) do
     t.integer "spoilt"
     t.integer "BuyingPrice"
     t.integer "SellingPrice"
+    t.boolean "paid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,20 +32,6 @@ ActiveRecord::Schema.define(version: 2022_10_24_081224) do
     t.integer "quantity"
     t.string "item_name"
     t.date "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tickets", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

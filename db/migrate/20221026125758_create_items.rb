@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.integer :spoilt
       t.integer :BuyingPrice
       t.integer :SellingPrice
+      t.boolean :paid
 
       t.timestamps
     end

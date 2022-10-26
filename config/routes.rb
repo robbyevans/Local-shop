@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :requested_items
   resources :items
+  resources :requested_items
 
   get"/items", to: "items#index"
   post"/items", to: "items#create"

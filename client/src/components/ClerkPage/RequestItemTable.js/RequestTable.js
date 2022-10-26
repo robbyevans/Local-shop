@@ -201,7 +201,7 @@ function RequestTable() {
         onChange={handleAddFormChange}
       />
 
-      <button type="submit">Add +</button>
+      <button className="btn" type="submit">Add +</button>
     </form>
                 {/* end of table form input */}
 
