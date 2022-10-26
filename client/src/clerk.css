@@ -137,6 +137,9 @@ color: #fff;
  width: 70%;
  margin-left: 150px;
 }
+.btn{
+  color: #fff;
+}
 
 /* form {
   display: flex;

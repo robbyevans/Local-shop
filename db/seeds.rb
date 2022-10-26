@@ -26,7 +26,8 @@ puts "seeding item table..."
     inStock:Faker::Number.number(digits: 2),
     spoilt:Faker::Number.non_zero_digit,
     BuyingPrice:Faker::Number.number(digits: 3),
-    SellingPrice:Faker::Number.number(digits: 3)
+    SellingPrice:Faker::Number.number(digits: 3),
+    paid:false
 
   )
 

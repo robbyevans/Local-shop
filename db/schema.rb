@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_10_26_174532) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_10_26_174532) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2022_10_26_174532) do
     t.integer "spoilt"
     t.integer "BuyingPrice"
     t.integer "SellingPrice"
+    t.boolean "paid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

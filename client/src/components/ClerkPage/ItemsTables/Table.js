@@ -8,13 +8,9 @@ import EditableRow from "./EditableRow";
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 const Table = () => {
-  // const history = useHistory();
-
-
+ 
 
   //<<<<-----table functions---->>>
-  
-  
   const [items, setItems] = useState(data);
 
 
@@ -80,24 +76,6 @@ const Table = () => {
     setEditFormData(newFormData);
   };
 
-//........
-// function addMovieHandler(movieDetails){
-//   fetch('https://phase-2-project-599c2-default-rtdb.firebaseio.com/movies.json',
-//   {
-//    method:'POST',
-//    body:JSON.stringify(movieDetails),
-//    headers:{
-//           'Content-Type':'application/json'
-//    }
-//   }
-//   ).then(() => {
-//     history.replace('/');
-//   });
-// }
-
-
-
-
   const handleAddFormSubmit = (event) => {
     //----POST---->>>>
     event.preventDefault();
@@ -149,9 +127,24 @@ const Table = () => {
 
     newItems[index] = editedItem;
 
+        //posting edited items to the db
+
+  fetch(`/items/${editItemId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({editedItem}),
+    })
+      .then((r) => r.json())
+      .then((data)=>console.log(data))
+
     setItems(newItems);
+    console.log(newItems)
     setEditContactId(null);
   };
+
+
 
   const handleEditClick = (event, item) => {
     event.preventDefault();
@@ -165,6 +158,8 @@ const Table = () => {
       BuyingPrice: item.buyingPrice,
       SellingPrice: item.sellingPrice
     };
+
+
 
     setEditFormData(formValues);
   };
@@ -245,7 +240,7 @@ const Table = () => {
               placeholder="Selling Price"
               onChange={handleAddFormChange}
             />
-            <button type="submit">Add</button>
+            <button className="btn" type="submit">Add</button>
           </form>
           {/* end of table input form*/}
 
