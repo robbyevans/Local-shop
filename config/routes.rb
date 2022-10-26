@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :stores
   resources :merchant_users
   resources :admins, only: [:create, :index, :update, :destroy]
-  post "/signup",  to: "merchantusers#create"
+  post "/signup",  to: "users#create"
   get "/me", to: "merchantusers#show"
   post "/login", to: "merchantsessions#create"
   delete "/logout", to: "mechantsessions#destroy"

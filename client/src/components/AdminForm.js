@@ -16,7 +16,6 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
       body: JSON.stringify({
         full_name: fullname,
         email: email,
-        password: password,
         store: store,
         status: "active",
         token: ""

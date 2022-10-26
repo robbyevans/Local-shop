@@ -16,16 +16,31 @@ const Table = () => {
   
   
   const [items, setItems] = useState(data);
+
+
+  //populating the table with data from database
+  useEffect(() => {
+    fetch("/items").then((r) => {
+      if (r.ok) {
+        r.json().then((data) => setItems(data));
+      }
+      else
+      console.log("NO RECORDS FOUND!")
+    });
+  },[]);
+
+  //-----end
+
   const [addFormData, setAddFormData] = useState({
     name: "",
     quantity: "",
     inStock: "",
     spoilt: "",
-    buyingPrice: "",
-    sellingPrice: "",
+    BuyingPrice: "",
+    SellingPrice: "",
     status:""
   });
-
+  
 
 
   const [editFormData, setEditFormData] = useState({
@@ -33,23 +48,11 @@ const Table = () => {
     quantity: "",
     inStock: "",
     spoilt: "",
-    buyingPrice: "",
-    sellingPrice: "",
-    status:""
+    BuyingPrice: "",
+    SellingPrice: ""
   });
 
 
-  //populating the table with data from database
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("http://127.0.0.1:3000/items").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((item) => setItem(item));
-  //     }
-  //   });
-  // },[]);
-
-  //-----end
 
   const [editItemId, setEditContactId] = useState(null);
 
@@ -105,43 +108,27 @@ const Table = () => {
       quantity: addFormData.quantity,
       inStock: addFormData.inStock,
       spoilt: addFormData.spoilt,
-      buyingPrice: addFormData.buyingPrice,
-      sellingPrice: addFormData.sellingPrice
+      BuyingPrice: addFormData.buyingPrice,
+      SellingPrice: addFormData.sellingPrice
     };
-
     const newItems = [...items, newItem];
+    // POSTING TO DATABASE
 
-// ADDED POST FUNCTION
-
-
-  // fetch("/events", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(formData),
-    
-  // })
-  //   .then((r) => r.json())
-  //   .then((newItem) => {
-  //     setItems(newItem);
-  //     // onAddSpice(newEvent);
-  //   });
-
-   
-  //   fetch('https://phase-2-project-599c2-default-rtdb.firebaseio.com/movies.json',
-  // {
-  //  method:'POST',
-  //  body:JSON.stringify(newItems),
-  //  headers:{
-  //         'Content-Type':'application/json'
-  //  }
-  // }
-  // ).then((r) => r.json()
-  // .then(console.log(r)));
-//--------->>>>
+  fetch("/items", {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newItem),   
+  })
+    .then((r) => r.json())
+    .then((newItem) => {
+      // setItems(newItem);
+    });
     setItems(newItems);
   };
+
+  // <<<<<<<-------->>>>>>>
 
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
@@ -152,8 +139,8 @@ const Table = () => {
       quantity: editFormData.quantity,
       inStock: editFormData.inStock,
       spoilt: editFormData.spoilt,
-      buyingPrice: editFormData.buyingPrice,
-      sellingPrice: editFormData.sellingPrice
+      BuyingPrice: editFormData.buyingPrice,
+      SellingPrice: editFormData.sellingPrice
     };
 
     const newItems = [...items];
@@ -175,8 +162,8 @@ const Table = () => {
       quantity: item.quantity,
       inStock: item.inStock,
       spoilt: item.spoilt,
-      buyingPrice: item.buyingPrice,
-      sellingPrice: item.sellingPrice
+      BuyingPrice: item.buyingPrice,
+      SellingPrice: item.sellingPrice
     };
 
     setEditFormData(formValues);
@@ -186,12 +173,20 @@ const Table = () => {
     setEditContactId(null);
   };
 
+
+
   const handleDeleteClick = (contactId) => {
     const newItems = [...items];
-
     const index = items.findIndex((item) => item.id === contactId);
-
     newItems.splice(index, 1);
+
+    fetch(`/items/${contactId}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        // setRequest(spice);
+      }
+    });
 
     setItems(newItems);
   };

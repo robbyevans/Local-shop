@@ -3,8 +3,8 @@ import React from "react";
 const ReadOnlyRow = ({ items, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
-              <td>{items.name}</td>
-              <td>{items.item}</td>
+              <td>{items.clerk_name}</td>
+              <td>{items.item_name}</td>
               <td>{items.quantity}</td>
               <td>{items.date}</td>
       <td>

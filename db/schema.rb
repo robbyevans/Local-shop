@@ -26,10 +26,30 @@ ActiveRecord::Schema.define(version: 2022_10_25_130854) do
     t.string "token"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantity"
+    t.integer "inStock"
+    t.integer "spoilt"
+    t.integer "BuyingPrice"
+    t.integer "SellingPrice"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "merchant_users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "requested_items", force: :cascade do |t|
+    t.string "clerk_name"
+    t.integer "quantity"
+    t.string "item_name"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
