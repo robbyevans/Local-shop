@@ -21,9 +21,7 @@ function StoreCard({store}) {
             <p className="card-text">
              {store.description}
             </p>
-            <p className="card-text">
-             Admin: {store.admin.full_name}
-            </p>
+        
             <a href="#" className="btn btn-primary">
               Go to Store
             </a>

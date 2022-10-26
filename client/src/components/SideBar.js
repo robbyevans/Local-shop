@@ -67,7 +67,7 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
             {showAdmin ? (
               <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} mStores={mStores} />
             ) : (
-              <StoreReports mStores={mStores} onAddStore={onAddStore}  /> 
+              <StoreReports mStores={mStores} onAddStore={onAddStore} admins={admins} /> 
             )}
           </div>
         </div>

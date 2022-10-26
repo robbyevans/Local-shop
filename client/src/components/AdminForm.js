@@ -89,17 +89,22 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin, mStores}) {
                       onChange={(e)=> setPassword(e.target.value)}
                     />
                   </div>
-                  <div className="col">
-                  <select value={storeId} onChange = {(e)=> setStoreId(e.target.value)}>
+                  <div className="row">
+                  <div className="col ">
+                    <p> Store: </p>
+                  <select className="btn btn-secondary dropdown-toggle" value={storeId} onChange = {(e)=> setStoreId(e.target.value)}> 
+                 
                   {mStores.map((store) => {
 
                     console.log(store)
                    
-                     return <option value={store.id}>{store.store_name}</option>
+                     return  <option value={store.id}>{store.store_name}</option>
 
                 })}
 
+
             </select>
+                  </div>
                   </div>
                 
                 </div>

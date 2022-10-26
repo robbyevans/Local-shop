@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
 
-function StoreForm({onAddStore}) {
+function StoreForm({onAddStore, admins}) {
     const [storename, setStorename] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
+    const [admin, setAdmin]= useState({})
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -87,9 +88,10 @@ function StoreForm({onAddStore}) {
                         onChange={(e)=> setDescription(e.target.value)}
                       />
                     </div>
-                   
                   
                   </div>
+
+              
                   <div className="row">
                   <div className="col">
                       <input type="submit"

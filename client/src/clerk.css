@@ -13,6 +13,7 @@
   font-size: 3rem;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -168,3 +169,20 @@ form td:last-child {
 /* form * {
   font-size: 20px;
 } */
+.merchant-log-out{
+  margin-bottom: 40px;
+  height:50px;
+  background-color:  #000000;
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.merchant-table-font td{
+  font-size: 14px;
+}
+.merchant-table-font table{
+  border-radius: 10px;
+}
