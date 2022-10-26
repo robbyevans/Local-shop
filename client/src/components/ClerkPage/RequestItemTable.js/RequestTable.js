@@ -17,7 +17,7 @@ function RequestTable() {
 
   //populating the table with data from database
     useEffect(() => {
-      fetch("/requests").then((r) => {
+      fetch("/requested_items").then((r) => {
         if (r.ok) {
           r.json().then((item) => setRequest(item));
         }
@@ -86,7 +86,7 @@ function RequestTable() {
 
     //POSTING TO THE DATABASE
 
-    fetch("/requests", {
+    fetch("/requested_items", {
       method: "POST",
       headers: {
       "Content-Type": "application/json",
@@ -147,7 +147,7 @@ function RequestTable() {
 
     // console.log(contactId)
 
-    fetch(`/requests/${contactId}`, {
+    fetch(`/requested_items/${contactId}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
