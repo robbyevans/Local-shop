@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :clerks
   resources :requested_items
   resources :items
+
+
+  get"/clerks", to: "clerks#index"
+  get"/clerks/:do", to: "clerks#show"
+  post"/clerks", to: "clerks#create"
+  delete"/clerks/:id", to: "clerks#destroy"
 
   get"/items", to: "items#index"
   post"/items", to: "items#create"
