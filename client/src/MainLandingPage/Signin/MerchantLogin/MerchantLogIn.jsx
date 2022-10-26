@@ -78,42 +78,45 @@ import Footer from '../../footer/Footer';
 
 const MerchantLogIn = ({setUser}) => {
 
-  const[username, setUsername] = useState("");
+  const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
   const navigate=useNavigate()
-  function handleClick(){
-    navigate("/merchant")
-
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch ("/login",{
+    fetch ("/auth/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) =>{
+          console.log(user)
+          setUser(user)
+        } );
       }
+      navigate('/merchant')
     });
+   
   }
+
+
 
   return (
     <>
     <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='formation-control'>
-          <input type="text"
-                id="username"
-                placeholder='username'
+          <form className='formation-control' onSubmit={handleSubmit}>
+          <input type="email"
+                id="email"
+                placeholder='email'
                 autoComplete="off"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
           />
            <input type="password"
                 id="password"
@@ -123,7 +126,7 @@ const MerchantLogIn = ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
            <p> Don't have account? <Link className='linkp'  to='/register'> Become a Member!</Link></p>
-            <button onClick={handleClick} type='submit'>Log In</button>
+            <button  type='submit'>Log In</button>
           </form>
         </div>
       </section>

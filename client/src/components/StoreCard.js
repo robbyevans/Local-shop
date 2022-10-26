@@ -10,16 +10,18 @@ function StoreCard({store}) {
     return (
         <div className="col-12 col-md-6 col-lg-4" onClick={handleClick}>
         <div className="card">
-          <img
-            src=""
-            className="card-img-top"
-            alt="A Street in Europe"
-          ></img>
           <div className="card-body">
-            <h5 className="card-title">{store.name}</h5>
+            <h5 className="card-title">{store.store}</h5>
             <p className="card-text">
-             {store.name}
+             {store.store_name}
             </p>
+            <p className="card-text">
+             {store.location}
+            </p>
+            <p className="card-text">
+             {store.description}
+            </p>
+        
             <a href="#" className="btn btn-primary">
               Go to Store
             </a>

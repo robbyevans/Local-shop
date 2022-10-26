@@ -12,7 +12,7 @@ function StorePage() {
   const [mStore, setmStore] = useState({});
   //gets specific store using id
   useEffect(() => {
-    fetch(`http://localhost:3000/stores/${storeId}`)
+    fetch(`/stores/${storeId}`)
       .then((r) => r.json())
       .then((data) => {
         setmStore(data);

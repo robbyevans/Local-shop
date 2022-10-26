@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {store} from '../src/app/store'
 import { Provider } from 'react-redux';
 import './App.css';
@@ -22,6 +22,7 @@ import Landing from './MainLandingPage/Landing'
 
 function App() {
 
+  const[user, setUser]= useState(null)
   return (
   
     <div className="App">
@@ -29,7 +30,7 @@ function App() {
       <Routes>
        <Route exact path="/" element={<Landing/> }></Route>
        <Route path="/clerk" element={<ClerkLandingPage/>}></Route>
-       <Route path="/merchant" element={<Merchant/>}></Route>
+          <Route path="/merchant" element={<Merchant user={user} />}></Route>
 
 
        
@@ -44,10 +45,10 @@ function App() {
 
 
 
-       <Route path='/mlog-in' element={<MerchantLogIn/>} />
+       <Route path='/mlog-in' element={<MerchantLogIn setUser={setUser}/>} />
        <Route path='/alog-in' element={<AdminLogin/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
-       <Route path='/Register' element={<Register/>} />
+       <Route path='/Register' element={<Register setUser={setUser}/>} />
         <Route path="/inventories" element={<Inventory />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
