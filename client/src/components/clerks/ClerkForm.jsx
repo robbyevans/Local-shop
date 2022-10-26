@@ -7,9 +7,9 @@ const ClerkForm = () => {
 
     // let navigate = useNavigate();
     const [formData, setFormData] = useState({
-        fullname: '',
+        full_name: '',
         email:'',
-        password:''
+        password_digest:''
     })
 
     const handleChange = (e) => {
@@ -32,6 +32,7 @@ const ClerkForm = () => {
         .then((response)=>response.json())
         .then((data))
         // navigate('/')
+        alert("New Review added successfully!");
     }
     
     
@@ -62,8 +63,8 @@ const ClerkForm = () => {
               <div className="row">
                 <div className="col my-2">
                   <input type="text"
-                    name="name"
-                    placeholder='name'
+                    name="full name"
+                    placeholder='full name'
                     className="form-control"
                   />
                 </div>
@@ -71,8 +72,6 @@ const ClerkForm = () => {
                   <input type="email"
                     className="form-control"
                     name="price"
-                    value={formData.email}
-                    onChange={(e) => handleChange(e)}
                     placeholder='email'
                   />
                 </div>
@@ -82,6 +81,8 @@ const ClerkForm = () => {
                 <div className="col my-2">
                   <input type="password"
                     name="password"
+                    value={formData.password}
+                    onChange={(e) => handleChange(e)}
                     placeholder='password'
                     className="form-control"
                   />
@@ -90,8 +91,6 @@ const ClerkForm = () => {
                   <input type="password"
                     className="form-control"
                     name="confirm_password"
-                    value={formData.email}
-                    onChange={(e) => handleChange(e)}
                     placeholder='confirm password'
                   />
                 </div>
