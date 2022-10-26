@@ -28,20 +28,12 @@ const Register = ({ setUser }) => {
             role,
           }),
       })
-      // .then((r) => {
-      //   if (r.ok) {
-      //     r.json().then((user) => setUser(user));
-      //   } else {
-          
-      //   }
-      //   });
-        .then((response) => response.json())
-        .then((data) => {
-        console.log(data)
-      })
-        .catch((error) => {
-        console.log(error.message);
-      })
+       .then((r) => {
+         if (r.ok) {
+           r.json().then((user) => setUser(user));
+         } 
+        });
+    
     }
   return (
     <>

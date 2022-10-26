@@ -105,6 +105,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin}) {
                 <div className="col">
                     <input type="submit"
                        className="btn btn-primary btn-block form-control"
+                      
                     />
                   </div>
                   </div>
