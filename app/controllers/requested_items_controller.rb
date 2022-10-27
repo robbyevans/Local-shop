@@ -31,7 +31,7 @@ class RequestedItemsController < ApplicationController
   private
 
   def request_params
-    params.permit(:clerk_name,:quantity,:item_name,:date)
+    params.permit(:clerk_name,:quantity,:item_name,:date, :clerk_id)
   end
 
   def find_request

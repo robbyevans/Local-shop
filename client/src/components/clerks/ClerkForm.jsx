@@ -5,11 +5,14 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const ClerkForm = () => {
 
+  let adminId = 1
+
     // let navigate = useNavigate();
     const [formData, setFormData] = useState({
         full_name: '',
         email:'',
-        password_digest:''
+        password_digest:'',
+        admin_id:''
     })
 
     const handleChange = (e) => {

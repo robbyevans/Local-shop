@@ -9,7 +9,7 @@ import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 const Table = () => {
  
-
+ let clerkId = 1
   //<<<<-----table functions---->>>
   const [items, setItems] = useState(data);
 
@@ -34,7 +34,8 @@ const Table = () => {
     spoilt: "",
     BuyingPrice: "",
     SellingPrice: "",
-    status:""
+    status:"",
+    clerk_id:clerkId
   });
   
 
