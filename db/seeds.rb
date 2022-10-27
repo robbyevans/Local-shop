@@ -32,13 +32,14 @@ puts "seeding item table..."
   )
 end
 
-Clerk.create(
-  full_name:"James",
-  email:"james@gmail.com",
-  password_digest:"james",
-  admin_id:1
-)
 
+Clerk.create({
+   "full_name":"djhshd",
+    "email":"sjhjshdddjh@gmail.com",
+   "password_digest":"123452",
+   "admin_id":1,
+   "created_at":"",
+   "updated_at":""})
 puts "done seeding.!"
 
 

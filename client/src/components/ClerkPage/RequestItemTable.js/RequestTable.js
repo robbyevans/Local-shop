@@ -80,7 +80,8 @@ function RequestTable() {
       clerk_name: addFormData.name,
       item_name: addFormData.item,
       quantity: addFormData.quantity,
-      date: addFormData.date
+      date: addFormData.date,
+      clerk_id: addFormData.clerk_id
     };
 
     const newItems = [...request, newItem];
