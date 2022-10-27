@@ -8,6 +8,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin, mStores}) {
   const [email, setEmail] = useState("");
   const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
+  let userId =1
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -19,7 +20,7 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin, mStores}) {
         store_id: storeId,
         status: "active",
         token: "",
-        user_id: 1
+        user_id: userId
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

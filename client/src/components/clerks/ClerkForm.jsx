@@ -5,6 +5,8 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const ClerkForm = () => {
 
+  let adminId = 1
+
     // let navigate = useNavigate();
     const [formData, setFormData] = useState({
         full_name: '',

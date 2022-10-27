@@ -19,7 +19,8 @@ const Inventory = () => {
     status: '',
     quantity: '',
     sellingPrice: '',
-    buyingPrice:''
+    buyingPrice:'',
+
   })
 
   // const [loading, setLoading] = useState(false)
@@ -33,7 +34,7 @@ const Inventory = () => {
 
   //function adding inventory
   const createInventory = (data) => {
-    fetch("http://localhost:3000/items", {
+    fetch("/items", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"

@@ -11,6 +11,7 @@ import ClerkNavbar from '../ClerkNavbar/Navbar';
 function RequestTable() {
 
 
+  let clerkId = 1
   //<<<<-----table functions---->>>
   
   const [request, setRequest] = useState(data);
@@ -30,7 +31,7 @@ function RequestTable() {
     item: "",
     quantity: "",
     date: "",
-    clerk_id: 1
+    clerk_id: clerkId
 
   });
 
@@ -87,7 +88,7 @@ function RequestTable() {
 
     //POSTING TO THE DATABASE
 
-    fetch("/requests", {
+    fetch("/requested_items", {
       method: "POST",
       headers: {
       "Content-Type": "application/json",
@@ -148,7 +149,7 @@ function RequestTable() {
 
     // console.log(contactId)
 
-    fetch(`/requests/${contactId}`, {
+    fetch(`/requested_items/${contactId}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
