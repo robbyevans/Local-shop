@@ -119,8 +119,8 @@ const Table = () => {
       quantity: editFormData.quantity,
       inStock: editFormData.inStock,
       spoilt: editFormData.spoilt,
-      BuyingPrice: editFormData.buyingPrice,
-      SellingPrice: editFormData.sellingPrice
+      BuyingPrice: editFormData.BuyingPrice,
+      SellingPrice: editFormData.SellingPrice
     };
 
     const newItems = [...items];
