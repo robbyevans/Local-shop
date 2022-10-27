@@ -5,7 +5,6 @@ import "../../../App.css";
 import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
-
 import ClerkNavbar from '../ClerkNavbar/Navbar';
 
 function RequestTable() {

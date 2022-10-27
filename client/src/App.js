@@ -14,6 +14,7 @@ import AdminLogin from './MainLandingPage/Signin/AdminLogin/AdminLogin';
 import ClerkLogin from './MainLandingPage/Signin/ClerkLogin/ClerkLogin';
 import Register from './MainLandingPage/RegisterMerchant/Register';
 import "./MainLandingPage/design.css"
+import Clerk from './components/clerks/Clerks'
 import Inventory from './components/inventory/Inventory'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import ClerkLandingPage from './ClerkLandingPage';
@@ -30,16 +31,12 @@ function App() {
       <Routes>
        <Route exact path="/" element={<Landing user={user}/> }></Route>
        <Route path="/clerk" element={<ClerkLandingPage user={user}/>}></Route>
-          <Route path="/merchant" element={<Merchant user={user} />}></Route>
-
-
-       
+        <Route path="/merchant" element={<Merchant user={user} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
-
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
        <Route path='/addRequests' element={<RequestTable/>} />
-
+       <Route path="/clerks" element={<Clerk />}></Route>
        
        <Route path='/oldPage' element={<ClerkPage/>} />
 
