@@ -94,7 +94,7 @@ body {
     padding: 12px;
     border: none;
     border-radius: 10px;
-    width: 80vw;
+    width: 50vw;
     font-family: inherit;
     font-weight: 700;
     letter-spacing: 2px;
@@ -119,6 +119,8 @@ body {
 }
 .login .formation-control button:hover {
     background-color: transparent;
+  
+    color: #fff;
 }
 @media (min-width: 768px) {
     .showcase {
@@ -144,6 +146,7 @@ body {
         justify-content: space-between;
     }
     .login .formation-control input {
-        width: 50vw;
+        width: 30vw;
+        margin-top: 5px;
     }
 }

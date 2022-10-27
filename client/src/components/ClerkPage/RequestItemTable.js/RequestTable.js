@@ -18,7 +18,7 @@ function RequestTable() {
 
   //populating the table with data from database
     useEffect(() => {
-      fetch("/requests").then((r) => {
+      fetch("/requested_items").then((r) => {
         if (r.ok) {
           r.json().then((item) => setRequest(item));
         }
@@ -202,8 +202,8 @@ function RequestTable() {
         placeholder=" Due Date..."
         onChange={handleAddFormChange}
       />
+            <button className="one-btn" type="submit">Add+</button>
 
-      <button className="btn" type="submit">Add +</button>
     </form>
                 {/* end of table form input */}
 

@@ -25,23 +25,23 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                 id="menu"
               >
-                <div>
+                <div >
                   <li
-                    className="nav-item"
+                    className="nav-item li-link"
                     onClick={() => {
                       setSetShowAdmin(true);
                     }}
                   >
                     <a
                       href="#"
-                      className="nav-link align-middle px-0 text-white"
+                      className="nav-link align-middle px-0 text-white "
                     >
                       <i className="fs-4 bi-house"></i>{" "}
-                      <span className="ms-1 d-none d-sm-inline">Admins</span>
+                      <span className="ms-1 d-none d-sm-inline nav-text ">Admins</span>
                     </a>
                   </li>
 
-                  <li>
+                  <li className="solo-link">
                     <a
                       href="#"
                       className="nav-link px-0 align-middle text-white"
@@ -51,15 +51,16 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
                         onClick={() => {
                           setSetShowAdmin(false);
                         }}
-                        className="ms-1 d-none d-sm-inline"
+                        className="ms-1 d-none d-sm-inline nav-text"
                       >
                         Stores
                       </span>
                     </a>
                   </li>
+                  <button onClick={handleLogout} className="logout-btn">Log out</button>
                 </div>
               </ul>
-              <button onClick={handleLogout} className="merchant-log-out">Log out</button>
+             
               <hr />
             </div>
           </nav>

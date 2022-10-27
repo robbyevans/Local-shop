@@ -1,3 +1,11 @@
+/* css variables for theming */
+:root {
+  --theme-primary:#fff ;
+  --theme-secondary:#7400b0;
+  --color-accent:#eee6ee;
+}
+
+
 .clerk {
   text-align: center;
   background-color: #ebeff2;
@@ -35,10 +43,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* .actual-table{
+  border: 1px solid red;
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
 .clerk-container {
   display: flex;
@@ -78,18 +89,19 @@
   margin-left: 10px;
 }
 
-.item-form input {
+.items-form input {
   display: block;
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
-  border: 1px solid grey;
+  border: 1px solid  #060b26;
   width: 100%;
+  border-radius: 5px;
 }
 
-.add-btn {
+/* .add-btn {
   margin: 1rem;
   padding: 10px;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
@@ -111,6 +123,7 @@ table {
   border-collapse: collapse;
   width: 90%;
   margin-top: 30px;
+  /* border: 1px solid red; */
 }
 
 .actual-table th,
@@ -123,6 +136,7 @@ td {
 .actual-table th{
   background-color: #060b26;
   color: #fff;
+  border-top-left-radius: 10px;
 }
 /* th {
 color: #fff;
@@ -131,11 +145,14 @@ color: #fff;
 
 .actual-table td {
   border: 1px solid #fff;
-  background-color: rgb(205, 235, 253);
+  /* background-color: rgb(205, 235, 253); */
+  background-color: #fff;
+  border: 1px solid grey;
 }
 .admin-form input{
  width: 70%;
  margin-left: 150px;
+ border: 1px solid #060b26;
 }
 .btn{
   color: #fff;
@@ -188,4 +205,43 @@ form td:last-child {
 }
 .merchant-table-font table{
   border-radius: 10px;
+}
+.read-btn{
+  background-color: dodgerblue;
+  /* margin-right: 5px; */
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #060b26;
+
+}
+.delete-btn{
+  background-color: #e8003f;
+  color: #fff;
+  border: 1px solid #060b26;
+  border-radius: 5px;
+}
+td input{
+  border: 1px solid dodgerblue;
+  background-color: #f4f4f4;
+}
+.one-btn{
+  height:40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: #060b26;
+  color: #fff;
+}
+.save-btn{
+  background-color:#00b73e;
+  color: #fff;
+  border: 1px solid #060b26;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.cancel-btn{
+  background-color:grey;
+  color: #fff;
+  border: 1px solid #060b26;
+  border-radius: 5px;
 }
