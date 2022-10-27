@@ -240,7 +240,7 @@ const Table = () => {
               placeholder="Selling Price"
               onChange={handleAddFormChange}
             />
-            <button className="btn" type="submit">Add</button>
+            <button className="one-btn"  type="submit">Add</button>
           </form>
           {/* end of table input form*/}
 
