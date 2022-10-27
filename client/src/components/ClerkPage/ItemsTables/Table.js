@@ -87,8 +87,9 @@ const Table = () => {
       quantity: addFormData.quantity,
       inStock: addFormData.inStock,
       spoilt: addFormData.spoilt,
-      BuyingPrice: addFormData.buyingPrice,
-      SellingPrice: addFormData.sellingPrice
+      BuyingPrice: addFormData.BuyingPrice,
+      SellingPrice: addFormData.SellingPrice,
+      clerk_id: addFormData.clerk_id
     };
     const newItems = [...items, newItem];
     // POSTING TO DATABASE

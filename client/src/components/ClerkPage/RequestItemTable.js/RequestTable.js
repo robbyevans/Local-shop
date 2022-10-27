@@ -18,7 +18,7 @@ function RequestTable() {
 
   //populating the table with data from database
     useEffect(() => {
-      fetch("/requests").then((r) => {
+      fetch("/requested_items").then((r) => {
         if (r.ok) {
           r.json().then((item) => setRequest(item));
         }
@@ -81,7 +81,8 @@ function RequestTable() {
       clerk_name: addFormData.name,
       item_name: addFormData.item,
       quantity: addFormData.quantity,
-      date: addFormData.date
+      date: addFormData.date,
+      clerk_id: addFormData.clerk_id
     };
 
     const newItems = [...request, newItem];
