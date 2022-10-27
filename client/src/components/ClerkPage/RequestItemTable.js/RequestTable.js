@@ -5,7 +5,6 @@ import "../../../App.css";
 import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
-
 import ClerkNavbar from '../ClerkNavbar/Navbar';
 
 function RequestTable() {
@@ -203,8 +202,8 @@ function RequestTable() {
         placeholder=" Due Date..."
         onChange={handleAddFormChange}
       />
+            <button className="one-btn" type="submit">Add+</button>
 
-      <button className="btn" type="submit">Add +</button>
     </form>
                 {/* end of table form input */}
 
