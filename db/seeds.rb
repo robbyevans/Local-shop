@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+Clerk.create({ "full_name":"djhshd",
+    "email":"sjhjshdddjh@gmail.com",
+   "password_digest":"123452",
+   "admin_id":1,
+   "created_at":"",
+   "updated_at":""})
 
  

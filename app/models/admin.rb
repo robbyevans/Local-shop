@@ -3,7 +3,7 @@ class Admin < ApplicationRecord
     validates :email, presence: true
     validates :store_id, presence: true
     validates :password, presence: true
-    belongs_to :user
+    #belongs_to :user
     belongs_to :store
     has_many :clerks
     has_many :items, through: :clerks

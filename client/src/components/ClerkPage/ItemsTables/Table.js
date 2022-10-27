@@ -87,8 +87,8 @@ const Table = () => {
       quantity: addFormData.quantity,
       inStock: addFormData.inStock,
       spoilt: addFormData.spoilt,
-      BuyingPrice: addFormData.BuyingPrice,
-      SellingPrice: addFormData.SellingPrice,
+      BuyingPrice: addFormData.buyingPrice,
+      SellingPrice: addFormData.sellingPrice,
       clerk_id: addFormData.clerk_id
     };
     const newItems = [...items, newItem];
@@ -119,8 +119,8 @@ const Table = () => {
       quantity: editFormData.quantity,
       inStock: editFormData.inStock,
       spoilt: editFormData.spoilt,
-      BuyingPrice: editFormData.BuyingPrice,
-      SellingPrice: editFormData.SellingPrice
+      BuyingPrice: editFormData.buyingPrice,
+      SellingPrice: editFormData.sellingPrice
     };
 
     const newItems = [...items];
