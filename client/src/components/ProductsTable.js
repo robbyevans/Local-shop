@@ -6,7 +6,7 @@ function ProductsTable({storeId}) {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/stores/${storeId}`).then((r) => {
+    fetch(`/stores/${storeId}`).then((r) => {
       if (r.ok) {
         r.json().then((data) => 
         setProducts(data.items));
@@ -35,7 +35,7 @@ function ProductsTable({storeId}) {
               <tr key={product.id}>
               <td>{product.name}</td>
               <td>{product.quantity}</td>
-              <td>{product.paymentstatus}</td>
+              <td>{product.status}</td>
             </tr>
             )
 
