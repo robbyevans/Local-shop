@@ -30,6 +30,7 @@ function RequestTable() {
     item: "",
     quantity: "",
     date: "",
+    clerk_id: 1
 
   });
 

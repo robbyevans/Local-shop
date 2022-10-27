@@ -33,7 +33,7 @@ const Inventory = () => {
 
   //function adding inventory
   const createInventory = (data) => {
-    fetch("http://localhost:3000/inventories", {
+    fetch("http://localhost:3000/items", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
@@ -56,6 +56,7 @@ const Inventory = () => {
     fetch("/items")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
       setInventories(data)
     })
   }, [])

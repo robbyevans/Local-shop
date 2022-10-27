@@ -34,7 +34,8 @@ const Table = () => {
     spoilt: "",
     BuyingPrice: "",
     SellingPrice: "",
-    status:""
+    status:"",
+    clerk_id:1
   });
   
 

@@ -9,7 +9,8 @@ const ClerkForm = () => {
     const [formData, setFormData] = useState({
         full_name: '',
         email:'',
-        password_digest:''
+        password_digest:'',
+        admin_id:''
     })
 
     const handleChange = (e) => {

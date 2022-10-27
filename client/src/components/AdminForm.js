@@ -18,7 +18,8 @@ function AdminForm({ onAddAdmin, admins,onDeleteAdmin, mStores}) {
         email: email,
         store_id: storeId,
         status: "active",
-        token: ""
+        token: "",
+        user_id: 1
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
