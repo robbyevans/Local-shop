@@ -1,9 +1,7 @@
-import React,{useState} from 'react'
-import {store} from '../src/app/store'
-import { Provider } from 'react-redux';
+import React,{useState, useEffect} from 'react'
 import './App.css';
 import Merchant from './Merchant';
-import { Route, Routes } from "react-router";
+import { Route, Routes, Link } from "react-router";
 import StorePage from './pages/StorePage';
 import OrderForm from './components/ClerkPage/pages/Order/OrderForm';
 import Table from "./components/ClerkPage/ItemsTables/Table"
@@ -22,15 +20,21 @@ import Landing from './MainLandingPage/Landing'
 
 function App() {
 
-  const[user, setUser]= useState(null)
+  const [user, setUser] = useState(null)
+  const [loggedIn, setLoggedIn] = useState(false);
+   
+  const getToken = ()=> {
+    return JSON.parse(localStorage.getItem('id_token'));
+  }
+  console.log(getToken())
   return (
   
     <div className="App">
-      <Provider store={store}>
+          
       <Routes>
        <Route exact path="/" element={<Landing/> }></Route>
        <Route path="/clerk" element={<ClerkLandingPage/>}></Route>
-          <Route path="/merchant" element={<Merchant user={user} />}></Route>
+        <Route path="/merchant" element={<Merchant user={user} />}></Route>
 
 
        
@@ -52,7 +56,6 @@ function App() {
         <Route path="/inventories" element={<Inventory />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
-        </Provider>
     </div>
   )
 }

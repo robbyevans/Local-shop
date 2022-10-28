@@ -85,18 +85,30 @@ const MerchantLogIn = ({setUser}) => {
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch ("/auth/login",{
+    const user = {email, password}
+    fetch ("http://localhost:3000/auth/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: localStorage.token
       },
       body: JSON.stringify({ email, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-      navigate('/merchant')
-    });
+    })
+    // .then((r) => {
+    //   if (r.ok) {
+    //     r.json().then((user) => setUser(user));
+    //     console.log(r);
+    //   }
+    //   // navigate('/merchant')ret
+    // });
+    .then(res => res.json()).then(res => {
+      let token = res.token;
+      console.log("token: ", token);
+  })
+    .catch((error) => {
+    console.log(error.message)
+})
   }
 
   return (
@@ -106,14 +118,12 @@ const MerchantLogIn = ({setUser}) => {
         <div className='showcase-overlay'>
           <form className='formation-control' onSubmit={handleSubmit}>
           <input type="email"
-                id="email"
                 placeholder='email'
                 autoComplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
           />
            <input type="password"
-                id="password"
                 autoComplete="current-password"
                 value={password}
                 placeholder='password'

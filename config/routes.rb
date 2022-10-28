@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
   post '/auth/login', to: 'authentication#login'
+  post '/auto_login', to: 'auth#auto_login'
   get '/*a', to: 'application#not_found'
 
   post '/create_admin', to: 'user#create_admin'
