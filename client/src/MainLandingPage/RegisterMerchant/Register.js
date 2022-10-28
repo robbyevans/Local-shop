@@ -21,27 +21,26 @@ const Register = ({ setUser }) => {
               "Content-Type": "application/json"
           }, 
           body: JSON.stringify({
-            full_name,
-            email,
-            password,
-            password_confirmation,
-            role,
+            full_name:full_name,
+            email:email,
+            password:password,
+            password_confirmation:password_confirmation,
+            role:role
           }),
       })
-      // .then((r) => {
-      //   if (r.ok) {
-      //     r.json().then((user) => setUser(user));
-      //   } else {
+       .then((r) => {
+        console.log(r)
+         if (r.ok) {
+           r.json().then((user) => {
+            console.log(user)
+            setUser(user)
+           }
           
-      //   }
-      //   });
-        .then((response) => response.json())
-        .then((data) => {
-        console.log(data)
-      })
-        .catch((error) => {
-        console.log(error.message);
-      })
+           
+           );
+         } 
+        });
+    
     }
   return (
     <>

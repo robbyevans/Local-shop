@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import AdminForm from "./AdminForm";
 import StoreReports from "./StoreReports";
 
-function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
+function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
   const [showAdmin, setSetShowAdmin] = useState(true);
+
+  function handleLogout(){
+
+  }
   return (
     <div>
       {/* sidebar dashboard */}
@@ -21,23 +25,23 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                 id="menu"
               >
-                <div>
+                <div >
                   <li
-                    className="nav-item"
+                    className="nav-item li-link"
                     onClick={() => {
                       setSetShowAdmin(true);
                     }}
                   >
                     <a
                       href="#"
-                      className="nav-link align-middle px-0 text-white"
+                      className="nav-link align-middle px-0 text-white "
                     >
                       <i className="fs-4 bi-house"></i>{" "}
-                      <span className="ms-1 d-none d-sm-inline">Admin</span>
+                      <span className="ms-1 d-none d-sm-inline nav-text ">Admins</span>
                     </a>
                   </li>
 
-                  <li>
+                  <li className="solo-link">
                     <a
                       href="#"
                       className="nav-link px-0 align-middle text-white"
@@ -47,28 +51,24 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin }) {
                         onClick={() => {
                           setSetShowAdmin(false);
                         }}
-                        className="ms-1 d-none d-sm-inline"
+                        className="ms-1 d-none d-sm-inline nav-text"
                       >
-                        Store Reports
+                        Stores
                       </span>
                     </a>
                   </li>
+                  <button onClick={handleLogout} className="logout-btn">Log out</button>
                 </div>
-                <li>
-                  <a href="#" className="nav-link px-0 align-middle text-white">
-                    <i className="fs-4 bi-people"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Logout</span>{" "}
-                  </a>
-                </li>
               </ul>
+             
               <hr />
             </div>
           </nav>
           <div className="col py-3">
             {showAdmin ? (
-              <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} />
+              <AdminForm onAddAdmin={onAddAdmin} admins={admins} onDeleteAdmin={onDeleteAdmin} mStores={mStores} />
             ) : (
-              <StoreReports mStores={mStores}  />
+              <StoreReports mStores={mStores} onAddStore={onAddStore} admins={admins} /> 
             )}
           </div>
         </div>

@@ -12,6 +12,7 @@ import AdminLogin from './MainLandingPage/Signin/AdminLogin/AdminLogin';
 import ClerkLogin from './MainLandingPage/Signin/ClerkLogin/ClerkLogin';
 import Register from './MainLandingPage/RegisterMerchant/Register';
 import "./MainLandingPage/design.css"
+import Clerk from './components/clerks/Clerks'
 import Inventory from './components/inventory/Inventory'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import ClerkLandingPage from './ClerkLandingPage';
@@ -32,18 +33,14 @@ function App() {
     <div className="App">
           
       <Routes>
-       <Route exact path="/" element={<Landing/> }></Route>
-       <Route path="/clerk" element={<ClerkLandingPage/>}></Route>
+       <Route exact path="/" element={<Landing user={user}/> }></Route>
+       <Route path="/clerk" element={<ClerkLandingPage user={user}/>}></Route>
         <Route path="/merchant" element={<Merchant user={user} />}></Route>
-
-
-       
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
-
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
        <Route path='/addRequests' element={<RequestTable/>} />
-
+       <Route path="/clerks" element={<Clerk />}></Route>
        
        <Route path='/oldPage' element={<ClerkPage/>} />
 
@@ -53,7 +50,7 @@ function App() {
        <Route path='/alog-in' element={<AdminLogin/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
        <Route path='/Register' element={<Register setUser={setUser}/>} />
-        <Route path="/inventories" element={<Inventory />} />
+        <Route path="/inventories" element={<Inventory user={user} />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
     </div>

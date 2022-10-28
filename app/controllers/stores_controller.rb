@@ -4,9 +4,14 @@ class StoresController < ApplicationController
         store = Store.create(store_params)
         render json: store, status: :created
     end
+
+    def index
+        render json: Store.all , status: :ok
+    end
+
     private 
     def store_params
-        params.permit(:full_name, :email, :password, :store, :status)
+        params.permit(:store_name, :location, :description)
     end
     def record_not_found
         render json: { error: "Store not found" }, status: :not_found

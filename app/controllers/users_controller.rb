@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       admin = Admin.create(admin_params)
       render json: admin, status: :created
     end
+
   
     # PUT /users/{username}
     def update

@@ -13,8 +13,15 @@ function StoreCard({store}) {
           <div className="card-body">
             <h5 className="card-title">{store.store}</h5>
             <p className="card-text">
-             {store.name}
+             {store.store_name}
             </p>
+            <p className="card-text">
+             {store.location}
+            </p>
+            <p className="card-text">
+             {store.description}
+            </p>
+        
             <a href="#" className="btn btn-primary">
               Go to Store
             </a>

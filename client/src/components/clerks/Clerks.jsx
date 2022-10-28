@@ -1,8 +1,12 @@
 import React from 'react'
+import ClerkForm from '../clerks/ClerkForm'
 
 const Clerks = () => {
   return (
-    <div>Clerks</div>
+    <div>
+      <ClerkForm />
+      
+    </div>
   )
 }
 

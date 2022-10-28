@@ -5,19 +5,19 @@ import "../../../App.css";
 import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
-
 import ClerkNavbar from '../ClerkNavbar/Navbar';
 
 function RequestTable() {
 
 
+  let clerkId = 1
   //<<<<-----table functions---->>>
   
   const [request, setRequest] = useState(data);
 
   //populating the table with data from database
     useEffect(() => {
-      fetch("/requests").then((r) => {
+      fetch("/requested_items").then((r) => {
         if (r.ok) {
           r.json().then((item) => setRequest(item));
         }
@@ -30,6 +30,7 @@ function RequestTable() {
     item: "",
     quantity: "",
     date: "",
+    clerk_id: clerkId
 
   });
 
@@ -79,14 +80,15 @@ function RequestTable() {
       clerk_name: addFormData.name,
       item_name: addFormData.item,
       quantity: addFormData.quantity,
-      date: addFormData.date
+      date: addFormData.date,
+      clerk_id: addFormData.clerk_id
     };
 
     const newItems = [...request, newItem];
 
     //POSTING TO THE DATABASE
 
-    fetch("/requests", {
+    fetch("/requested_items", {
       method: "POST",
       headers: {
       "Content-Type": "application/json",
@@ -147,7 +149,7 @@ function RequestTable() {
 
     // console.log(contactId)
 
-    fetch(`/requests/${contactId}`, {
+    fetch(`/requested_items/${contactId}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
@@ -200,8 +202,8 @@ function RequestTable() {
         placeholder=" Due Date..."
         onChange={handleAddFormChange}
       />
+            <button className="one-btn" type="submit">Add+</button>
 
-      <button type="submit">Add +</button>
     </form>
                 {/* end of table form input */}
 

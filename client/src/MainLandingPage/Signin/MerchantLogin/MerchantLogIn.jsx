@@ -94,22 +94,19 @@ const MerchantLogIn = ({setUser}) => {
         Authorization: localStorage.token
       },
       body: JSON.stringify({ email, password }),
-    })
-    // .then((r) => {
-    //   if (r.ok) {
-    //     r.json().then((user) => setUser(user));
-    //     console.log(r);
-    //   }
-    //   // navigate('/merchant')ret
-    // });
-    .then(res => res.json()).then(res => {
-      let token = res.token;
-      console.log("token: ", token);
-  })
-    .catch((error) => {
-    console.log(error.message)
-})
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) =>{
+          console.log(user)
+          setUser(user)
+        } );
+      }
+      navigate('/merchant')
+    });
+   
   }
+
+
 
   return (
     <>

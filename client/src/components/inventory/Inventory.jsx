@@ -10,52 +10,14 @@ import ClerkForm from '../clerks/ClerkForm';
 
 
 const Inventory = () => {
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    price: '',
-    instock: '',
-    spoilt:'',
-    status: '',
-    quantity: '',
-    sellingPrice: '',
-    buyingPrice:''
-  })
-
-  // const [loading, setLoading] = useState(false)
-  const [inventories, setInventories] = useState([])
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    createInventory();
-    console.log(formData);
-  }
-
-  //function adding inventory
-  const createInventory = (data) => {
-    fetch("http://localhost:3000/inventories", {
-      method: "POST",
-      headers: {
-        "Content-Type":"application/json"
-      },
-      body:JSON.stringify(data)
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        return data;
-    })
-  }
-  
-  //handling form field state
-  const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]:e.target.value})
-  }
  
 //fetch inventories
+  const [inventories, setInventories] = useState([])
   useEffect(() => {
-    fetch("http://localhost:3000/inventories")
+    fetch("/items")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
       setInventories(data)
     })
   }, [])
@@ -63,13 +25,12 @@ const Inventory = () => {
   return (
     <>
       <SideBar />
-      <ClerkForm/>
-   
+    <ClerkForm/> 
+
     <Grid item xs={8}>
       <div className='container'>
-        <div className="row mt-5">
+        <div className="row mt-5 ml">
           <div className="col-md-6">
-            {/* <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button> */}
           </div>
           <div className="col-md-6">
           <h3>Inventory</h3>
@@ -79,14 +40,12 @@ const Inventory = () => {
       <div className="modal" id="form-modal">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            {/* modal header */}
             <div className="modal-header">
               <h3 className="modal-title ">New Inventory</h3>
               <button className="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            {/*modal body */}
             <div className="modal-body">
-            <form action="" onSubmit={handleSubmit}>
+            <form action="">
                 <div className="row">
                   <div className="col my-2">
                     <input type="text"
@@ -99,8 +58,6 @@ const Inventory = () => {
                     <input type="number"
                       className="form-control"
                       name="price"
-                      value={formData.price}
-                      onChange={(e) => handleChange(e)}
                       placeholder='Price'
                     />
                   </div>
@@ -109,8 +66,6 @@ const Inventory = () => {
                   <div className="col">
                     <input type="text"
                       name="quantity"
-                      value={formData.quantity}
-                      onChange={(e) => handleChange(e)}
                       placeholder='quantity'
                       className="form-control"
                     />
@@ -118,8 +73,6 @@ const Inventory = () => {
                   <div className="col">
                     <input type="text"
                       name="instock"
-                      value={formData.instock}
-                      onChange={(e) => handleChange(e)}
                       placeholder='instock'
                       className="form-control"
                     />
@@ -127,18 +80,14 @@ const Inventory = () => {
                   <div className="col">
                     <input type="number"
                       className="form-control"
-                      value={formData.spoilt}
                       name="spoilt"
                       placeholder='spoilt'
-                      onChange={(e) => handleChange(e)}
                     />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col my-2">
                     <input type="text"
-                      value={formData.sellingPrice}
-                      onChange={(e) => handleChange(e)}
                       name="sellingPrice"
                       placeholder='Selling Price'
                       className="form-control"
@@ -148,8 +97,6 @@ const Inventory = () => {
                     <input type="number"
                       className="form-control"
                       name="buyingPrice"
-                      value={formData.buyingPrice}
-                      onChange={(e) => handleChange(e)}
                       placeholder='Buying Price'
                     />
                   </div>
@@ -158,8 +105,6 @@ const Inventory = () => {
                   <div className="col my-2">
                     <input type="text"
                       name="status"
-                      value={formData.status}
-                      onChange={(e) => handleChange(e)}
                       placeholder='payment status'
                       className="form-control"
                     />
@@ -173,7 +118,6 @@ const Inventory = () => {
                 </div>
               </form>
             </div>
-            {/*modal footer */}
             <div className="modal-footer">
               <button className="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
@@ -206,8 +150,7 @@ const Inventory = () => {
           </tr>
         ))}
         </tbody>
-      </table>
-          
+      </table>    
       </div>
       </Grid>  
       </>

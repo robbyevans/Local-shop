@@ -8,13 +8,9 @@ import EditableRow from "./EditableRow";
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 const Table = () => {
-  // const history = useHistory();
-
-
-
+ 
+ let clerkId = 1
   //<<<<-----table functions---->>>
-  
-  
   const [items, setItems] = useState(data);
 
 
@@ -38,7 +34,8 @@ const Table = () => {
     spoilt: "",
     BuyingPrice: "",
     SellingPrice: "",
-    status:""
+    status:"",
+    clerk_id:clerkId
   });
   
 
@@ -80,24 +77,6 @@ const Table = () => {
     setEditFormData(newFormData);
   };
 
-//........
-// function addMovieHandler(movieDetails){
-//   fetch('https://phase-2-project-599c2-default-rtdb.firebaseio.com/movies.json',
-//   {
-//    method:'POST',
-//    body:JSON.stringify(movieDetails),
-//    headers:{
-//           'Content-Type':'application/json'
-//    }
-//   }
-//   ).then(() => {
-//     history.replace('/');
-//   });
-// }
-
-
-
-
   const handleAddFormSubmit = (event) => {
     //----POST---->>>>
     event.preventDefault();
@@ -109,7 +88,8 @@ const Table = () => {
       inStock: addFormData.inStock,
       spoilt: addFormData.spoilt,
       BuyingPrice: addFormData.buyingPrice,
-      SellingPrice: addFormData.sellingPrice
+      SellingPrice: addFormData.sellingPrice,
+      clerk_id: addFormData.clerk_id
     };
     const newItems = [...items, newItem];
     // POSTING TO DATABASE
@@ -149,9 +129,24 @@ const Table = () => {
 
     newItems[index] = editedItem;
 
+        //posting edited items to the db
+
+  fetch(`/items/${editItemId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({editedItem}),
+    })
+      .then((r) => r.json())
+      .then((data)=>console.log(data))
+
     setItems(newItems);
+    console.log(newItems)
     setEditContactId(null);
   };
+
+
 
   const handleEditClick = (event, item) => {
     event.preventDefault();
@@ -165,6 +160,8 @@ const Table = () => {
       BuyingPrice: item.buyingPrice,
       SellingPrice: item.sellingPrice
     };
+
+
 
     setEditFormData(formValues);
   };
@@ -245,7 +242,7 @@ const Table = () => {
               placeholder="Selling Price"
               onChange={handleAddFormChange}
             />
-            <button type="submit">Add</button>
+            <button className="one-btn"  type="submit">Add</button>
           </form>
           {/* end of table input form*/}
 
@@ -253,7 +250,7 @@ const Table = () => {
 
                   {/* actual table */}
       <form className="actual-table" onSubmit={handleEditFormSubmit}>
-        <table>
+        <table className="actual-table">
           <thead>
             <tr>
             <th> Name</th>

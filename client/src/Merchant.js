@@ -21,6 +21,9 @@ function Merchant({user}) {
     function onAddAdmin(newAdmin) {
       setAdmins([...admins, newAdmin]);
     }
+    function onAddStore(newStore) {
+      setmStores([...mStores, newStore]);
+    }
     function onDeleteAdmin(deletedAdmin){
       const newAdmins = admins.filter(admin=> admin.id!== deletedAdmin.id);
       setAdmins(newAdmins)
@@ -29,7 +32,7 @@ function Merchant({user}) {
     return (
         <div>
         <Routes>
-        <Route exact path="/" element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin}/>}></Route>
+        <Route exact path="/" element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin} onAddStore={onAddStore}/>}></Route>
         {/*<Route exact path="/storepage/:storeId" element={<StorePage />}></Route>*/}
         </Routes>
         </div>

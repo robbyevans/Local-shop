@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_25_130854) do
+ActiveRecord::Schema.define(version: 2022_10_27_074155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,21 @@ ActiveRecord::Schema.define(version: 2022_10_25_130854) do
     t.string "full_name"
     t.string "email"
     t.string "password"
-    t.string "store"
+    t.string "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
     t.string "token"
+    t.integer "user_id"
+  end
+
+  create_table "clerks", force: :cascade do |t|
+    t.string "full_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "admin_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -33,16 +43,10 @@ ActiveRecord::Schema.define(version: 2022_10_25_130854) do
     t.integer "spoilt"
     t.integer "BuyingPrice"
     t.integer "SellingPrice"
+    t.boolean "paid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "merchant_users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "clerk_id"
   end
 
   create_table "requested_items", force: :cascade do |t|
@@ -52,12 +56,15 @@ ActiveRecord::Schema.define(version: 2022_10_25_130854) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "clerk_id"
   end
 
   create_table "stores", force: :cascade do |t|
     t.string "store_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
