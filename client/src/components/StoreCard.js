@@ -10,21 +10,20 @@ function StoreCard({store}) {
     return (
         <div className="col-12 col-md-6 col-lg-4" onClick={handleClick}>
         <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{store.store}</h5>
-            <p className="card-text">
+          <div className="store-card">
+            <h2 className="store-card-title">
              {store.store_name}
+            </h2>
+            <p >
+             Location: {store.location}
             </p>
-            <p className="card-text">
-             {store.location}
-            </p>
-            <p className="card-text">
-             {store.description}
+            <p c>
+             Description: {store.description}
             </p>
         
-            <a href="#" className="btn btn-primary">
+            <button className="storecard-btn">
               Go to Store
-            </a>
+            </button>
           </div>
         </div>
       </div>   

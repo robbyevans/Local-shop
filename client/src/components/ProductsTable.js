@@ -1,49 +1,45 @@
 import React, { useState, useEffect } from "react";
 
-function ProductsTable({storeId}) {
-  console.log(storeId)
-  const[products, setProducts]= useState([])
-
+function ProductsTable({ storeId }) {
+  console.log(storeId);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch(`/stores/${storeId}`).then((r) => {
       if (r.ok) {
-        r.json().then((data) => 
-        setProducts(data.items));
+        r.json().then((data) => setProducts(data.items));
       }
     });
-  });
+  }, [storeId]);
 
-  console.log(products)
+  console.log(products);
 
-
+  //design table
   return (
-    <div className="container">
-      <h3>Product Table</h3>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>Item Name</th>
-            <th>Quantity</th>
-            <th>Payment Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product)=>{
-
-            return(
-              <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.quantity}</td>
-              <td>{product.status}</td>
+    <div>
+      <div className="ptable-container">
+        <p >Paid and non-paid products</p>
+        <table className="stable">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Payment Status</th>
             </tr>
-            )
-
-          })}
-         
-         
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {products.map((product) => {
+              return (
+                <tr key={product.id}>
+                  <td>{product.name}</td>
+                  <td>{product.quantity}</td>
+                  <td>{product.status}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
