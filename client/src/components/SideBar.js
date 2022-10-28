@@ -8,8 +8,6 @@ import { ListItemIcon } from "@mui/material";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
-import { AiFillHome, AiFillInfoCircle } from "react-icons/ai";
-
 function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
   const [showAdmin, setSetShowAdmin] = useState();
 
