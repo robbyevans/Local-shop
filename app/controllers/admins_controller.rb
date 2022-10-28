@@ -9,7 +9,10 @@ class AdminsController < ApplicationController
         admins = Admin.all
         render json: admins, status: :ok
     end
- 
+    def show
+        admin = Admin.find_by_id(params[:id])
+        render json: admin, status: :ok
+    end
 
     def update
         admin = Admin.find_by(id: params[:id])

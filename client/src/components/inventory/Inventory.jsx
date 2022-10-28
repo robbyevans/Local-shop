@@ -14,7 +14,7 @@ const Inventory = () => {
 //fetch inventories
   const [inventories, setInventories] = useState([])
   useEffect(() => {
-    fetch("/items")
+    fetch("/clerks/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data)

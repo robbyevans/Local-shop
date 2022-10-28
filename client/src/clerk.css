@@ -245,3 +245,77 @@ td input{
   border: 1px solid #060b26;
   border-radius: 5px;
 }
+.store-page{
+  margin-top: 50px;
+  padding: 50px;
+}
+.mtable-container{
+  border-radius: 10px;
+  background-color: white;
+  padding-bottom: 1vh;
+
+}
+.mtable-container p{
+  font-weight: bold;
+  font-size: 20px; 
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #060b26;
+  color: white;
+}
+.stable tr{
+  text-align: center;
+  background-color: white;
+  border-bottom: 1pt solid rgba(112, 111, 111, 0.171);
+}
+.stable{
+  border-collapse: collapse; 
+  margin-left: 4vw ;
+}
+.stable td{
+  text-align: center;
+}
+.ptable-container{
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: white;
+  padding-bottom: 1vh;
+}
+.ptable-container p{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  background-color: #060b26;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.merchant-logo{
+  color: white;
+}
+.store-card{
+  height: auto;
+  padding: 20px;
+}
+.store-card button{
+  background-color: #060b26;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+}
+.mbtn-submit{
+  background-color: #060b26;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  width: 200px;
+  
+}
+.mNav-items{
+  margin-top: 5vh;
+}

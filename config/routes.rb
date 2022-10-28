@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   resources :users, param: :_email
-  resources :stores, only: [:create, :index, :update, :destroy]
+  resources :stores, only: [:create, :index,:show, :update, :destroy]
   resources :merchant_users
-  resources :admins, only: [:create, :index, :update, :destroy]
+  resources :admins, only: [:create, :index, :show,:update, :destroy]
   post "/signup",  to: "users#create"
 
   resources :clerks, only: [:index, :show, :create, :update, :destroy ]
