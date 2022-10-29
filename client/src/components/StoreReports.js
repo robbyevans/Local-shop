@@ -13,7 +13,7 @@ function StoreReports({mStores, onAddStore,admins}) {
       <StoreForm onAddStore={onAddStore} admins={admins}/>
     <div className="container store-wrap">
 
-      <h3>Stores</h3>
+      <h3>Available Stores</h3>
       <div className="row g-3">
 
             {renderStores}

@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar() {
+
+  const navigate =useNavigate()
+  function handleClick(){
+    navigate("/merchant")
+  }
     return (
         <div>
              {/* top navigation bar */}
@@ -18,23 +24,10 @@ function NavBar() {
               data-bs-target="#sidebar"
             ></span>
           </button>
-          <a
-            className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
-            href="#"
-          >
+          <h3 className='merchant-logo' onClick={handleClick}>
             Merchant
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#topNavBar"
-            aria-controls="topNavBar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          </h3>
+       
        
         </div>
       </nav>

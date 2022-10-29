@@ -39,7 +39,8 @@ function StoreForm({onAddStore, admins}) {
         <div className='container'>
           <div className="row mt-5">
             <div className="col-md-6">
-              <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />Add Store</button>
+              <button className="btn btn-success mb-2" data-bs-toggle="modal"
+               data-bs-target="#form-modal"><ControlPointIcon />Add Store</button>
             </div>
        
           </div>
@@ -93,19 +94,17 @@ function StoreForm({onAddStore, admins}) {
 
               
                   <div className="row">
-                  <div className="col">
+                  <div className="col" data-bs-dismiss="modal">
                       <input type="submit"
-                         className="btn btn-primary btn-block form-control"
+                         className="mbtn-submit"
+                        
                         
                       />
                     </div>
                     </div>
                 </form>
               </div>
-              {/*modal footer */}
-              <div className="modal-footer">
-                <button className="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
+           
             </div>
           </div>
         </div>

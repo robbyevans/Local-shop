@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductTable from "../components/ProductsTable";
 import NavBar from "../components/NavBar";
+import AdminDetails from "../components/AdminDetails";
+import StoreChart from "../components/StoreChart";
 // import SideBar from "../components/SideBar";
 
 function StorePage() {
@@ -20,17 +22,17 @@ function StorePage() {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [storeId]);
+  },[]);
 
   console.log(mStore);
 
   return (
-    <div>
+    <div className="store-page">
       <NavBar />
-
-      {mStore.name}
-      <p>paid and not paid</p>
+      <AdminDetails storeId={storeId}/>
+      <StoreChart storeId={storeId}/>
       <ProductTable storeId={storeId} />
+      
     </div>
   );
 }

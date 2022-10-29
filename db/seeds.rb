@@ -8,6 +8,7 @@
 
 
 
+<<<<<<< HEAD
 puts"🌱seeding"
 
 # puts "seeding request table.."
@@ -40,6 +41,8 @@ Clerk.create({
    "admin_id":1,
    "created_at":"",
    "updated_at":""})
+=======
+>>>>>>> 8c084799bb49e1cb5ef18f3cbddede2f2c423118
 
 puts "done seeding.!"
 
