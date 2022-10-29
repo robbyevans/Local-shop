@@ -5,7 +5,8 @@ import Grid from '@mui/material/Grid'
 import SideBar from '../sidebar/SideBar';
 // import InventoryAnalytics from '../analytics/InventoryAnalytics';
 // import { DataGrid } from '@mui/x-data-grid';
-import ClerkForm from '../clerks/ClerkForm';
+import ClerkForm from '../clerks/Clerks';
+import OrderRequests from '../orders/OrderRequests';
 
 
 
@@ -25,6 +26,7 @@ const Inventory = () => {
   return (
     <>
       <SideBar />
+      <OrderRequests/>
     <ClerkForm/> 
 
     <Grid item xs={8}>
