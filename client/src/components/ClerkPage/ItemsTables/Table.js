@@ -90,7 +90,8 @@ const Table = () => {
       spoilt: addFormData.spoilt,
       BuyingPrice: addFormData.buyingPrice,
       SellingPrice: addFormData.sellingPrice,
-      clerk_id: addFormData.clerk_id
+      clerk_id: addFormData.clerk_id,
+      paid:false
     };
     const newItems = [...items, newItem];
     // POSTING TO DATABASE
