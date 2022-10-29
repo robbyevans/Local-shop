@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   post "/signup",  to: "users#create"
 
   resources :clerks, only: [:index, :show, :create, :update, :destroy ]
-  resources :requested_items, only: [:index, :show, :create, :update, :destroy ]
+  resources :requested_items
   resources :items
 
   
-  get"/items", to: "items#index"
-  post"/items", to: "items#create"
-  delete"/items/:id", to: "items#destroy"
+  # get"/items", to: "items#index"
+  # post"/items", to: "items#create"
+  # delete"/items/:id", to: "items#destroy"
 
   post '/auth/login', to: 'authentication#login'
   get '/*a', to: 'application#not_found'
