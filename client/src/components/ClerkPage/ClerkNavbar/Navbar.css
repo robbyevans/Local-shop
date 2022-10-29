@@ -99,9 +99,9 @@ span {
     margin-right: 550px;
 }
 
-/* @media screen and (min-width:600px){
+@media screen and (max-width:790px){
     .clerk-title{
         color: #fff;
-        margin-right: 250px;
+        margin-right: 150px;
     } 
-} */
+}
