@@ -215,6 +215,7 @@ function RequestTable() {
             <th>Item Name</th>
             <th>Quantity</th>
             <th>Date</th>
+            <th>Edit / Delete</th>
             </tr>
           </thead>
           <tbody>
