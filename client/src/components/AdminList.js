@@ -15,8 +15,8 @@ function AdminList({ admins, onDeleteAdmin }) {
             <th>Full Name</th>
             <th>Email</th>
             <th>Store</th>
-            {/* <th>Deactivate</th>
-            <th>Delete</th> */}
+            <th>Deactivate</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody >

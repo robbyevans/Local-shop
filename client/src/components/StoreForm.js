@@ -39,7 +39,7 @@ function StoreForm({onAddStore, admins}) {
         <div className='container'>
           <div className="row mt-5">
             <div className="col-md-6">
-              <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />New</button>
+              <button className="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#form-modal"><ControlPointIcon />Add Store</button>
             </div>
        
           </div>

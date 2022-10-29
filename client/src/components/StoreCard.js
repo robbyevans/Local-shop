@@ -10,7 +10,7 @@ function StoreCard({store}) {
     return (
         <div className="col-12 col-md-6 col-lg-4" onClick={handleClick}>
         <div className="card">
-          <div className="card-body">
+          <div className="card-body store-card">
             <h5 className="card-title">{store.store}</h5>
             <p className="card-text">
              {store.store_name}

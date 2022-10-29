@@ -7,6 +7,7 @@ import EditableRow from "./EditableRow";
 // import { useHistory } from 'react-router-dom';
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
+
 const Table = () => {
  
  let clerkId = 1
