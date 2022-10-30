@@ -89,3 +89,19 @@ span {
 .icon{
     color: red;
 }
+/* .title-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+} */
+.clerk-title{
+    color: #fff;
+    margin-right: 550px;
+}
+
+@media screen and (max-width:790px){
+    .clerk-title{
+        color: #fff;
+        margin-right: 150px;
+    } 
+}

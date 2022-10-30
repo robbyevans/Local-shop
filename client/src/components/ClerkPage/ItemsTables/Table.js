@@ -261,6 +261,7 @@ const Table = () => {
             <th>spoilt</th>
             <th>BuyingPrice</th>
             <th>SellingPrice</th>
+            <th>Edit / Delete</th>
             </tr>
           </thead>
           <tbody>

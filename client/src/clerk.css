@@ -319,3 +319,12 @@ td input{
 .mNav-items{
   margin-top: 5vh;
 }
+@media screen and (max-width:650px) {
+  .items-form{
+    display: flex;
+    flex-direction: column;
+  }
+  /* .items-form input{
+    display: inline-block;
+  } */
+}
