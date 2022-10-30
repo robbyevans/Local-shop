@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   
   resources :users, param: :_email
-  resources :stores, only: [:create, :index, :update, :destroy]
+  resources :stores, only: [:create, :index,:show, :update, :destroy]
   resources :merchant_users
-  resources :admins, only: [:create, :index, :update, :destroy]
+  resources :admins, only: [:create, :index, :show,:update, :destroy]
   post "/signup",  to: "users#create"
 
   resources :clerks, only: [:index, :show, :create, :update, :destroy ]
-  resources :requested_items, only: [:index, :show, :create, :update, :destroy ]
+  resources :requested_items
   resources :items
 
   
-  get"/items", to: "items#index"
-  post"/items", to: "items#create"
-  delete"/items/:id", to: "items#destroy"
+  # get"/items", to: "items#index"
+  # post"/items", to: "items#create"
+  # delete"/items/:id", to: "items#destroy"
 
   post '/auth/login', to: 'authentication#login'
   post '/auto_login', to: 'auth#auto_login'

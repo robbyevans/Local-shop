@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
-// import '../../../App.css'
-// import Spinner from '../../common/spinner/Spinner'
-// import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
-// import clerkAnalytics from '../analytics/clerkAnalytics';
-// import { DataGrid } from '@mui/x-data-grid';
+import { useNavigate } from 'react-router-dom'
 
 
-
-const ClerkForm = () => {
-  
+const Clerks= () => {
+   
+  let navigate  = useNavigate()
   const [formData, setFormData] = useState({
     full_name: '',
     email: '',
@@ -27,7 +23,7 @@ const ClerkForm = () => {
 
   //function adding clerk
   const createClerk = (data) => {
-    fetch("/clerks", {
+    fetch("http://localhost:3000/clerks", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
@@ -36,7 +32,8 @@ const ClerkForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        
+        setFormData(" ")
+        navigate('/clerks')
     })
   }
   
@@ -113,6 +110,7 @@ const ClerkForm = () => {
 
                   <div className="col">
                         <input type="submit"
+                        value="Submit"
                         className="btn btn-primary btn-block form-control mt-2"
                     />
                   </div>
@@ -143,7 +141,7 @@ const ClerkForm = () => {
         <tbody>
           {clerks && clerks.map((clerk) => (
             <tr key={clerk.id}>
-              <td>{clerk.fullname}</td>
+              <td>{clerk.full_name}</td>
               <td>{clerk.email}</td>
               <td><button className='btn btn-primary'>Deactivate</button></td>
               <td><button className='btn btn-danger'>Delete</button></td>
@@ -160,4 +158,4 @@ const ClerkForm = () => {
   )
 }
 
-export default ClerkForm;
+export default Clerks;
