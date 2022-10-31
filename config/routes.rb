@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   # clerk sign in routes
 
   resources :clerks, only: [:index, :show, :create, :update, :destroy ]
-  post '/clerk/login', to: 'clerk#clerk_login'
-  delete 'clerk/logout', to: 'sessions#destroy'
+  post '/clerk/login', to: 'sessions#clerk_login'
+  delete 'clerk/logout', to: 'sessions#clerk_logout'
 
   
  # admin sign in routes
