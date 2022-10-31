@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   resources :requested_items
   resources :items
 
+
   
-  # get"/items", to: "items#index"
+  get"/stores/:id/items", to: "stores#store_items"
   # post"/items", to: "items#create"
   # delete"/items/:id", to: "items#destroy"
 

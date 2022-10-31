@@ -5,4 +5,5 @@ class StoreSerializer < ActiveModel::Serializer
   has_many :items, through: :clerks
   has_many :requested_items, through: :clerks
 
+
 end

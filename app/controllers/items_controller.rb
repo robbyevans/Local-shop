@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     render json:items, status: :ok 
   end
 
+
   def create
     items=Item.create(item_params)
     render json:items, status: :created
