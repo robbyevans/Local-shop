@@ -135,8 +135,9 @@ body {
     width: 60px;
 }
 .comment-title{
-    font-weight: 950;
+    font-weight: 900;
     font-size: x-large;
+    text-decoration: underline;
 }
 .showcase .showcase-overlay {
     background-color: rgba(0, 0, 0, 0.4);
