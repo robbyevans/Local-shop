@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  #include ActionController::Cookies
+  include ActionController::Cookies
 
   def not_found
     render json: { error: 'not_found' }

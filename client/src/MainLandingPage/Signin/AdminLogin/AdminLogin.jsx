@@ -15,7 +15,7 @@ const AdminLogin= ({adminUser,setAdminUser}) => {
     e.preventDefault();
     
     
-   /* fetch ("",{
+   fetch ("admin/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,14 +31,11 @@ const AdminLogin= ({adminUser,setAdminUser}) => {
       }else
       {
         console.log(data)
-        setAdminUser(data)
-        localStorage.setItem('adminId',data.id)
+    setAdminUser(data)
+    localStorage.setItem("adminId", data.id)
         navigate('/inventories')
       }
-     
-
-    })*/
-    navigate('/inventories')
+    })
   }
 
 

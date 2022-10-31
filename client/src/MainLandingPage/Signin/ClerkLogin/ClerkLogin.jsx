@@ -19,7 +19,7 @@ const ClerkLogin = ({setUser}) => {
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch ("/login",{
+    fetch ("/clerk/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
