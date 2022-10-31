@@ -12,7 +12,7 @@ const EditableRow = ({
           type="text"
           required="required"
           placeholder="Clerk name..."
-          name="name"
+          name="clerk_name"
           value={editFormData.name}
           onChange={handleEditFormChange}
         ></input>
@@ -22,7 +22,7 @@ const EditableRow = ({
           type="text"
           required="required"
           placeholder="Item name."
-          name="item"
+          name="item_name"
           value={editFormData.item}
           onChange={handleEditFormChange}
         ></input>

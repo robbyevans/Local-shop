@@ -4,7 +4,6 @@ import { nanoid } from "nanoid";
 import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
-// import { useHistory } from 'react-router-dom';
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 
@@ -105,7 +104,7 @@ const Table = () => {
   })
     .then((r) => r.json())
     .then((newItem) => {
-      // setItems(newItem);
+      console.log(newItem);
     });
     setItems(newItems);
   };
