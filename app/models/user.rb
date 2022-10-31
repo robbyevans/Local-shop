@@ -8,5 +8,6 @@ class User < ApplicationRecord
               if:  -> { new_record? || !password.nil? }
 
     validates :role, presence: true
+    has_many :stores
     has_many :admins
 end

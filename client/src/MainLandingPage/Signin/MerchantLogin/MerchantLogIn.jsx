@@ -5,9 +5,6 @@ import MainBar from '../../MainBar/MainBar';
 import Footer from '../../footer/Footer';
 
 const MerchantLogIn = ({setUser}) => {
-
-  
-
   const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
   const navigate =useNavigate()
@@ -16,7 +13,7 @@ const MerchantLogIn = ({setUser}) => {
     e.preventDefault();
     
     const user = {email, password}
-    fetch ("http://localhost:3000/auth/login",{
+    fetch ("/auth/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,22 +29,17 @@ const MerchantLogIn = ({setUser}) => {
       if(data.error){
         alert(data.error)
       }else{
+        navigate('/merchant')
         console.log(data)
         setUser(data)
         localStorage.setItem('userId',data.id)
-        localStorage.setItem('token',data.token)
-        navigate('/merchant')
+        console.log(data.id)
       }
      
 
     })
       
   }
-
-   
-   
-  
-
 
 
   return (

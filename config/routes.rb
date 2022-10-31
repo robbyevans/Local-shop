@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :users, param: :_email
+  resources :users, only: [:create, :show, :index]
   resources :stores, only: [:create, :index,:show, :update, :destroy]
   resources :merchant_users
   resources :admins, only: [:create, :index, :show,:update, :destroy]
@@ -19,10 +19,6 @@ Rails.application.routes.draw do
   post '/admin/login', to: 'admins#admin_login'
 
   post '/auth/login', to: 'authentication#login'
-  post '/auto_login', to: 'auth#auto_login'
-  get '/*a', to: 'application#not_found'
-
-  post '/create_admin', to: 'users#create_admin'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

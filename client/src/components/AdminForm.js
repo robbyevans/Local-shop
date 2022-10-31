@@ -9,14 +9,12 @@ function AdminForm({adminUser, onAddAdmin, admins, onDeleteAdmin, mStores, setAd
   const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState()
-  const [token, setToken] = useState()
+  const [token, setToken] = useState("")
   useEffect(() => {
     setUserId(localStorage.getItem('userId'))
-    setToken(localStorage.getItem('token'))
     
 }, []);
 console.log(userId)
-console.log(token)
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -28,7 +26,7 @@ console.log(token)
         password: password,
         store_id: storeId,
         status: "active",
-        token: token,
+        token: "Notokenusage",
         user_id: userId,
       }),
       headers: {
