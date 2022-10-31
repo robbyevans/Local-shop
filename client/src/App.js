@@ -14,27 +14,23 @@ import Register from './MainLandingPage/RegisterMerchant/Register';
 import "./MainLandingPage/design.css"
 import Clerk from './components/clerks/Clerks'
 import Inventory from './components/inventory/Inventory'
-import SideBar from './components/sidebar/SideBar';
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import ClerkLandingPage from './ClerkLandingPage';
 import Landing from './MainLandingPage/Landing'
 
 
 function App() {
-
+  const [user, setUser]= useState({})
+  const [adminUser, setAdminUser] =useState({})
+  
   return (
   
     <div className="App">
           
       <Routes>
-        
-        <Route path='/admin' element={<SideBar />} />
-       
-
-
-       <Route exact path="/" element={<Landing/> }></Route>
-       <Route path="/clerk" element={<ClerkLandingPage/>}></Route>
-        <Route path="/merchant" element={<Merchant/>}></Route>
+       <Route exact path="/" element={<Landing /> }></Route>
+       <Route path="/clerk" element={<ClerkLandingPage />}></Route>
+        <Route path="/merchant" element={<Merchant adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
@@ -45,10 +41,10 @@ function App() {
 
 
 
-       <Route path='/mlog-in' element={<MerchantLogIn/>} />
-       <Route path='/alog-in' element={<AdminLogin/>} />
+       <Route path='/mlog-in' element={<MerchantLogIn user={user} setUser={setUser} />} />
+       <Route path='/alog-in' element={<AdminLogin adminUser={adminUser} setAdminUser={setAdminUser}/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
-       <Route path='/Register' element={<Register/>} />
+       <Route path='/Register' element={<Register setUser={setUser} />} />
         <Route path="/inventories" element={<Inventory />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>

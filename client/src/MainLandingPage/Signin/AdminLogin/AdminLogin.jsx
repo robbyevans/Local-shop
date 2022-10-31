@@ -3,45 +3,57 @@ import { useNavigate } from 'react-router';
 import Footer from '../../footer/Footer';
 import MainBar from '../../MainBar/MainBar';
 
-const AdminLogin= ({setUser}) => {
+const AdminLogin= ({adminUser,setAdminUser}) => {
 
-  const[username, setUsername] = useState("");
+  const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
+  
 
-  const navigate=useNavigate()
-  function handleClick(){
-    navigate("/inventories")
-
-  }
+  const navigate =useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch ("/login",{
+    
+   /* fetch ("",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
+      body: JSON.stringify({ email, password }),
+    })
+    .then((r)=>{
+      return r.json()
+    })
+    .then((data) =>{
+      if(data.error){
+        alert(data.error)
+      }else
+      {
+        console.log(data)
+        setAdminUser(data)
+        localStorage.setItem('adminId',data.id)
+        navigate('/inventories')
       }
-    });
+     
+
+    })*/
+    navigate('/inventories')
   }
+
 
   return (
     <>
     <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='formation-control'>
-          <input type="text"
-                id="username"
-                placeholder='username'
+          <form className='formation-control' onSubmit={handleSubmit}>
+          <input type="email"
+                id="email"
+                placeholder='email'
                 autoComplete="off"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
           />
            <input type="password"
                 id="password"
@@ -51,7 +63,7 @@ const AdminLogin= ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
           
-            <button onClick={handleClick}  type='submit'>Log In</button>
+            <button  type='submit'>Log In</button>
           </form>
         </div>
       </section>

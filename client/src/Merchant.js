@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router";
 import MerchantPage from "./pages/MerchantPage";
 //import StorePage from "./pages/StorePage";
 
-function Merchant({user}) {
+function Merchant({user, setUser,setAdminUser}) {
     const [admins, setAdmins] = useState([]);
     //mStores meaning merchant stores
     const [mStores, setmStores] = useState([]);
@@ -32,7 +32,7 @@ function Merchant({user}) {
     return (
         <div>
         <Routes>
-        <Route exact path="/" element={<MerchantPage admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin} onAddStore={onAddStore}/>}></Route>
+        <Route exact path="/" element={<MerchantPage setAdminUser={setAdminUser} user= {user} setUser= {setUser} admins={admins} onDeleteAdmin={onDeleteAdmin} getAdmins={getAdmins} mStores={mStores} getmStores={getmStores} onAddAdmin={onAddAdmin} onAddStore={onAddStore}/>}></Route>
         {/*<Route exact path="/storepage/:storeId" element={<StorePage />}></Route>*/}
         </Routes>
         </div>
