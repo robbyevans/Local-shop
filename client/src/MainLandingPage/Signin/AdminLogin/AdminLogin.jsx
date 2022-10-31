@@ -15,7 +15,7 @@ const AdminLogin= ({adminUser,setAdminUser}) => {
     e.preventDefault();
     
     
-    fetch ("/admin/login",{
+   /* fetch ("",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,8 @@ const AdminLogin= ({adminUser,setAdminUser}) => {
       }
      
 
-    })
+    })*/
+    navigate('/inventories')
   }
 
 

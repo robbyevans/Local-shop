@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
 
-function StoreForm({onAddStore, admins}) {
+function StoreForm({onAddStore}) {
     const [storename, setStorename] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
-    const [admin, setAdmin]= useState({})
   
     function handleSubmit(event) {
       event.preventDefault();

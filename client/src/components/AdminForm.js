@@ -46,7 +46,7 @@ console.log(token)
     setEmail("");
     setPassword("");
   }
-  console.log(adminUser)
+ 
 
   return (
     <div>

@@ -30,7 +30,7 @@ function ShowCase() {
             </div>
             <div className="why-wrapper">
               <div className='why-section'>
-                <h3 className='why-h3'>WHY <element className="why-title">LOCALSHOP</element></h3>
+                <h2 className='why-h3'>WHY <element className="why-title">LOCALSHOP</element></h2>
                 <p> Manage all your  inventory with ease anytime, anywhere.
                    Create a new store assign roles and sit back and watch it get done.all with a click of a button.Track,manage and assign roles with ease.Trusted by millions of business owners world wide. </p>
               </div>
@@ -77,7 +77,7 @@ function ShowCase() {
                 <div className="dp"><img src="https://imgk.timesnownews.com/story/66603010_1317351581756321_4675944928644445097_n.jpg"/> <h5 className="dp-title">Snoop Dog</h5></div>
                 </div>
               </div>
-      <div className="my-footer"><Footer/></div>
+              <div className="my-footer"><Footer/></div>
           </div>
         </div>
       </section>
