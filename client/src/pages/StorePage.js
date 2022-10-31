@@ -30,7 +30,7 @@ function StorePage() {
   return (
     <div className="store-page">
       <NavBar />
-      <h1>Store {mStore.store_name} Summary Report</h1>
+      <h3 className="bar-title">Store {mStore.store_name} Summary Report</h3>
       <StoreChart storeId={storeId}/>
       <AdminDetails storeId={storeId}/>
       <ProductTable storeId={storeId} />

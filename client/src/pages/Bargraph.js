@@ -20,7 +20,7 @@ export default function Bargraph (storeId) {
 
     return ( 
 
-      <div>
+      <div className="bargraph">
         <h1></h1>
         <ResponsiveContainer width="100%" aspect={3}>
           <BarChart
