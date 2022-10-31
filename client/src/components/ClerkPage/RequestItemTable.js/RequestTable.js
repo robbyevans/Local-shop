@@ -26,8 +26,8 @@ function RequestTable() {
     //end
 
   const [addFormData, setAddFormData] = useState({
-    name: "",
-    item: "",
+    clerk_name: "",
+    item_name: "",
     quantity: "",
     date: "",
     clerk_id: clerkId
@@ -37,8 +37,8 @@ function RequestTable() {
 
 
   const [editFormData, setEditFormData] = useState({
-    name: "",
-    item:"",
+    clerk_name: "",
+    item_name:"",
     quantity: "",
     date: "",
   });
@@ -77,8 +77,8 @@ function RequestTable() {
 
     const newItem = {
       id: nanoid(),
-      clerk_name: addFormData.name,
-      item_name: addFormData.item,
+      clerk_name: addFormData.clerk_name,
+      item_name: addFormData.item_name,
       quantity: addFormData.quantity,
       date: addFormData.date,
       clerk_id: addFormData.clerk_id
@@ -97,19 +97,21 @@ function RequestTable() {
     })
       .then((r) => r.json())
       .then((newItem) => {
-        // console.log(newItem);
+        console.log(newItem);
       });
 
     setRequest(newItems);
   };
+
+  // <<<<------------->>>>
 
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
 
     const editedItem = {
       id: editItemId,
-      name: editFormData.name,
-      item: editFormData.item,
+      clerk_name: editFormData.clerk_name,
+      item_name: editFormData.item_name,
       quantity: editFormData.quantity,
       date: editFormData.date
     };
@@ -120,7 +122,20 @@ function RequestTable() {
 
     newItems[index] = editedItem;
 
+    //posting edited items to the db
+
+    // fetch(`/requested_items/${editItemId}`, {
+    //   method: "PATCH",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({editedItem}),
+    // })
+    //   .then((r) => r.json())
+    //   .then((data)=>console.log(data))
+
     setRequest(newItems);
+    console.log(newItems)
     setEditContactId(null);
   };
 
@@ -129,8 +144,8 @@ function RequestTable() {
     setEditContactId(item.id);
 
     const formValues = {
-      name: item.name,
-      item: item.item,
+      clerk_name: item.clerk_name,
+      item_name: item.item_name,
       quantity: item.quantity,
       date: item.date,
     };
@@ -176,14 +191,14 @@ function RequestTable() {
     <form  className="items-form" onSubmit={handleAddFormSubmit}>
       <input
         type="text"
-        name="name"
+        name="clerk_name"
         required="required"
         placeholder="Enter Clerk Name..."
         onChange={handleAddFormChange}
       />
         <input
           type="text"
-          name="item"
+          name="item_name"
           required="required"
           placeholder="item name."
           onChange={handleAddFormChange}
@@ -215,6 +230,7 @@ function RequestTable() {
             <th>Item Name</th>
             <th>Quantity</th>
             <th>Date</th>
+            <th>Edit / Delete</th>
             </tr>
           </thead>
           <tbody>

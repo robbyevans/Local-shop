@@ -11,7 +11,7 @@ const EditableRow = ({
         <input
           type="text"
           required="required"
-          placeholder="Enter a name..."
+          placeholder="Enter item name..."
           name="name"
           value={editFormData.name}
           onChange={handleEditFormChange}

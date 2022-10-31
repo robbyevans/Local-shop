@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # delete"/items/:id", to: "items#destroy"
 
   post '/auth/login', to: 'authentication#login'
+  post '/auto_login', to: 'auth#auto_login'
   get '/*a', to: 'application#not_found'
 
   post '/create_admin', to: 'users#create_admin'

@@ -13,6 +13,8 @@ import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCh
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import { useNavigate } from 'react-router-dom';
+// import Inventory from '../inventory/Inventory';
+
 
 const SideBar = ({children}) => {
 
@@ -80,8 +82,6 @@ const SideBar = ({children}) => {
                   ))}
               </List>
       </Drawer>
-      {children}
-          
     </div>
   )
 }
