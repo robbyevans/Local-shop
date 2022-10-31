@@ -3,7 +3,7 @@ import AdminList from "./AdminList";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import Grid from "@mui/material/Grid";
 
-function AdminForm({adminUser, onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser }) {
+function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [storeId, setStoreId] = useState(1);
