@@ -29,8 +29,8 @@ function StorePage() {
   return (
     <div className="store-page">
       <NavBar />
-      <AdminDetails storeId={storeId}/>
       <StoreChart storeId={storeId}/>
+      <AdminDetails storeId={storeId}/>
       <ProductTable storeId={storeId} />
       
     </div>
