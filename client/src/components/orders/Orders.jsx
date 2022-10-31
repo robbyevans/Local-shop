@@ -31,8 +31,8 @@ const Orders = () => {
       <tr key={order.id}>
         <td>{order.item_name}</td>
         <td>{order.quantity}</td>
-        <td>{order.id.full_name}</td>
-        <td>{order.created_at}</td>
+        <td>{order.clerk_name}</td>
+        <td>{order.date}</td>
     </tr>
   ))}
   </tbody>
