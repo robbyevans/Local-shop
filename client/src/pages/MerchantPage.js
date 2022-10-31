@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 
-function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
+function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
   //fetch admins from db
   useEffect(() => {
     fetch("/admins").then((r) => {
@@ -29,7 +29,7 @@ function MerchantPage({ admins, getAdmins, mStores, getmStores, onAddAdmin, onDe
 
       {/* sidebar dashboard */}
 
-      <SideBar onAddAdmin={onAddAdmin} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} onAddStore={onAddStore} />
+      <SideBar adminUser={adminUser} setAdminUser={setAdminUser} onAddAdmin={onAddAdmin} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} onAddStore={onAddStore} />
     </div>
   );
 }

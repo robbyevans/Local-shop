@@ -9,6 +9,15 @@ import Grid from '@mui/material/Grid'
 
 
 const ClerkForm = () => {
+
+
+  const[adminId, setAdminId]=useState()
+  useEffect(() => {
+    setAdminId(localStorage.getItem('adminId'))
+    
+}, []);
+
+console.log(adminId)
   
   const [formData, setFormData] = useState({
     full_name: '',

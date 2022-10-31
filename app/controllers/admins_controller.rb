@@ -1,9 +1,41 @@
 class AdminsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+    #before_action :authorize, only: :admin_login
+
+    def admin_login
+        admin = Admin.find_by_email(params[:email])
+        if admin&.authenticate(params[:password])
+            session[:admin_id] = admin.id
+            render json: admin
+        else
+            render json: {errors: []}, status: :unauthorized
+        end
+    end
+  
+    def admin_logout
+        admin = Admin.find_by(id: session[:admin_id])
+        if admin
+            session.delete :admin_id
+            head :no_content
+        else
+            render json: {errors: []}, status: :unauthorized
+   
+        end
+    end
+
     def create
         admin = Admin.create(admin_params)
-        render json: admin, status: :created
+        if admin.valid?
+            session[:admin_id] = admin.id
+            render json: admin, status: :created
+        else
+            render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+        end
+        #render json: admin, status: :created
     end
+
+
 
     def index
         admins = Admin.all

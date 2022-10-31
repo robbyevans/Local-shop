@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       render json: @users, status: :ok
     end
   
-    # GET /users/{username}
+    # GET /users/{}
     def show
       render json: @user, status: :ok
     end
@@ -24,10 +24,6 @@ class UsersController < ApplicationController
       end
     end
 
-    def create_admin
-      admin = Admin.create(admin_params)
-      render json: admin, status: :created
-    end
 
   
     # PUT /users/{username}
@@ -56,7 +52,5 @@ class UsersController < ApplicationController
          :full_name, :email, :password, :password_confirmation, :role
       )
     end
-    def admin_params
-      params.permit(:full_name, :email, :password,:store, :status, :token)
-  end
+
 end

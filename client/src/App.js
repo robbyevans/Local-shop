@@ -22,16 +22,17 @@ import Landing from './MainLandingPage/Landing'
 
 
 function App() {
-
-  const[user, setUser]= useState(null)
+  const [user, setUser]= useState({})
+  const [adminUser, setAdminUser] =useState({})
+  
   return (
   
     <div className="App">
       <Provider store={store}>
       <Routes>
-       <Route exact path="/" element={<Landing user={user}/> }></Route>
-       <Route path="/clerk" element={<ClerkLandingPage user={user}/>}></Route>
-        <Route path="/merchant" element={<Merchant user={user} />}></Route>
+       <Route exact path="/" element={<Landing /> }></Route>
+       <Route path="/clerk" element={<ClerkLandingPage />}></Route>
+        <Route path="/merchant" element={<Merchant adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
@@ -42,11 +43,11 @@ function App() {
 
 
 
-       <Route path='/mlog-in' element={<MerchantLogIn setUser={setUser}/>} />
-       <Route path='/alog-in' element={<AdminLogin/>} />
+       <Route path='/mlog-in' element={<MerchantLogIn user={user} setUser={setUser} />} />
+       <Route path='/alog-in' element={<AdminLogin adminUser={adminUser} setAdminUser={setAdminUser}/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
-       <Route path='/Register' element={<Register setUser={setUser}/>} />
-        <Route path="/inventories" element={<Inventory user={user} />} />
+       <Route path='/Register' element={<Register setUser={setUser} />} />
+        <Route path="/inventories" element={<Inventory />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
         </Provider>

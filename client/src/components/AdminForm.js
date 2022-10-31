@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminList from "./AdminList";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import Grid from "@mui/material/Grid";
 
-function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores }) {
+function AdminForm({adminUser, onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
-  let userId = 1;
+  const [userId, setUserId] = useState()
+  const [token, setToken] = useState()
+  useEffect(() => {
+    setUserId(localStorage.getItem('userId'))
+    setToken(localStorage.getItem('token'))
+    
+}, []);
+console.log(userId)
+console.log(token)
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,7 +28,7 @@ function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores }) {
         password: password,
         store_id: storeId,
         status: "active",
-        token: "sfdcjghjkkjjkjkjkjk",
+        token: token,
         user_id: userId,
       }),
       headers: {
@@ -31,11 +39,14 @@ function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores }) {
       .then((data) => {
         console.log(data);
         onAddAdmin(data);
+        setAdminUser(data);
+        
       });
     setFullname("");
     setEmail("");
     setPassword("");
   }
+  console.log(adminUser)
 
   return (
     <div>

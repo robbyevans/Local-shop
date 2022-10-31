@@ -1,19 +1,24 @@
 class AuthenticationController < ApplicationController
-    before_action :authorize_request, except: :login
+   #before_action :authorize_request, except: :login
 
     # POST /auth/login
     def login
       @user = User.find_by_email(params[:email])
       if @user&.authenticate(params[:password])
         token = JsonWebToken.encode(user_id: @user.id)
-        time = Time.now + 24.hours.to_i
+        time = Time.now + 1.hours.to_i
         render json: { token: token, exp: time.strftime("%m-%d-%Ygit %H:%M"),
-                       email: @user.email }, status: :ok
+                       email: @user.email, id: @user.id}, status: :ok
       else
         render json: { error: 'unauthorized' }, status: :unauthorized
       end
     end
 
+  
+
+     
+
+   
   
     private
   

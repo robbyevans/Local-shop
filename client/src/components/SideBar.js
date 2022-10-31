@@ -8,10 +8,14 @@ import { ListItemIcon } from "@mui/material";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
-function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
+function SideBar({setAdminUser,adminUser, onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore,  }) {
+  
   const [showAdmin, setSetShowAdmin] = useState();
 
-  function handleLogout() {}
+  function handleLogout() {
+    
+  }
+
   return (
     <div>
       {/* sidebar dashboard */}
@@ -39,7 +43,7 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
                   </ListItemIcon>
                   <ListItemText>Admins</ListItemText>
                 </ListItem>
-                <ListItem    >
+                <ListItem onClick={handleLogout}>
                   <ListItemIcon sx={{ color: "#ffffff" }}>
                  
                   </ListItemIcon>
@@ -57,6 +61,8 @@ function SideBar({ onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore }) {
                 admins={admins}
                 onDeleteAdmin={onDeleteAdmin}
                 mStores={mStores}
+                setAdminUser={setAdminUser}
+                adminUser={adminUser}
               />
             ) : (
               <StoreReports
