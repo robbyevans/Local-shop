@@ -126,7 +126,7 @@ const MerchantLogIn = ({setUser}) => {
                 placeholder='password'
                 onChange={(e) => setPassword(e.target.value)} 
           />
-           <p> Don't have account? <Link className='linkp'  to='/register'> Become a Member!</Link></p>
+           <p className="signup-link"> Don't have account? <Link className='linkp'  to='/register'> Become a Member!</Link></p>
             <button  type='submit'>Log In</button>
           </form>
         </div>
