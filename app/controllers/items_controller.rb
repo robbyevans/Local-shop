@@ -8,8 +8,9 @@ class ItemsController < ApplicationController
 
   def show
     items=Item.find_by(id:params[:id])
-    render json:items, status: :ok
+    render json:items, status: :ok 
   end
+
 
   def create
     items=Item.create(item_params)

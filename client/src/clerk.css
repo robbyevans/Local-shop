@@ -319,6 +319,14 @@ td input{
 .mNav-items{
   margin-top: 5vh;
 }
+.bargraph{
+  border: 1px solid #060b26;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  /* width: 80vw; */
+}
 @media screen and (max-width:650px) {
   .items-form{
     display: flex;
