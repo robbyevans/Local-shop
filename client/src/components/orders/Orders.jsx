@@ -3,17 +3,20 @@ import React,{useState, useEffect} from 'react'
 const Orders = () => {
 
     const [orders, setOrders] = useState([])
+    const[adminId, setAdminId] = useState(localStorage.getItem('adminId'))
     
     useEffect(() => {
-        fetch('http://localhost:3000/requested_items')
+        fetch(`/admins/${adminId}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                setOrders(data)
+                setOrders(data.requested_items)
         })
     },[])
+    
   return (
-    <div className='container'>
+    
+    <div className='container pt-5'>
     <div className="row">
         <div className="col-md-10 offset-md-2">
           <h3>Order Requests</h3>

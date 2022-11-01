@@ -22,11 +22,11 @@ const SideBar = ({children, setAdminuser}) => {
 
     const drawerWidth = 240
     const sidebarItems=[
-        {
-          text: "Admin",
-          icon: <AccountCircleOutlinedIcon color="secondary"/>,
-          path: '/'
-        },
+        // {
+        //   text: "Admin",
+        //   icon: <AccountCircleOutlinedIcon color="secondary"/>,
+        //   path: '/'
+        // },
         {
           text: "Inventory",
           icon: <Inventory2OutlinedIcon color="secondary"/>,
@@ -73,8 +73,9 @@ const SideBar = ({children, setAdminuser}) => {
                   '& .MuiDrawer-paper': {
                       width: drawerWidth,
                       boxSizing: 'border-box',
-                      backgroundColor: '#101F33',
-                      color: 'rgba(255,255,255, 0.7)'
+                      backgroundColor: '#060b26',
+                      color: 'rgba(255,255,255, 0.7)',
+                      cursor:'pointer'
                   }
               }}
               variant="permanent" 
