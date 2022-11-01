@@ -6,6 +6,7 @@ import data from "./mock-data.json";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 import ClerkNavbar from '../ClerkNavbar/Navbar';
+import { useNavigate } from "react-router-dom";
 
 function RequestTable() {
 
@@ -14,12 +15,14 @@ function RequestTable() {
   
   const [request, setRequest] = useState(data);
   const [clerkId,setClerkId]= useState(localStorage.getItem('clerkId'));
+ 
 
   //populating the table with data from database
     useEffect(() => {
       fetch(`/clerks/${clerkId}`).then((r) => {
         if (r.ok) {
           r.json().then((data) => setRequest(data.requested_items));
+          
         }
       });
     },[]);
