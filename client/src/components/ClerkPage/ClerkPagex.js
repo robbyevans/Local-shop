@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../App.css"
 // import Navbar from './Navbar/Navbar';
-import {useState,useEffect} from "react"
+import {useState} from "react"
 import Table from "./ItemsTables/Table"
 import RequestTable from './RequestItemTable.js/RequestTable';
 

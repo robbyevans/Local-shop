@@ -7,12 +7,21 @@ import ListItemText from "@mui/material/ListItemText";
 import { ListItemIcon } from "@mui/material";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
+import { useNavigate } from "react-router-dom";
 
-function SideBar({setAdminUser,adminUser, onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore,  }) {
+function SideBar({setAdminUser,adminUser, onAddAdmin, admins, mStores, onDeleteAdmin, onAddStore,setUser  }) {
   
   const [showAdmin, setSetShowAdmin] = useState();
 
+  const navigate = useNavigate();
+
   function handleLogout() {
+    fetch("auth/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+        navigate("/mlog-in")
+      }
+    });
     
   }
 

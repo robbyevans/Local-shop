@@ -7,7 +7,7 @@ import EditableRow from "./EditableRow";
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 
-const Table = () => {
+const Table = ({setClerkUser}) => {
  
   //<<<<-----table functions---->>>
   const [items, setItems] = useState(data);
@@ -192,7 +192,7 @@ const Table = () => {
   return (
 
 <>
-    <ClerkNavBar/>
+    <ClerkNavBar setClerkuser={setClerkUser}/>
     <div className="app-container">
      
             {/* //<<<<--- table input form-->> */}

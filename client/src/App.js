@@ -31,7 +31,7 @@ function App() {
       <Routes>
        <Route exact path="/" element={<Landing /> }></Route>
        <Route path="/clerk" element={<ClerkLandingPage clerkUser = {clerkUser} setClerkUser={setClerkUser} />}></Route>
-        <Route path="/merchant" element={<Merchant adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
+        <Route path="/merchant" element={<Merchant  setUser ={setUser} adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
@@ -46,7 +46,7 @@ function App() {
        <Route path='/alog-in' element={<AdminLogin adminUser={adminUser} setAdminUser={setAdminUser}/>} />
        <Route path='/clog-in' element={<ClerkLogin setClerkUser={setClerkUser} />} />
        <Route path='/Register' element={<Register setUser={setUser} />} />
-        <Route path="/inventories" element={<Inventory setClerkUser={setClerkUser} />} />
+        <Route path="/inventories" element={<Inventory setAdminUser={setAdminUser} setClerkUser={setClerkUser} />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
     </div>
