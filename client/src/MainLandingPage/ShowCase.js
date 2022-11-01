@@ -70,7 +70,7 @@ function ShowCase() {
                 </div>
                 <div className="comment-1">
                 <p>"t is a very flexible system, many different functions can be in one placе. The most important thing is that you can implement a large number of integrations with other services." </p>
-                <div className="dp"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"/><h5 className="dp-title">Snoop dog cuz</h5></div>
+                <div className="dp"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"/><h5 className="dp-title">James Maina</h5></div>
                 </div>
                 <div className="comment-1">
                 <p>"It covers almost all the enterprise needs such as sales, inventory, accounting and much more Automated workflows and latest AI and IoT technologies are included" </p>
