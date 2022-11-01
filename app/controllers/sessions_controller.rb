@@ -30,4 +30,20 @@ class SessionsController < ApplicationController
         session.delete :admin_id
         head :no_content
     end
+
+    #merchant/user login and logout
+    def user_login
+        user = User.find_by(email: params[:email])
+        if user&.authenticate(params[:password])
+            session[:user_id] = user.id
+            render json: user, status: :created
+        else
+            render json: {error: "Invalid email or password"}, status: :unauthorized
+        end
+    end
+
+    def user_logout
+        session.delete :user_id
+        head :no_content
+    end
 end

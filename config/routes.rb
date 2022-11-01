@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
  resources :users
  post "/signup",  to: "users#create"
- post '/auth/login', to: 'authentication#login'
+ post '/auth/login', to: 'sessions#user_login'
+delete '/auth/logout', to: 'sessions#user_logout'
 
 
   # clerk sign in routes

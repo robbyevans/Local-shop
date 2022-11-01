@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 
-function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
+function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore, setUser }) {
   //fetch admins from db
   const [userId, setUserId] = useState(localStorage.getItem('userId'))
 
@@ -37,7 +37,7 @@ function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmS
 
       {/* sidebar dashboard */}
 
-      <SideBar adminUser={adminUser} setAdminUser={setAdminUser} onAddAdmin={onAddAdmin} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} onAddStore={onAddStore} />
+      <SideBar adminUser={adminUser} setAdminUser={setAdminUser} onAddAdmin={onAddAdmin} setUser = {setUser} mStores={mStores} admins={admins} onDeleteAdmin={onDeleteAdmin} onAddStore={onAddStore} />
     </div>
   );
 }

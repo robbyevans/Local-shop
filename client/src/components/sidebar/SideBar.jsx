@@ -16,9 +16,10 @@ import { useNavigate } from 'react-router-dom';
 // import Inventory from '../inventory/Inventory';
 
 
-const SideBar = ({children}) => {
+const SideBar = ({children, setAdminuser}) => {
 
-    let navigate = useNavigate()
+    let navigate = useNavigate();
+
     const drawerWidth = 240
     const sidebarItems=[
         {
@@ -45,13 +46,24 @@ const SideBar = ({children}) => {
             text: "Clerks",
             icon: <PeopleAltOutlinedIcon color="secondary"/>,
             path: '/clerks'
-          },
-        {
-            text: "Logout",
-            icon: <PowerSettingsNewOutlinedIcon color='secondary' />,
-            path: "/logout"
-        }
+          }
+       
       ]
+
+
+
+      //logout button
+
+      function handleLogoutClick() {
+    fetch("admin/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setAdminuser(null);
+        navigate("/alog-in")
+      }
+    });
+
+
+  }
   return (
       <div>
           <Drawer
@@ -78,8 +90,16 @@ const SideBar = ({children}) => {
                           button>
                           <ListItemIcon sx={{color: 'rgba(255,255,255, 0.7)'}}>{item.icon}</ListItemIcon>
                           <ListItemText>{ item.text}</ListItemText>
+                         
                         </ListItem>
+                        
                   ))}
+                   <ListItem onClick={handleLogoutClick}>
+                          <ListItemIcon sx={{color: 'rgba(255,255,255, 0.7)'}}><PowerSettingsNewOutlinedIcon color='secondary' /></ListItemIcon>
+                          <ListItemText>Logout</ListItemText>
+                         
+                        </ListItem>
+                   
               </List>
       </Drawer>
     </div>

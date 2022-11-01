@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/Footer';
 import MainBar from '../MainBar/MainBar';
 
@@ -9,7 +10,8 @@ const Register = ({ setUser }) => {
     const[password, setPassword] = useState("");  
     const[password_confirmation, setPasswordConfirmation] = useState("");
     const[role, setRole] = useState("")
-
+ 
+    const navigate = useNavigate();
 
 
     function handleSubmit(e) {
@@ -34,6 +36,7 @@ const Register = ({ setUser }) => {
            r.json().then((user) => {
             console.log(user)
             setUser(user)
+            navigate("/mlog-in")
            }
           
            

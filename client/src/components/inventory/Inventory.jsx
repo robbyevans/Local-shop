@@ -7,7 +7,7 @@ import Spinner from '../../common/spinner/Spinner'
 import { getItems } from "../../features/items/ItemSlice";
 import Orders from "../orders/Orders";
 
-const Inventory = ({setClerkUser}) => {
+const Inventory = ({setClerkUser, setAdminUser}) => {
   const { items, loading } = useSelector((state) => state.items)
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +20,7 @@ const Inventory = ({setClerkUser}) => {
 
   return (
     <>
-      <SideBar />
+      <SideBar  setAdminuser={setAdminUser}/>
       <Orders/>
     <Clerks setClerkUser={setClerkUser}/> 
 
