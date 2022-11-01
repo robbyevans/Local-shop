@@ -12,7 +12,6 @@ const MerchantLogIn = ({setUser}) => {
   function handleSubmit(e) {
     e.preventDefault();
     
-    const user = {email, password}
     fetch ("/auth/login",{
       method: "POST",
       headers: {
@@ -29,8 +28,7 @@ const MerchantLogIn = ({setUser}) => {
       }else{
         console.log(data)
         setUser(data)
-        localStorage.setItem('userId',data.id)
-        console.log(data.id)
+        localStorage.setItem("userId", data.id)
         navigate('/merchant')
       }
      
