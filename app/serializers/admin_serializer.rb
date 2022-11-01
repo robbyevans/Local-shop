@@ -1,5 +1,6 @@
 class AdminSerializer < ActiveModel::Serializer
-  attributes :id, :full_name, :email, :password, :store_id, :status, :token
+  attributes :id, :full_name, :email, :password_digest, :store_id, :status, :token, :user_id
+  belongs_to :user
   belongs_to :store
   has_many :clerks
   has_many :items, through: :clerks

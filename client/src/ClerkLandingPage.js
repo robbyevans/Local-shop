@@ -13,12 +13,12 @@ import RequestTable from './components/ClerkPage/RequestItemTable.js/RequestTabl
 import ClerkPage from './components/ClerkPage/ClerkPagex';*/}
 
 //changed to clerklandingpage instead of app
-function ClerkLandingPage() {
+function ClerkLandingPage({setClerkUser}) {
   return (
 <>
     {/* <ClerkNavbar /> */}
         <Routes>
-        <Route exact path='/' element={<Table/>} />
+        <Route exact path='/' element={<Table setClerkUser={setClerkUser}/>} />
           {/*<Route exact path='/home' element={<Home/>} />
           <Route path='/orders' element={<OrderForm/>} />
           <Route path='/addItems' element={<Table/>} />

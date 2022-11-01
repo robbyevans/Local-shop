@@ -8,7 +8,7 @@ function StoreCard({store}) {
         navigate(`/storepage/${storeId}`)
     }
     return (
-        <div className="col-12 col-md-6 col-lg-4" onClick={handleClick}>
+        <div className="col-12 col-md-6 col-lg-4" >
         <div className="card">
           <div className="store-card">
             <h2 className="store-card-title">
@@ -21,7 +21,7 @@ function StoreCard({store}) {
              Description: {store.description}
             </p>
         
-            <button className="storecard-btn">
+            <button className="storecard-btn" onClick={handleClick}>
               Go to Store
             </button>
           </div>

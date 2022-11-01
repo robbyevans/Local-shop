@@ -51,6 +51,29 @@
       "status": "not paid"
     }
   ],
+  "orders": [
+    {
+      "id": 1,
+      "item_name": "Cooking Oil",
+      "quantity": 100,
+      "clerk_name": "Mungai",
+      "date": "12/10/2022"
+    },
+    {
+      "id": 2,
+      "item_name": "Bread",
+      "quantity": 50,
+      "clerk_name": "Rono",
+      "date": "12/10/2022"
+    },
+    {
+      "id": 3,
+      "item_name": "Milk",
+      "quantity": 100,
+      "clerk_name": "Joseph",
+      "date": "12/10/2022"
+    }
+  ],
   "admins": [
     {
       "id": 2,
@@ -89,6 +112,23 @@
           "paymentstatus": "notpaid"
         }
       ]
+    }
+  ],
+  "clerks": [
+    {
+      "id": 1,
+      "fullname": "Fred Matiangi",
+      "email": "matiangs0@gmail.com",
+      "store": "hakunamatata1"
+    },
+    {
+      "fullname": "peter ndumia",
+      "email": "ndumia@gmail.com",
+      "store": "one stop",
+      "id": 2
+    },
+    {
+      "id": 3
     }
   ]
 }

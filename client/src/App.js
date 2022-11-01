@@ -1,6 +1,4 @@
 import React,{useState} from 'react'
-import {store} from '../src/app/store'
-import { Provider } from 'react-redux';
 import './App.css';
 import Merchant from './Merchant';
 import { Route, Routes } from "react-router";
@@ -22,34 +20,35 @@ import Landing from './MainLandingPage/Landing'
 
 
 function App() {
-
-  const[user, setUser]= useState(null)
+  const [user, setUser]= useState({})
+  const [adminUser, setAdminUser] =useState({})
+  const [clerkUser, setClerkUser] =useState({})
+  
   return (
   
     <div className="App">
-      <Provider store={store}>
+          
       <Routes>
-       <Route exact path="/" element={<Landing user={user}/> }></Route>
-       <Route path="/clerk" element={<ClerkLandingPage user={user}/>}></Route>
-        <Route path="/merchant" element={<Merchant user={user} />}></Route>
+       <Route exact path="/" element={<Landing /> }></Route>
+       <Route path="/clerk" element={<ClerkLandingPage clerkUser = {clerkUser} setClerkUser={setClerkUser} />}></Route>
+        <Route path="/merchant" element={<Merchant  setUser ={setUser} adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
        <Route path='/orders' element={<OrderForm/>} />
        <Route path='/addItems' element={<Table/>} />
        <Route path='/addRequests' element={<RequestTable/>} />
-       <Route path="/clerks" element={<Clerk />}></Route>
+       <Route path="/clerks" element={<Clerk setClerkUser={setClerkUser} />}></Route>
        
        <Route path='/oldPage' element={<ClerkPage/>} />
 
 
 
-       <Route path='/mlog-in' element={<MerchantLogIn setUser={setUser}/>} />
-       <Route path='/alog-in' element={<AdminLogin/>} />
-       <Route path='/clog-in' element={<ClerkLogin/>} />
-       <Route path='/Register' element={<Register setUser={setUser}/>} />
-        <Route path="/inventories" element={<Inventory user={user} />} />
+       <Route path='/mlog-in' element={<MerchantLogIn user={user} setUser={setUser} />} />
+       <Route path='/alog-in' element={<AdminLogin adminUser={adminUser} setAdminUser={setAdminUser}/>} />
+       <Route path='/clog-in' element={<ClerkLogin setClerkUser={setClerkUser} />} />
+       <Route path='/Register' element={<Register setUser={setUser} />} />
+        <Route path="/inventories" element={<Inventory setAdminUser={setAdminUser} setClerkUser={setClerkUser} />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
-        </Provider>
     </div>
   )
 }
