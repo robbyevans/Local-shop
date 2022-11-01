@@ -70,9 +70,9 @@ const Clerks= ({setClerkUser}) => {
             <div className="col-md-6">
               <button className='btn btn-success my-3' data-bs-toggle="modal"  data-bs-target='#form-modal'>Add Clerk</button>
           </div>
-          <div className="col-md-6 mt-5">
+          {/* <div className="col-md-6 mt-5">
           <h3 className='my-3 '>Clerks</h3>
-          </div>
+          </div> */}
         </div>
 
       <div className="modal" id="form-modal">
