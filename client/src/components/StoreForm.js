@@ -6,11 +6,8 @@ function StoreForm({onAddStore}) {
     const [storename, setStorename] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
-    const [userId, setUserId] = useState(null)
-    useEffect(() => {
-      setUserId(localStorage.getItem('userId'))
-      
-  }, []);
+    const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
   
     function handleSubmit(event) {
       event.preventDefault();

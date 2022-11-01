@@ -17,8 +17,6 @@ const MerchantLogIn = ({setUser}) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: localStorage.token
       },
       body: JSON.stringify({ email, password }),
     })
@@ -29,11 +27,11 @@ const MerchantLogIn = ({setUser}) => {
       if(data.error){
         alert(data.error)
       }else{
-        navigate('/merchant')
         console.log(data)
         setUser(data)
         localStorage.setItem('userId',data.id)
         console.log(data.id)
+        navigate('/merchant')
       }
      
 

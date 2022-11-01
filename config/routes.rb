@@ -31,12 +31,7 @@ Rails.application.routes.draw do
  delete 'admin/logout', to: 'sessions#admin_logout'
   
 
-<<<<<<< HEAD
-  post '/auth/login', to: 'authentication#login'
-
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
-=======
->>>>>>> c85c63a04b5f9684df36f48dc84ef681b6ef1936
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

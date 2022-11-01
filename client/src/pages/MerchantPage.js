@@ -4,11 +4,8 @@ import SideBar from "../components/SideBar";
 
 function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
   //fetch admins from db
-  const [userId, setUserId] = useState()
-  useEffect(() => {   
-   setUserId(localStorage.getItem('userId'))  
-}, []);
-console.log(userId)
+  const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
 
   useEffect(() => {
     fetch(`/users/${userId}`).then((r) => {
@@ -19,7 +16,7 @@ console.log(userId)
         }); 
       }
     });
-  }, [getAdmins]);
+  }, []);
 
   //fetch stores from db
   useEffect(() => {
@@ -32,7 +29,7 @@ console.log(userId)
         } );
       }
     });
-  }, [getmStores]);
+  }, []);
   console.log(mStores);
   return (
     <div>

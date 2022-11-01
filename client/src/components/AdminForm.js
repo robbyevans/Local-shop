@@ -8,13 +8,8 @@ function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser })
   const [email, setEmail] = useState("");
   const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
-  const [userId, setUserId] = useState()
-  const [token, setToken] = useState("")
-  useEffect(() => {
-    setUserId(localStorage.getItem('userId'))
-    
-}, []);
-console.log(userId)
+  const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
 
   function handleSubmit(event) {
     event.preventDefault();
