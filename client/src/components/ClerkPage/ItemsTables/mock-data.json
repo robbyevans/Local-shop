@@ -7,14 +7,6 @@
     "spoilt": 2,
     "buyingPrice":50,
     "sellingPrice":150
-  },
-  {
-    "id": 2,
-    "name": "JBL Speaker",
-    "quantity": 40,
-    "inStock": 30,
-    "spoilt": 15,
-    "buyingPrice":50,
-    "sellingPrice":150
   }
+ 
 ]
