@@ -21,11 +21,11 @@ const SideBar = ({children}) => {
     let navigate = useNavigate()
     const drawerWidth = 240
     const sidebarItems=[
-        {
-          text: "Admin",
-          icon: <AccountCircleOutlinedIcon color="secondary"/>,
-          path: '/'
-        },
+        // {
+        //   text: "Admin",
+        //   icon: <AccountCircleOutlinedIcon color="secondary"/>,
+        //   path: '/'
+        // },
         {
           text: "Inventory",
           icon: <Inventory2OutlinedIcon color="secondary"/>,

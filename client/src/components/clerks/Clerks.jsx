@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Grid from '@mui/material/Grid'
 import { useNavigate } from 'react-router-dom'
+import SideBar from "../sidebar/SideBar";
 
 
 const Clerks= ({setClerkUser}) => {
@@ -60,6 +61,7 @@ const Clerks= ({setClerkUser}) => {
   
   return (
     <>
+      <SideBar />
     <Grid item xs={8}>
       <div className='container'>
         <div className="row mt-5">
