@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :users, only: [:create, :show, :index]
+  resources :stores, only: [:create, :index,:show, :update, :destroy]
+  resources :merchant_users
+  resources :admins, only: [:create, :index, :show,:update, :destroy]
   
   resources :stores, only: [:create, :index,:show, :update, :destroy]
   resources :requested_items
@@ -27,5 +31,7 @@ Rails.application.routes.draw do
  delete 'admin/logout', to: 'sessions#admin_logout'
   
 
+  # Routing logic: fallback requests for React Router.
+  # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

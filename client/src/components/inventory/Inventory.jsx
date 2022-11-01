@@ -7,7 +7,7 @@ import Spinner from '../../common/spinner/Spinner'
 import { getItems } from "../../features/items/ItemSlice";
 import Orders from "../orders/Orders";
 
-const Inventory = () => {
+const Inventory = ({setClerkUser}) => {
   const { items, loading } = useSelector((state) => state.items)
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,7 +22,7 @@ const Inventory = () => {
     <>
       <SideBar />
       <Orders/>
-    <Clerks/> 
+    <Clerks setClerkUser={setClerkUser}/> 
 
       <Grid item xs={8}>
         <div className="container">

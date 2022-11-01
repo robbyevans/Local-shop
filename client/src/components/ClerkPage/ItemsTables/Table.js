@@ -9,9 +9,9 @@ import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 const Table = () => {
  
- let clerkId = 1
   //<<<<-----table functions---->>>
   const [items, setItems] = useState(data);
+  const [clerkId,setClerkId]= useState(localStorage.getItem('clerkId'));
 
 
   //populating the table with data from database
@@ -25,7 +25,6 @@ const Table = () => {
     });
   },[]);
 
-  //-----end
 
   const [addFormData, setAddFormData] = useState({
     name: "",

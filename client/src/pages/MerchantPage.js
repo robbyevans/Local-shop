@@ -1,27 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 
 function MerchantPage({adminUser, setAdminUser,admins, getAdmins, mStores, getmStores, onAddAdmin, onDeleteAdmin, onAddStore }) {
   //fetch admins from db
+  const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
+
   useEffect(() => {
-    fetch("/admins").then((r) => {
+    fetch(`/users/${userId}`).then((r) => {
       if (r.ok) {
-        r.json().then((admins) => {
-          getAdmins(admins);
+        r.json().then((data) => {
+          console.log(data)
+          getAdmins(data.admins);
         }); 
       }
     });
-  }, [getAdmins]);
+  }, []);
 
   //fetch stores from db
   useEffect(() => {
-    fetch("/stores").then((r) => {
+    fetch(`/users/${userId}`).then((r) => {
       if (r.ok) {
-        r.json().then((stores) => getmStores(stores));
+        r.json().then((data) =>
+        {
+          console.log(data)
+          getmStores(data.stores)
+        } );
       }
     });
-  }, [getmStores]);
+  }, []);
   console.log(mStores);
   return (
     <div>

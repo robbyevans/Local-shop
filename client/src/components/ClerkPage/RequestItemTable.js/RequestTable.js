@@ -10,10 +10,10 @@ import ClerkNavbar from '../ClerkNavbar/Navbar';
 function RequestTable() {
 
 
-  let clerkId = 1
   //<<<<-----table functions---->>>
   
   const [request, setRequest] = useState(data);
+  const [clerkId,setClerkId]= useState(localStorage.getItem('clerkId'));
 
   //populating the table with data from database
     useEffect(() => {
@@ -103,7 +103,6 @@ function RequestTable() {
     setRequest(newItems);
   };
 
-  // <<<<------------->>>>
 
   const handleEditFormSubmit = (event) => {
     event.preventDefault();

@@ -5,9 +5,6 @@ import MainBar from '../../MainBar/MainBar';
 import Footer from '../../footer/Footer';
 
 const MerchantLogIn = ({setUser}) => {
-
-  
-
   const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
   const navigate =useNavigate()
@@ -15,13 +12,10 @@ const MerchantLogIn = ({setUser}) => {
   function handleSubmit(e) {
     e.preventDefault();
     
-    const user = {email, password}
-    fetch ("http://localhost:3000/auth/login",{
+    fetch ("/auth/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: localStorage.token
       },
       body: JSON.stringify({ email, password }),
     })
@@ -34,8 +28,7 @@ const MerchantLogIn = ({setUser}) => {
       }else{
         console.log(data)
         setUser(data)
-        localStorage.setItem('userId',data.id)
-        localStorage.setItem('token',data.token)
+        localStorage.setItem("userId", data.id)
         navigate('/merchant')
       }
      
@@ -43,11 +36,6 @@ const MerchantLogIn = ({setUser}) => {
     })
       
   }
-
-   
-   
-  
-
 
 
   return (

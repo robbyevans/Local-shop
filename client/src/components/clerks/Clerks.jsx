@@ -3,13 +3,18 @@ import Grid from '@mui/material/Grid'
 import { useNavigate } from 'react-router-dom'
 
 
-const Clerks= () => {
+const Clerks= ({setClerkUser}) => {
+
+  const [adminId, setAdminId]= useState(localStorage.getItem('adminId'))
+
+
    
-  let navigate  = useNavigate()
+ // let navigate  = useNavigate()
   const [formData, setFormData] = useState({
     full_name: '',
-    email: '',
-    password_digest: '',
+    email:'',
+    password:'',
+    admin_id: adminId
 
   })
 
@@ -17,13 +22,13 @@ const Clerks= () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createClerk();
+    createClerk(formData);
     console.log(formData);
   }
 
   //function adding clerk
   const createClerk = (data) => {
-    fetch("http://localhost:3000/clerks", {
+    fetch("/clerks", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
@@ -32,8 +37,9 @@ const Clerks= () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setFormData(" ")
-        navigate('/clerks')
+        setFormData(data)
+        setClerkUser(data)
+        //navigate('/clerks')
     })
   }
   
@@ -44,11 +50,11 @@ const Clerks= () => {
  
 //fetch clerks
   useEffect(() => {
-    fetch("http://localhost:3000/clerks")
+    fetch(`/admins/${adminId}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
-      setClerks(data)
+        console.log(data.clerks)
+        setClerks(data.clerks)
     })
   }, [])
   
@@ -99,9 +105,9 @@ const Clerks= () => {
                 <div className="row">
                   
                   <div className="col">
-                    <input type="password"
-                      name="password_digest"
-                      value={formData.password_digest}
+                    <input type="text"
+                      name="password"
+                      value={formData.password}
                       onChange={(e) => handleChange(e)}
                       placeholder='password'
                       className="form-control"

@@ -3,20 +3,13 @@ import AdminList from "./AdminList";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import Grid from "@mui/material/Grid";
 
-function AdminForm({adminUser, onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser }) {
+function AdminForm({ onAddAdmin, admins, onDeleteAdmin, mStores, setAdminUser }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [storeId, setStoreId] = useState(1);
   const [password, setPassword] = useState("");
-  const [userId, setUserId] = useState()
-  const [token, setToken] = useState()
-  useEffect(() => {
-    setUserId(localStorage.getItem('userId'))
-    setToken(localStorage.getItem('token'))
-    
-}, []);
-console.log(userId)
-console.log(token)
+  const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -28,7 +21,7 @@ console.log(token)
         password: password,
         store_id: storeId,
         status: "active",
-        token: token,
+        token: "Notokenusage",
         user_id: userId,
       }),
       headers: {
