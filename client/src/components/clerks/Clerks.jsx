@@ -65,7 +65,7 @@ const Clerks= ({setClerkUser}) => {
       <SideBar />
       <NavBar />
     <Grid item xs={8}>
-      <div className='container mt-5'>
+      <div className='container mt-5 pt-3'>
         <div className="row mt-5">
             <div className="col-md-6">
               <button className='btn btn-success my-3' data-bs-toggle="modal"  data-bs-target='#form-modal'>Add Clerk</button>

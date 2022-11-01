@@ -28,11 +28,11 @@ const Inventory = ({setClerkUser}) => {
     {/* <Clerks setClerkUser={setClerkUser}/>  */}
 
       <Grid item xs={8}>
-        <div className="container">
+        <div className="container pt-5">
           <div className="row mt-5 ml">
             <div className="col-md-6"></div>
             <div className="col-md-6">
-              <h3>Inventory</h3>
+              <h3>Available Inventory</h3>
             </div>
           </div>
 
