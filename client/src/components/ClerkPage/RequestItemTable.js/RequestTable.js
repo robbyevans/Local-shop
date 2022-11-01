@@ -19,7 +19,7 @@ function RequestTable() {
     useEffect(() => {
       fetch(`/clerks/${clerkId}`).then((r) => {
         if (r.ok) {
-          r.json().then((item) => setRequest(item.requested_items));
+          r.json().then((data) => setRequest(data.requested_items));
         }
       });
     },[]);
