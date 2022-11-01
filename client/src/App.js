@@ -46,7 +46,7 @@ function App() {
        <Route path='/alog-in' element={<AdminLogin adminUser={adminUser} setAdminUser={setAdminUser}/>} />
        <Route path='/clog-in' element={<ClerkLogin/>} />
        <Route path='/Register' element={<Register setUser={setUser} />} />
-        <Route path="/inventories" element={<Inventory />} />
+        <Route path="/inventories" element={<Inventory setClerkUser={setClerkUser} />} />
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
         </Routes>
     </div>

@@ -32,6 +32,7 @@ function StoreForm({onAddStore}) {
       setStorename("");
       setLocation("");
       setDescription("");
+      
     }
   
     return (

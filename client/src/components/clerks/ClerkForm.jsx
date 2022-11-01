@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid'
 
 
 
-const ClerkForm = () => {
+const ClerkForm = ({setClerkUser}) => {
 
 
   const[adminId, setAdminId]=useState(localStorage.getItem('adminId'))
@@ -43,7 +43,7 @@ const ClerkForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        return data;
+        setClerkUser(data);
     })
   }
   
