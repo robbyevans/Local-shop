@@ -78,7 +78,7 @@ const Clerks= ({setClerkUser}) => {
       <div className="modal" id="form-modal">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header mt-5" >
+            <div className="modal-header mt-2" >
               <h3 className="modal-title ">New Clerk</h3>
               <button className="btn-close" data-bs-dismiss="modal"></button>
             </div>
@@ -129,9 +129,9 @@ const Clerks= ({setClerkUser}) => {
               </form>
             </div>
             {/*modal footer */}
-            <div className="modal-footer">
+            {/* <div className="modal-footer">
               <button className="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
+            </div> */}
           </div>
         </div>
 

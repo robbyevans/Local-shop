@@ -31,16 +31,16 @@ const Inventory = ({setClerkUser}) => {
         <div className="container pt-5">
           <div className="row mt-5 ml">
             <div className="col-md-6"></div>
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <h3>Available Inventory</h3>
-            </div>
+            </div> */}
           </div>
 
           <div className="modal" id="form-modal">
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h3 className="modal-title ">New Inventory</h3>
+                  <h3 className="modal-title d-flex align-items-sm-center">New Inventory</h3>
                   <button
                     className="btn-close"
                     data-bs-dismiss="modal"
