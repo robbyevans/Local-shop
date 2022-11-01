@@ -1,24 +1,28 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useState } from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import Grid from "@mui/material/Grid";
 import SideBar from "../sidebar/SideBar";
 // import Clerks from "../clerks/Clerks";
-import Spinner from '../../common/spinner/Spinner'
-import { getItems } from "../../features/items/ItemSlice";
+// import Spinner from '../../common/spinner/Spinner'
+// import { getItems } from "../../features/items/ItemSlice";
 import NavBar from "../NavBar";
 
 // import Orders from "../orders/Orders";
 
-const Inventory = ({setClerkUser}) => {
-  const { items, loading } = useSelector((state) => state.items)
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getItems())
-  }, [dispatch]);
+const Inventory = () => {
 
-  if (loading) {
-    return <Spinner/>
-  }
+  const [items, setItems] = useState([])
+
+  const[adminId, setAdminId] = useState(localStorage.getItem('adminId'))
+    
+  useEffect(() => {
+      fetch(`/admins/${adminId}`)
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data)
+              setItems(data.items)
+      })
+  },[])
 
   return (
     <>
