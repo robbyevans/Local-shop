@@ -31,8 +31,8 @@ const ClerkLogin = ({setClerkUser}) => {
       }else
       {
         console.log(data)
-    setClerkUser(data)
-    localStorage.setItem("clerkId", data.id)
+        setClerkUser(data)
+        localStorage.setItem("clerkId", data.id)
         navigate('/clerk')
       }
     })

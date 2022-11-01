@@ -11,4 +11,7 @@ class User < ApplicationRecord
     has_many :stores
     validates :role, presence: true
     has_many :admins
+    has_many :clerks, through: :admins
+    has_many :items, through: :clerks
+    has_many :requested_items, through: :clerks
 end

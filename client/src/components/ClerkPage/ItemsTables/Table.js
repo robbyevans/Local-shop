@@ -16,9 +16,9 @@ const Table = () => {
 
   //populating the table with data from database
   useEffect(() => {
-    fetch("/items").then((r) => {
+    fetch(`/clerks${clerkId}`).then((r) => {
       if (r.ok) {
-        r.json().then((data) => setItems(data));
+        r.json().then((data) => setItems(data.items));
       }
       else
       console.log("NO RECORDS FOUND!")

@@ -17,9 +17,9 @@ function RequestTable() {
 
   //populating the table with data from database
     useEffect(() => {
-      fetch("/requested_items").then((r) => {
+      fetch(`/clerks/${clerkId}`).then((r) => {
         if (r.ok) {
-          r.json().then((item) => setRequest(item));
+          r.json().then((item) => setRequest(item.requested_items));
         }
       });
     },[]);
