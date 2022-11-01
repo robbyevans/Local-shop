@@ -10,6 +10,7 @@ function StorePage() {
   const params = useParams();
   const storeId = params.storeId;
   console.log(storeId);
+  console.log(params)
 
   const [mStore, setmStore] = useState({});
   //gets specific store using id
@@ -29,8 +30,9 @@ function StorePage() {
   return (
     <div className="store-page">
       <NavBar />
-      <AdminDetails storeId={storeId}/>
+      <h3 className="bar-title">Store {mStore.store_name} Summary Report</h3>
       <StoreChart storeId={storeId}/>
+      <AdminDetails storeId={storeId}/>
       <ProductTable storeId={storeId} />
       
     </div>

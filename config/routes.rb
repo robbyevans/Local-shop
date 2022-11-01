@@ -26,6 +26,10 @@ delete '/auth/logout', to: 'sessions#user_logout'
 
   
  # admin sign in routes
+  
+  get"/stores/:id/items", to: "stores#store_items"
+  # post"/items", to: "items#create"
+  # delete"/items/:id", to: "items#destroy"
 
  resources :admins, only: [:create, :index, :show,:update, :destroy]
  post '/admin/login', to: 'sessions#admin_login'
