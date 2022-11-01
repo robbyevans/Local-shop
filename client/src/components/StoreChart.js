@@ -1,11 +1,11 @@
 import React from 'react';
 import Bargraph from '../pages/Bargraph';
-import Piechart from '../pages/Piechart';
+// import Piechart from '../pages/Piechart';
 
 function StoreChart({storeId}) {
     return (
         <div>
-            <Piechart />
+            {/* <Piechart /> */}
             <Bargraph storeId={storeId}/>
         </div>
     );
