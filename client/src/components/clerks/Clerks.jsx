@@ -13,7 +13,7 @@ const Clerks= ({setClerkUser}) => {
   const [formData, setFormData] = useState({
     full_name: '',
     email:'',
-    password_digest:'',
+    password:'',
     admin_id: adminId
 
   })
@@ -105,9 +105,9 @@ const Clerks= ({setClerkUser}) => {
                 <div className="row">
                   
                   <div className="col">
-                    <input type="password"
-                      name="password_digest"
-                      value={formData.password_digest}
+                    <input type="text"
+                      name="password"
+                      value={formData.password}
                       onChange={(e) => handleChange(e)}
                       placeholder='password'
                       className="form-control"
