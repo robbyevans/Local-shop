@@ -49,7 +49,7 @@ const SideBar = ({children}) => {
         {
             text: "Logout",
             icon: <PowerSettingsNewOutlinedIcon color='secondary' />,
-            path: "/logout"
+            path: "/"
         }
       ]
   return (
@@ -61,7 +61,7 @@ const SideBar = ({children}) => {
                   '& .MuiDrawer-paper': {
                       width: drawerWidth,
                       boxSizing: 'border-box',
-                      backgroundColor: '#101F33',
+                      backgroundColor: '#060b26',
                       color: 'rgba(255,255,255, 0.7)'
                   }
               }}

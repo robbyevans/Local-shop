@@ -17,6 +17,7 @@ import Inventory from './components/inventory/Inventory'
 import InventoryAnalytics from './components/analytics/InventoryAnalytics';
 import ClerkLandingPage from './ClerkLandingPage';
 import Landing from './MainLandingPage/Landing'
+import OrderRequests from './components/orders/OrderRequests';
 
 
 function App() {
@@ -33,9 +34,10 @@ function App() {
        <Route path="/clerk" element={<ClerkLandingPage clerkUser = {clerkUser} setClerkUser={setClerkUser} />}></Route>
         <Route path="/merchant" element={<Merchant adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
-       <Route path='/orders' element={<OrderForm/>} />
+       <Route path='/orders' element={<OrderRequests/>} />
        <Route path='/addItems' element={<Table/>} />
        <Route path='/addRequests' element={<RequestTable/>} />
+       
        <Route path="/clerks" element={<Clerk setClerkUser={setClerkUser} />}></Route>
        
        <Route path='/oldPage' element={<ClerkPage/>} />

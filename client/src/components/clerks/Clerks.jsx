@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Grid from '@mui/material/Grid'
 import { useNavigate } from 'react-router-dom'
 import SideBar from "../sidebar/SideBar";
+import NavBar from '../NavBar';
 
 
 const Clerks= ({setClerkUser}) => {
@@ -62,13 +63,14 @@ const Clerks= ({setClerkUser}) => {
   return (
     <>
       <SideBar />
+      <NavBar />
     <Grid item xs={8}>
-      <div className='container'>
+      <div className='container mt-5'>
         <div className="row mt-5">
             <div className="col-md-6">
               <button className='btn btn-success my-3' data-bs-toggle="modal"  data-bs-target='#form-modal'>Add Clerk</button>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 mt-5">
           <h3 className='my-3 '>Clerks</h3>
           </div>
         </div>
@@ -76,7 +78,7 @@ const Clerks= ({setClerkUser}) => {
       <div className="modal" id="form-modal">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header mt-5" >
               <h3 className="modal-title ">New Clerk</h3>
               <button className="btn-close" data-bs-dismiss="modal"></button>
             </div>

@@ -5,6 +5,8 @@ import SideBar from "../sidebar/SideBar";
 // import Clerks from "../clerks/Clerks";
 import Spinner from '../../common/spinner/Spinner'
 import { getItems } from "../../features/items/ItemSlice";
+import NavBar from "../NavBar";
+
 // import Orders from "../orders/Orders";
 
 const Inventory = ({setClerkUser}) => {
@@ -20,6 +22,7 @@ const Inventory = ({setClerkUser}) => {
 
   return (
     <>
+    <NavBar/>
       <SideBar />
       {/* <Orders/> */}
     {/* <Clerks setClerkUser={setClerkUser}/>  */}

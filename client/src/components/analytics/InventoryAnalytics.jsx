@@ -18,7 +18,7 @@ const InventoryAnalytics = () => {
     let name = [];
     let price = [];
 
-    axios.get("http://localhost:3000/inventories")
+    axios.get("/inventories")
       .then(response => {
         console.log(response);
         for (const resObj of response.data) {
