@@ -69,7 +69,7 @@ function ShowCase() {
                 <div className="dp"><img src="https://user-images.githubusercontent.com/63696529/196118581-24c47276-aecb-43d3-bef1-13c5cfa32371.png"/><h5 className="dp-title">Geoffrey Meru</h5></div>
                 </div>
                 <div className="comment-1">
-                <p>"t is a very flexible system, many different functions can be in one placе. The most important thing is that you can implement a large number of integrations with other services." </p>
+                <p>"it is a very flexible system, many different functions can be in one placе. The most important thing is that you can implement a large number of integrations with other services." </p>
                 <div className="dp"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"/><h5 className="dp-title">James Maina</h5></div>
                 </div>
                 <div className="comment-1">
