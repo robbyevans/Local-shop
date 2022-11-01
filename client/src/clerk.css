@@ -158,12 +158,6 @@ color: #fff;
   color: #fff;
 }
 
-/* form {
-  display: flex;
-  gap: 5px;
-  margin-left: 50px;
-} */
-
 .app-container form{
   display: flex;
   gap: 5px;
@@ -183,12 +177,7 @@ form td:last-child {
 .store-wrap{
   margin-top: 50px;
 }
-/* .actual-table{
-  font-size: 20px;
-} */
-/* form * {
-  font-size: 20px;
-} */
+
 .merchant-log-out{
   margin-bottom: 40px;
   height:50px;
@@ -332,7 +321,4 @@ td input{
     display: flex;
     flex-direction: column;
   }
-  /* .items-form input{
-    display: inline-block;
-  } */
 }

@@ -73,8 +73,8 @@ function ShowCase() {
                 <div className="dp"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwd2l0aCUyMGdsYXNzZXN8ZW58MHx8MHx8&w=1000&q=80"/><h5 className="dp-title">Snoop dog cuz</h5></div>
                 </div>
                 <div className="comment-1">
-                <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been th" </p>
-                <div className="dp"><img src="https://imgk.timesnownews.com/story/66603010_1317351581756321_4675944928644445097_n.jpg"/> <h5 className="dp-title">Snoop Dog</h5></div>
+                <p>"Iam a dog but i have never seen such a beautiful website.Great work to the team.woof woof!" </p>
+                <div className="dp"><img src="https://imgk.timesnownews.com/story/66603010_1317351581756321_4675944928644445097_n.jpg"/> <h5 className="dp-title">Charity Dillah</h5></div>
                 </div>
               </div>
               <div className="my-footer"><Footer/></div>
