@@ -1,7 +1,7 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import './App.css';
 import Merchant from './Merchant';
-import { Route, Routes, Link } from "react-router";
+import { Route, Routes } from "react-router";
 import StorePage from './pages/StorePage';
 import OrderForm from './components/ClerkPage/pages/Order/OrderForm';
 import Table from "./components/ClerkPage/ItemsTables/Table"
@@ -22,6 +22,7 @@ import Landing from './MainLandingPage/Landing'
 function App() {
   const [user, setUser]= useState({})
   const [adminUser, setAdminUser] =useState({})
+  const [clerkUser, setClerkUser] =useState({})
   
   return (
   
@@ -29,7 +30,7 @@ function App() {
           
       <Routes>
        <Route exact path="/" element={<Landing /> }></Route>
-       <Route path="/clerk" element={<ClerkLandingPage />}></Route>
+       <Route path="/clerk" element={<ClerkLandingPage clerkUser = {clerkUser} setClerkUser={setClerkUser} />}></Route>
         <Route path="/merchant" element={<Merchant adminUser={adminUser} setAdminUser={setAdminUser} />}></Route>
        <Route path="/storepage/:storeId" element={<StorePage />}></Route>
        <Route path='/orders' element={<OrderForm/>} />

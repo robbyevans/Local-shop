@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    def create
+    def clerk_login
         clerk = Clerk.find_by(email: params[:email])
         if clerk&.authenticate(params[:password])
             session[:clerk_id] = clerk.id
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    def destroy
+    def clerk_logout
         session.delete :clerk_id
         head :no_content
     end
