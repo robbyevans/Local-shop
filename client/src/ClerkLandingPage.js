@@ -18,7 +18,7 @@ function ClerkLandingPage({setClerkUser}) {
 <>
     {/* <ClerkNavbar /> */}
         <Routes>
-        <Route exact path='/' element={<Table setClerkUser={setClerkUser}/>} />
+        <Route exact path='/' element={<Table setClerkUser={setClerkUser}  />} />
           {/*<Route exact path='/home' element={<Home/>} />
           <Route path='/orders' element={<OrderForm/>} />
           <Route path='/addItems' element={<Table/>} />
