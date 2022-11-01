@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
 
-function StoreForm({onAddStore, admins}) {
+function StoreForm({onAddStore}) {
     const [storename, setStorename] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
-    const [admin, setAdmin]= useState({})
+    const [userId, setUserId] = useState(localStorage.getItem('userId'))
+
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -15,7 +16,8 @@ function StoreForm({onAddStore, admins}) {
         body: JSON.stringify({
           store_name: storename,
           location: location,
-          description: description
+          description: description,
+          user_id :userId
         
         }),
         headers: {
@@ -30,6 +32,7 @@ function StoreForm({onAddStore, admins}) {
       setStorename("");
       setLocation("");
       setDescription("");
+      
     }
   
     return (

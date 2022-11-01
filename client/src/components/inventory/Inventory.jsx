@@ -1,43 +1,49 @@
-import React, {useEffect } from "react";
-import {useSelector, useDispatch} from 'react-redux'
+import React, {useEffect, useState } from "react";
+// import {useSelector, useDispatch} from 'react-redux'
 import Grid from "@mui/material/Grid";
 import SideBar from "../sidebar/SideBar";
-import Clerks from "../clerks/Clerks";
-import Spinner from '../../common/spinner/Spinner'
-import { getItems } from "../../features/items/ItemSlice";
-import Orders from "../orders/Orders";
+// import Clerks from "../clerks/Clerks";
+// import Spinner from '../../common/spinner/Spinner'
+// import { getItems } from "../../features/items/ItemSlice";
+import NavBar from "../NavBar";
 
-const Inventory = () => {
-  const { items, loading } = useSelector((state) => state.items)
-  const dispatch = useDispatch();
+const Inventory = ({setClerkUser, setAdminUser}) => {
+
+
+  const [items, setItems] = useState([])
+
+  const[adminId, setAdminId] = useState(localStorage.getItem('adminId'))
+    
   useEffect(() => {
-    dispatch(getItems())
-  }, [dispatch]);
-
-  if (loading) {
-    return <Spinner/>
-  }
+      fetch(`/admins/${adminId}`)
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data)
+              setItems(data.items)
+      })
+  },[])
 
   return (
     <>
-      <SideBar />
-      <Orders/>
-    <Clerks/> 
+    
+    <NavBar/>
+    <SideBar  setAdminuser={setAdminUser}/>
+    
 
       <Grid item xs={8}>
-        <div className="container">
+        <div className="container pt-5">
           <div className="row mt-5 ml">
             <div className="col-md-6"></div>
-            <div className="col-md-6">
-              <h3>Inventory</h3>
-            </div>
+            {/* <div className="col-md-6">
+              <h3>Available Inventory</h3>
+            </div> */}
           </div>
 
           <div className="modal" id="form-modal">
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h3 className="modal-title ">New Inventory</h3>
+                  <h3 className="modal-title d-flex align-items-sm-center">New Inventory</h3>
                   <button
                     className="btn-close"
                     data-bs-dismiss="modal"

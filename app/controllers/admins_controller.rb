@@ -1,9 +1,18 @@
 class AdminsController < ApplicationController
-    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :record
+
     def create
         admin = Admin.create(admin_params)
-        render json: admin, status: :created
+        if admin.valid?
+            # session[:admin_id] = admin.id
+            render json: admin, status: :created
+        else
+            render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+        end
+        #render json: admin, status: :created
     end
+
+
 
     def index
         admins = Admin.all

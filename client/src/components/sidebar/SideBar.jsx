@@ -16,42 +16,50 @@ import { useNavigate } from 'react-router-dom';
 // import Inventory from '../inventory/Inventory';
 
 
-const SideBar = ({children}) => {
+const SideBar = ({children, setAdminuser}) => {
 
-    let navigate = useNavigate()
+    let navigate = useNavigate();
+
     const drawerWidth = 240
     const sidebarItems=[
-        {
-          text: "Admin",
-          icon: <AccountCircleOutlinedIcon color="secondary"/>,
-          path: '/'
-        },
+       
         {
           text: "Inventory",
-          icon: <Inventory2OutlinedIcon color="secondary"/>,
+          icon: <Inventory2OutlinedIcon color="#ffff"/>,
           path: '/inventories'
         },
         {
             text: "Order Requests",
-            icon: <ShoppingCartCheckoutOutlinedIcon color="secondary"/>,
+            icon: <ShoppingCartCheckoutOutlinedIcon color="#ffff"/>,
             path: '/orders'
           },
         {
           text: "Analytics",
-          icon: <TimelineOutlinedIcon color="secondary"/>,
+          icon: <TimelineOutlinedIcon color="#ffff"/>,
           path: '/analytics'
         },
         {
             text: "Clerks",
-            icon: <PeopleAltOutlinedIcon color="secondary"/>,
+            icon: <PeopleAltOutlinedIcon color="#ffff"/>,
             path: '/clerks'
-          },
-        {
-            text: "Logout",
-            icon: <PowerSettingsNewOutlinedIcon color='secondary' />,
-            path: "/logout"
-        }
+          }
+       
       ]
+
+
+
+      //logout button
+
+      function handleLogoutClick() {
+    fetch("admin/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setAdminuser(null);
+        navigate("/alog-in")
+      }
+    });
+
+
+  }
   return (
       <div>
           <Drawer
@@ -61,8 +69,9 @@ const SideBar = ({children}) => {
                   '& .MuiDrawer-paper': {
                       width: drawerWidth,
                       boxSizing: 'border-box',
-                      backgroundColor: '#101F33',
-                      color: 'rgba(255,255,255, 0.7)'
+                      backgroundColor: '#060b26',
+                      color: '#fff',
+                      cursor:'pointer'
                   }
               }}
               variant="permanent" 
@@ -76,10 +85,18 @@ const SideBar = ({children}) => {
                           key={item.text}
                           onClick={()=>navigate(item.path)}
                           button>
-                          <ListItemIcon sx={{color: 'rgba(255,255,255, 0.7)'}}>{item.icon}</ListItemIcon>
+                          <ListItemIcon sx={{color: '#ffffff'}}>{item.icon}</ListItemIcon>
                           <ListItemText>{ item.text}</ListItemText>
+                         
                         </ListItem>
+                        
                   ))}
+                   <ListItem onClick={handleLogoutClick}>
+                          <ListItemIcon sx={{color: '#ffffff'}}><PowerSettingsNewOutlinedIcon color='#ffffff' /></ListItemIcon>
+                          <ListItemText>Logout</ListItemText>
+                         
+                        </ListItem>
+                   
               </List>
       </Drawer>
     </div>

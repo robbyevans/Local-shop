@@ -3,33 +3,39 @@ import { useNavigate } from 'react-router';
 import Footer from '../../footer/Footer';
 import MainBar from '../../MainBar/MainBar';
 
-const ClerkLogin = ({setUser}) => {
+const ClerkLogin = ({setClerkUser}) => {
 
   
 
-  const[username, setUsername] = useState("");
+  const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
 
   const navigate=useNavigate()
-  function handleClick(){
-    navigate("/clerk")
-
-  }
+  
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch ("/login",{
+    fetch ("/clerk/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
+      body: JSON.stringify({ email, password }),
+    }).then((r)=>{
+      return r.json()
+    })
+    .then((data) =>{
+      if(data.error){
+        alert(data.error)
+      }else
+      {
+        console.log(data)
+        setClerkUser(data)
+        localStorage.setItem("clerkId", data.id)
+        navigate('/clerk')
       }
-    });
+    })
   }
 
   return (
@@ -37,13 +43,13 @@ const ClerkLogin = ({setUser}) => {
     <MainBar/>
       <section className='showcase login'>
         <div className='showcase-overlay'>
-          <form className='formation-control'>
+          <form className='formation-control' onSubmit={handleSubmit}>
           <input type="text"
                 id="username"
-                placeholder='username'
+                placeholder='email'
                 autoComplete="off"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
           />
            <input type="password"
                 id="password"
@@ -53,7 +59,7 @@ const ClerkLogin = ({setUser}) => {
                 onChange={(e) => setPassword(e.target.value)} 
           />
           
-            <button onClick={handleClick} type='submit'>Log In</button>
+            <button type='submit'>Log In</button>
           </form>
         </div>
       </section>

@@ -7,25 +7,30 @@ import EditableRow from "./EditableRow";
 import ClerkNavBar from '../ClerkNavbar/Navbar'
 
 
-const Table = () => {
+const Table = ({setClerkUser}) => {
  
- let clerkId = 1
   //<<<<-----table functions---->>>
   const [items, setItems] = useState(data);
+  const [clerkId,setClerkId]= useState(localStorage.getItem('clerkId'));
+  console.log(clerkId)
 
 
   //populating the table with data from database
   useEffect(() => {
-    fetch("/items").then((r) => {
+    fetch(`/clerks/${clerkId}`).then((r) => {
       if (r.ok) {
-        r.json().then((data) => setItems(data));
+        r.json().then((data) => {
+          console.log(data.items)
+          setItems(data.items)
+        }
+        
+        );
       }
       else
       console.log("NO RECORDS FOUND!")
     });
   },[]);
 
-  //-----end
 
   const [addFormData, setAddFormData] = useState({
     name: "",
@@ -193,7 +198,7 @@ const Table = () => {
   return (
 
 <>
-    <ClerkNavBar/>
+    <ClerkNavBar setClerkuser={setClerkUser}/>
     <div className="app-container">
      
             {/* //<<<<--- table input form-->> */}

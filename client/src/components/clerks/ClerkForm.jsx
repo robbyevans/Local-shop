@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react'
+// import '../../../App.css'
+// import Spinner from '../../common/spinner/Spinner'
+// import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import Grid from '@mui/material/Grid'
-import { useNavigate } from 'react-router-dom'
-import SideBar from "../sidebar/SideBar";
-import NavBar from '../NavBar';
+// import clerkAnalytics from '../analytics/clerkAnalytics';
+// import { DataGrid } from '@mui/x-data-grid';
 
 
-const Clerks= ({setClerkUser}) => {
 
-  const [adminId, setAdminId]= useState(localStorage.getItem('adminId'))
+const ClerkForm = ({setClerkUser}) => {
 
 
-   
- // let navigate  = useNavigate()
+  const[adminId, setAdminId]=useState(localStorage.getItem('adminId'))
+
+
+
+  
   const [formData, setFormData] = useState({
     full_name: '',
-    email:'',
-    password:'',
-    admin_id: adminId
+    email: '',
+    password_digest: '',
+    admin_id:adminId
 
   })
 
@@ -24,7 +28,7 @@ const Clerks= ({setClerkUser}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createClerk(formData);
+    createClerk();
     console.log(formData);
   }
 
@@ -39,9 +43,7 @@ const Clerks= ({setClerkUser}) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setFormData(data)
-        setClerkUser(data)
-        //navigate('/clerks')
+        setClerkUser(data);
     })
   }
   
@@ -52,33 +54,32 @@ const Clerks= ({setClerkUser}) => {
  
 //fetch clerks
   useEffect(() => {
-    fetch(`/admins/${adminId}`)
+    fetch("/clerks")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.clerks)
-        setClerks(data.clerks)
+        console.log(data)
+      setClerks(data)
     })
   }, [])
+
+  
   
   return (
     <>
-      <SideBar />
-      <NavBar />
     <Grid item xs={8}>
-      <div className='container mt-5 pt-3'>
+      <div className='container'>
         <div className="row mt-5">
-            <div className="col-md-6">
-              <button className='btn btn-success my-3' data-bs-toggle="modal"  data-bs-target='#form-modal'>Add Clerk</button>
+          <div className="col-md-6">
           </div>
-          {/* <div className="col-md-6 mt-5">
-          <h3 className='my-3 '>Clerks</h3>
-          </div> */}
+          <div className="col-md-6">
+          <h3>Clerks</h3>
+          </div>
         </div>
 
       <div className="modal" id="form-modal">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header mt-2" >
+            <div className="modal-header">
               <h3 className="modal-title ">New Clerk</h3>
               <button className="btn-close" data-bs-dismiss="modal"></button>
             </div>
@@ -86,16 +87,24 @@ const Clerks= ({setClerkUser}) => {
             <div className="modal-body">
             <form action="" onSubmit={handleSubmit}>
                 <div className="row">
-                <div className="col">
+                  <div className="col my-2">
                     <input type="text"
-                      name="full_name"
-                      value={formData.full_name}
-                      onChange={(e) => handleChange(e)}
-                      placeholder='full name'
+                      name="name"
+                      placeholder='Clerk Name'
                       className="form-control"
                     />
                   </div>
-                  
+                  <div className="col my-2">
+                    <input type="number"
+                      className="form-control"
+                      name="full name"
+                      value={formData.full_name}
+                      onChange={(e) => handleChange(e)}
+                      placeholder='Full name'
+                    />
+                  </div>
+                </div>
+                <div className="row">
                   <div className="col">
                     <input type="text"
                       name="email"
@@ -105,13 +114,10 @@ const Clerks= ({setClerkUser}) => {
                       className="form-control"
                     />
                   </div>
-                </div>
-                <div className="row">
-                  
                   <div className="col">
                     <input type="text"
                       name="password"
-                      value={formData.password}
+                      value={formData.password_digest}
                       onChange={(e) => handleChange(e)}
                       placeholder='password'
                       className="form-control"
@@ -120,7 +126,6 @@ const Clerks= ({setClerkUser}) => {
 
                   <div className="col">
                         <input type="submit"
-                        value="Submit"
                         className="btn btn-primary btn-block form-control mt-2"
                     />
                   </div>
@@ -129,43 +134,37 @@ const Clerks= ({setClerkUser}) => {
               </form>
             </div>
             {/*modal footer */}
-            {/* <div className="modal-footer">
+            <div className="modal-footer">
               <button className="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div> */}
+            </div>
           </div>
         </div>
 
       </div>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 offset-2">
-              <table className="table table-bordered table-dark">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Full Name</th>
             <th>Email</th>
-            <th>Deactivate</th>
-            <th>Delete</th>
+            <th>Password</th>
           </tr>
         </thead>
         <tbody>
-          {clerks && clerks.map((clerk) => (
+          {clerks.map((clerk) => (
             <tr key={clerk.id}>
               <td>{clerk.full_name}</td>
               <td>{clerk.email}</td>
-              <td><button className='btn btn-primary'>Deactivate</button></td>
-              <td><button className='btn btn-danger'>Delete</button></td>
+              <td>{clerk.password_digest}</td>
+              <button>Deactivate</button>
+              <button>Delete</button>
           </tr>
         ))}
         </tbody>
-      </table>
-              </div>
-            </div>     
-          </div> 
+      </table>      
       </div>
       </Grid>  
       </>
   )
 }
 
-export default Clerks;
+export default ClerkForm;
