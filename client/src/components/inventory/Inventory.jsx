@@ -25,7 +25,6 @@ const Inventory = ({setClerkUser, setAdminUser}) => {
 
   return (
     <>
-    
     <NavBar/>
     <SideBar  setAdminuser={setAdminUser}/>
     
@@ -34,9 +33,6 @@ const Inventory = ({setClerkUser, setAdminUser}) => {
         <div className="container pt-5">
           <div className="row mt-5 ml">
             <div className="col-md-6"></div>
-            {/* <div className="col-md-6">
-              <h3>Available Inventory</h3>
-            </div> */}
           </div>
 
           <div className="modal" id="form-modal">
