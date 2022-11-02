@@ -170,6 +170,7 @@ form td:last-child {
 }
 .merchant-sidebar{
   background-color: #060b26;
+  cursor: pointer;
 }
 .merchant-navbar{
   background-color: #060b26;
