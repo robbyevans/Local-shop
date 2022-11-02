@@ -41,11 +41,11 @@ export default function Bargraph (storeId) {
             <YAxis />
             <Tooltip />
             <Legend />
-              <Bar dataKey="quantity" fill="#e60000" />
+              {/* <Bar dataKey="quantity" fill="#e60000" />
               <Bar dataKey="inStock" fill="#f76700" />
-              <Bar dataKey="spoilt" fill="#f7bc00" />
-              <Bar dataKey="BuyingPrice" fill="#009e3b" />
-              <Bar dataKey="SellingPrice" fill="#5546cc" />
+              <Bar dataKey="spoilt" fill="#f7bc00" /> */}
+              <Bar dataKey="BuyingPrice" fill="#5546cc" />
+              <Bar dataKey="SellingPrice" fill="#009e3b" />
           </BarChart>
         </ResponsiveContainer>
       </div>
