@@ -25,9 +25,14 @@ export default function Piechart(storeId) {
 
 // label on individual chart
   return (
-    <div className="piechart">
-     
-     <PieChart width={400} height={400}  >
+    
+    
+    <ResponsiveContainer  className="pie">
+       
+     {/* <PieChart width={300} height={300}  > */}
+     <PieChart className="pie-chart"  >
+      
+  
         <Pie
           label={({
             cx,
@@ -48,26 +53,30 @@ export default function Piechart(storeId) {
             const y = cy + radius * Math.sin(-midAngle * RADIAN);
             return (
               <text
+              
+                
                 x={x}
                 y={y}
-                fill="#8884d8"
+                fill="#000"
                 textAnchor={x > cx ? "start" : "end"}
                 dominantBaseline="central"
               >
-                {data[index].name} ({value})
+                {/* {data[index].name} ({value}) */}
+                {data[index].name}
+                
               </text>
             );
           }}
           // end
           // the  actual piechart
           data={data}
-          cx={120}
-          cy={200}
+          cx={130}
+          cy={150}
       
           labelLine={true}
       
-          innerRadius={60}
-          outerRadius={80}
+          innerRadius={40}
+          outerRadius={60}
           fill="#8884d8"
           paddingAngle={5}
           dataKey="quantity"
@@ -80,6 +89,7 @@ export default function Piechart(storeId) {
         </Pie>
       
       </PieChart>
-    </div>
+
+    </ResponsiveContainer>
   );
 }

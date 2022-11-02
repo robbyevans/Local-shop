@@ -309,10 +309,43 @@ td input{
 .mNav-items{
   margin-top: 5vh;
 }
-/* .charts{
+.charts{
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-} */
+}
+.main-chart{
+  width: 75vw;
+}
+.secondary-chart{
+  width: 22vw;
+  height: 52vh;
+  margin-top: 19px;
+  padding-left: 3px;
+  margin-left: 10px;
+
+}
+.pie{
+
+  border: 1px solid #060b26;
+  /* border-left: none; */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding-left: 10px;
+ border-radius: 10px;
+ background-color: #fff;
+ 
+}
+.minibar-title-wrapper{
+  display: flex;
+  margin-left: 100px;
+}
+.minibar-title{
+  color: #060b26;
+
+  
+}
 .bargraph{
   border: 1px solid #060b26;
   background-color: #fff;
@@ -334,24 +367,18 @@ td input{
   padding-left: 100px;
 } */
 
-.piechart{
+/* .piechart{
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 100vw;
-}
+} */
 
 
 /* .piechart {
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 50px;
-  margin-left: 50px;
-  background-color: #fff;
-} */
+  border: 1px solid #060b26;
+}  */
 
 
 

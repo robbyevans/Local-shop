@@ -21,7 +21,9 @@ export default function Bargraph (storeId) {
     return ( 
 
       <div className="bargraph">
-        <h1></h1>
+         <div className="minibar-title-wrapper">
+           <h4 className="minibar-title">sale statistics</h4>
+         </div>
         <ResponsiveContainer width="100%" aspect={3}>
           <BarChart
             width={500}
