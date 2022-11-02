@@ -31,7 +31,7 @@ const Inventory = ({setClerkUser, setAdminUser}) => {
     
 
       <Grid item xs={8}>
-        <div className="container pt-5">
+        <div className="container pt-5 ">
           <div className="row mt-5 ml">
             <div className="col-md-6"></div>
             {/* <div className="col-md-6">
@@ -140,7 +140,7 @@ const Inventory = ({setClerkUser, setAdminUser}) => {
             </div>
           </div>
           <div className="col-md-10 offset-md-2">
-          <table className="table table-bordered">
+          <table className="table table-bordered table-dark">
             <thead>
               <tr>
                 <th>Name</th>

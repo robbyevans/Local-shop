@@ -139,6 +139,7 @@
     background-color: #fff;
     border: 1px solid #060b26;
     border-radius: 5px;
+    cursor: pointer;
 }
 .store-card{
     box-shadow: 0px 4px 15px -1px rgba(0,0,0,0.75);
