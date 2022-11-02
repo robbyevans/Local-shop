@@ -1,7 +1,7 @@
 // import "./st.css";
 import {useState,useEffect} from "react"
 import React from "react";
-import { PieChart, Pie, Sector, Cell,ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell,ResponsiveContainer } from "recharts";
 
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
