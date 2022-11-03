@@ -362,6 +362,17 @@ td input{
   margin-bottom: 50px;
   /* width: 80vw; */
 }
+.analytics-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 150px;
+}
+.analytic-graph{
+
+  width: 70vw;
+}
 /* .pie-chart{
   margin-left: 100px;
   padding-left: 100px;
