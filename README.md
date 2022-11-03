@@ -1,328 +1,104 @@
-# Project Template: React/Rails API
+# LocalShop Inventory Management Application
+- version 1.0.0
+
+# Authors
+- Geoffrey Njihia- Scrum Master
+- Billy Mwangi
+- Dancun Oluoch
+- Peter Ndumia
+- Evans Rutto
+- Lincolin Angaya
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+This is an inventory app that can help in stock taking, generation and visualization of weekly, monthly and annual reports.
 
-## Requirements
+## Livelink:
 
+
+## screenshot:
+
+<img src="./client/public/Localshop.png" alt="">
+
+## About Localshop
+
+- Authentication - Only the superuser(This could be the merchant) can initialize the registration process to add an admin by sending a tokenized link to their email from which the invitee can register within a reasonable amount of time.
+
+- The admins upon registration are responsible for adding data entry clerks
+A dashboard where clerks can record details for the received items in the store:
+The number of items received
+- The status of payment(paid or not paid), this is important for procurement processes.
+The number of items in stock.
+The number of items spoilt( Broken, expired and anything else).
+Buying and selling price.
+On the same dashboard there should be an option to request for more product supply - this request goes to the store admin
+The store admin can be able:
+To see a detailed report on the performance of individual entries.
+To approve or decline supply requests from the clerk.
+To see the products that suppliers have been paid and those not yet - this should be well separated to ensure ease of viewing.
+To change the payment status to paid for the products that were not paid - Ideally this happens after the suppliers have been paid.
+To inactivate or delete a clerks account and as well add new clerks.
+As above mentioned the report should be in a good graphical representation; that is, linear graphs and bar graphs as a requirement - pie charts are totally optional.
+- The merchant can be able to:
+Add an admin, deactivate and delete their accounts - PS deactivation is independent from deleting the account, it is important for probation purposes.
+- Should be able to see a store by store report in well visualized graphs
+To see an individual store performance, even narrowing down to individual product performance.
+To see the paid and non paid products for each store.
+
+## Technologies used
+- Figma- Wireframes
+- ReactJS and Redux Toolkit-Frontend
+- CSS-styling
+- Ruby on Rails- Backend
+- Postgresql- Database
+- Jest & Minitests: Testing frameworks
 - Ruby 2.7.4
 - NodeJS (v16), and npm
 - Heroku CLI
 - Postgresql
 
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
-
-## Setup
-
-Start by **cloning** (not forking) the project template repository and removing
-the remote:
-
-```console
-$ git clone git@github.com:learn-co-curriculum/project-template-react-rails-api.git your-project-name
-$ cd your-project-name
-$ git remote rm origin
-```
-
-Then, [create a new remote repository][create repo] on GitHub. Head to
-[github.com](https://github.com) and click the **+** icon in the top-right
-corner and follow the steps to create a new repository. **Important**: don't
-check any of the options such as 'Add a README file', 'Add a .gitignore file',
-etc — since you're importing an existing repository, creating any of those files
-on GitHub will cause issues.
-
-[create repo]: https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line#adding-a-project-to-github-without-github-cli
-
-If you're working with a partner,
-[add them as a collaborator][add collaborator] on GitHub. From your repo on
-GitHub, go to Settings > Manage Access > Invite a collaborator and enter your
-partner's username. Once your partner has access, they should git **clone** (not
-fork) the repository.
-
-[add collaborator]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository
-
-Finally, connect the GitHub remote repository to your local repository and push
-up your code:
-
-```console
-$ git remote add origin git@github.com:your-username/your-project-name.git
-$ git push -u origin main
-```
-
-When you're ready to start building your project, run:
-
-```sh
-bundle install
-rails db:create
-npm install --prefix client
-```
-
-You can use the following commands to run the application:
-
-- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
-- `npm start --prefix client`: run the frontend on
-  [http://localhost:4000](http://localhost:4000)
-
-Make sure to also update this README to include documentation about
-your project. Here's a list of some [awesome readmes][] for inspiration.
-
-[awesome readmes]: https://github.com/matiassingers/awesome-readme
-
-## Deploying
-
-This application has all the starter code needed to help you deploy your
-application to Heroku. It's recommended to deploy your project early and push up
-changes often to ensure that your code works equally well in production and
-development environments.
-
-If you've already set up your environment to deploy to Heroku, you can run the
-commands below to deploy your application. If not, make sure to check out the
-Environment Setup section below.
-
-To deploy, first log in to your Heroku account using the Heroku CLI:
-
-```sh
-heroku login
-```
-
-Create the new Heroku app:
-
-```sh
-heroku create my-app-name
-```
-
-Add the buildpacks for Heroku to build the React app on Node and run the Rails
-app on Ruby:
-
-```sh
-heroku buildpacks:add heroku/nodejs --index 1
-heroku buildpacks:add heroku/ruby --index 2
-```
-
-To deploy, commit your code and push the changes to Heroku:
-
-```sh
-git add .
-git commit -m 'Commit message'
-git push heroku main
-```
-
-> Note: depending on your Git configuration, your default branch might be named
-> `master` or `main`. You can verify which by running
-> `git branch --show-current`. If it's `master`, you'll need to run
-> `git push heroku master` instead.
-
-Any time you have changes to deploy, just make sure your changes are committed
-on the main branch of your repo, and push those changes to Heroku to deploy
-them.
-
-You can view your deployed app with:
-
-```sh
-heroku open
-```
 
 ## Environment Setup
 
-### Install the Latest Ruby Version
+- Start by **cloning**  the project template into your repository.
 
-Verify which version of Ruby you're running by entering this in the terminal:
+- open the directory containing the project localshop
 
-```sh
-ruby -v
-```
+- run command 
+`code .` 
+to open the project in your IDE(code editor)
 
-Make sure that the Ruby version you're running is listed in the [supported
-runtimes][] by Heroku. At the time of writing, supported versions are 2.6.8,
-2.7.4, or 3.0.2. Our recommendation is 2.7.4, but make sure to check the site
-for the latest supported versions.
+- open terminal in your code editor and run the command
+ ``` npm start --prefix client```
+ to start the client front-end
 
-If it's not, you can use `rvm` to install a newer version of Ruby:
 
-```sh
-rvm install 2.7.4 --default
-```
+-  run command
+  ```rails s```
+  to open the backend server 
 
-You should also install the latest versions of `bundler` and `rails`:
 
-```sh
-gem install bundler
-gem install rails
-```
+## Known Bugs
 
-[supported runtimes]: https://devcenter.heroku.com/articles/ruby-support#supported-runtimes
+- No known bugs as of know :) .
 
-### Install NodeJS
+## Support and contact details
 
-Verify you are running a recent version of Node with:
+If you have any suggestion or contributions about this project, you can reach out to the team that collaborated in making the project a success:
+- Geoffrey Njihia: geoffreynjihia15@gmail.com
+- Duncan Oluoch: oluochdancun19@gmail.com
+- Peter Ndumia: ndegwandumia@gmail.com
+- Billy Mwangi : kibuchibp@gmail.com
+- Lincoln Angaya: lincolinangaya5626@gmail.com
+- Evans Rutto: robbyevans001@gmail.com
 
-```sh
-node -v
-```
+## License
+- Copyright 2022 Team LocalShop
+- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-If your Node version is not 16.x.x, install it and set it as the current and
-default version with:
 
-```sh
-nvm install 16
-nvm use 16
-nvm alias default 16
-```
 
-You can also update your npm version with:
 
-```sh
-npm i -g npm
-```
-
-### Sign Up for a [Heroku Account][heroku signup]
-
-You can sign up at for a free account at
-[https://signup.heroku.com/devcenter][heroku signup].
-
-### Download the [Heroku CLI][heroku cli] Application
-
-Download the Heroku CLI. For OSX users, you can use Homebrew:
-
-```sh
-brew tap heroku/brew && brew install heroku
-```
-
-For WSL users, run this command in the Ubuntu terminal:
-
-```sh
-curl https://cli-assets.heroku.com/install.sh | sh
-```
-
-If you run into issues installing, check out the [Heroku CLI][heroku cli]
-downloads page for more options.
-
-After downloading, you can login via the CLI in the terminal:
-
-```sh
-heroku login
-```
-
-This will open a browser window to log you into your Heroku account. After
-logging in, close the browser window and return to the terminal. You can run
-`heroku whoami` in the terminal to verify that you have logged in successfully.
-
-[heroku signup]: https://signup.heroku.com/devcenter
-[heroku cli]: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
-
-### Install Postgresql
-
-Heroku requires that you use PostgreSQL for your database instead of SQLite.
-PostgreSQL (or just Postgres for short) is an advanced database management
-system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up.
-
-#### PostgreSQL Installation for WSL
-
-To install Postgres for WSL, run the following commands from your Ubuntu terminal:
-
-```sh
-sudo apt update
-sudo apt install postgresql postgresql-contrib libpq-dev
-```
-
-Then confirm that Postgres was installed successfully:
-
-```sh
-psql --version
-```
-
-Run this command to start the Postgres service:
-
-```sh
-sudo service postgresql start
-```
-
-Finally, you'll also need to create a database user so that you are able to
-connect to the database from Rails. First, check what your operating system
-username is:
-
-```sh
-whoami
-```
-
-If your username is "ian", for example, you'd need to create a Postgres user
-with that same name. To do so, run this command to open the Postgres CLI:
-
-```sh
-sudo -u postgres -i
-```
-
-From the Postgres CLI, run this command (replacing "ian" with your username):
-
-```sh
-createuser -sr ian
-```
-
-Then enter `control + d` or type `logout` to exit.
-
-[This guide][postgresql wsl] has more info on setting up Postgres on WSL if you
-get stuck.
-
-[postgresql wsl]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
-
-#### Postgresql Installation for OSX
-
-To install Postgres for OSX, you can use Homebrew:
-
-```sh
-brew install postgresql
-```
-
-Once Postgres has been installed, run this command to start the Postgres
-service:
-
-```sh
-brew services start postgresql
-```
-
-## Troubleshooting
-
-If you ran into any errors along the way, here are some things you can try to
-troubleshoot:
-
-- If you're on a Mac and got a server connection error when you tried to run
-  `rails db:create`, one option for solving this problem for Mac users is to
-  install the Postgres app. To do this, first uninstall `postgresql` by running
-  `brew remove postgresql`. Next, download the app from the
-  [Postgres downloads page][postgres downloads page] and install it. Launch the
-  app and click "Initialize" to create a new server. You should now be able to
-  run `rails db:create`.
-
-- If you're using WSL and got the following error running `rails db:create`:
-
-  ```txt
-  PG::ConnectionBad: FATAL:  role "yourusername" does not exist
-  ```
-
-  The issue is that you did not create a role in Postgres for the default user
-  account. Check [this video](https://www.youtube.com/watch?v=bQC5izDzOgE) for
-  one possible fix.
-
-- If your app failed to deploy at the build stage, make sure your local
-  environment is set up correctly by following the steps at the beginning of
-  this lesson. Check that you have the latest versions of Ruby and Bundler, and
-  ensure that Postgresql was installed successfully.
-
-- If you deployed successfully, but you ran into issues when you visited the
-  site, make sure you migrated and seeded the database. Also, make sure that
-  your application works locally and try to debug any issues on your local
-  machine before re-deploying. You can also check the logs on the server by
-  running `heroku logs`.
-
-For additional support, check out these guides on Heroku:
-
-- [Deploying a Rails 6 App to Heroku][heroku rails deploying guide]
-- [Rails Troubleshooting on Heroku][troubleshooting guide on heroku]
-
-[postgres downloads page]: https://postgresapp.com/downloads.html
-[heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
-[troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting
-# localshop
