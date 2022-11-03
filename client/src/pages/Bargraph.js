@@ -5,7 +5,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 
 export default function Bargraph (storeId) {
-  const[data,setData]=useState("")
+  const[data,setData]=useState([])
  
   useEffect(() => {
     fetch(`/stores/${storeId.storeId}/items`).then((r) => {

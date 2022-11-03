@@ -28,9 +28,7 @@ export default function Piechart(storeId) {
     
     
     <ResponsiveContainer  className="pie">
-       
-     {/* <PieChart width={300} height={300}  > */}
-     <PieChart className="pie-chart"  >
+      <PieChart className="pie-chart"  >
       
   
         <Pie
@@ -62,7 +60,7 @@ export default function Piechart(storeId) {
                 dominantBaseline="central"
               >
                 {/* {data[index].name} ({value}) */}
-                {data[index].name}
+                {data[index].name}({value})
                 
               </text>
             );
@@ -89,7 +87,7 @@ export default function Piechart(storeId) {
         </Pie>
       
       </PieChart>
+      </ResponsiveContainer> 
 
-    </ResponsiveContainer>
   );
 }

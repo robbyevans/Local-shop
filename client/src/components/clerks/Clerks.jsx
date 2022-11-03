@@ -41,7 +41,7 @@ const Clerks= ({setClerkUser}) => {
       .then((data) => {
         setFormData(data)
         setClerkUser(data)
-        //navigate('/clerks')
+        
     })
   }
   
@@ -80,7 +80,7 @@ const Clerks= ({setClerkUser}) => {
           <div className="modal-content">
             <div className="modal-header mt-2" >
               <h3 className="modal-title ">New Clerk</h3>
-              <button className="btn-close" data-bs-dismiss="modal"></button>
+              <button className="btn-close" ></button>
             </div>
     
             <div className="modal-body">
@@ -118,7 +118,7 @@ const Clerks= ({setClerkUser}) => {
                     />
                   </div>
 
-                  <div className="col">
+                  <div className="col"  data-bs-dismiss="modal">
                         <input type="submit"
                         value="Submit"
                         className="btn btn-primary btn-block form-control mt-2"

@@ -43,7 +43,9 @@ const ClerkForm = ({setClerkUser}) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setFormData(data)
         setClerkUser(data);
+        
     })
   }
   
@@ -81,7 +83,7 @@ const ClerkForm = ({setClerkUser}) => {
           <div className="modal-content">
             <div className="modal-header">
               <h3 className="modal-title ">New Clerk</h3>
-              <button className="btn-close" data-bs-dismiss="modal"></button>
+              <button className="btn-close" ></button>
             </div>
     
             <div className="modal-body">
@@ -124,7 +126,7 @@ const ClerkForm = ({setClerkUser}) => {
                     />
                   </div>
 
-                  <div className="col">
+                  <div className="col" data-bs-dismiss="modal">
                         <input type="submit"
                         className="btn btn-primary btn-block form-control mt-2"
                     />

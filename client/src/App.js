@@ -21,7 +21,7 @@ import OrderRequests from './components/orders/OrderRequests';
 
 
 function App() {
-  const [user, setUser]= useState(false)
+  const [user, setUser]= useState({})
   const [adminUser, setAdminUser] =useState({})
   const [clerkUser, setClerkUser] =useState({})
   
@@ -30,14 +30,14 @@ function App() {
     <div className="App">
           
       <Routes>
-        {user ? (
-  <>
+       
+ 
       <Route path="/merchant" element={<Merchant   adminUser={adminUser} setAdminUser={setAdminUser}  user={user} setUser={setUser} />}></Route>
   
-   </>
-        ):(
+ 
+      
 
-   <>
+ 
         
       <Route exact path="/" element={<Landing  setUser={setUser}/> }></Route>
       <Route path='/Register' element={<Register setUser={setUser} />} />
@@ -58,9 +58,9 @@ function App() {
         <Route path='/analytics' element={<InventoryAnalytics/>}/>
 
 
-   </>
 
-     ) }
+
+
        
        
         </Routes>
