@@ -33,7 +33,7 @@ function ProductsTable({ storeId }) {
                 <tr key={product.id}>
                   <td>{product.name}</td>
                   <td>{product.quantity}</td>
-                  <td>{product.paid}</td>
+                  <td>not paid</td>
                 </tr>
               );
             })}
