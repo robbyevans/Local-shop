@@ -1,0 +1,278 @@
+img{
+max-width: 100%;
+}
+p {
+    line-height: 1.9;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #060B26;
+}
+.header .links {
+    margin: 0 30px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+.links2 {
+    margin: 0 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.showcase {
+    background: url('https://www.americanwarehouses.com/hubfs/AmericanWarehouses_Blog_TheBestApproachToLeasingWarehouseSpace.jpg') no-repeat center/cover;
+    height: 650px;
+}
+.body-section{
+    height: 650px;
+    background: url("")no-repeat center/cover;
+    filter: brightness(1);
+    background-color: #ffff;
+
+}
+.trusted{
+    font-size: medium;
+    padding-top: 50px;
+}
+.logo{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 150px;
+
+}
+
+.logo img{
+    width: 100px;
+    height:100px;
+
+}
+
+.logo-1{
+    width: 90px;
+    height: 90px;
+}
+.why-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    background-color: #060B26;
+    color: #fff;
+    padding: 100px;
+
+}
+.why-section{
+    text-align: center;
+    /* margin-top: 100px; */
+    width: 50%;
+
+}
+.why-section p{
+    font-size: large;
+}
+/* .why-title{
+    color: #060B26;
+} */
+.why-h3{
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: 900;
+}
+.action-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 400px;
+
+}
+.mid-action{
+    margin-top: 50px;
+}
+.action-card{
+    width: 20%;
+}
+.comment{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+.comment-1{
+    padding: 20px;
+   width: 20rem; 
+   margin: 30px;
+   background-color: #e2e7f1;
+   border-radius: 10px;
+}
+.dp{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.dp img{
+    border-radius: 100%;
+    /* border: 4px solid #fff; */
+    height: 60px;
+    width: 60px;
+}
+.comment-title{
+    font-weight: 900;
+    font-size: x-large;
+    text-decoration: underline;
+}
+.showcase .showcase-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    text-align: center;
+    color: #fff;
+}
+.showcase .showcase-overlay h1 {
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+.destinations {
+    padding: 50px;
+    text-align: center;
+}
+.destinations h3 {
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+}
+.destinations .grid div {
+    background-color: #F1F1F1;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.destinations .grid div img {
+    border-radius: 10px;
+}
+.footer {
+    background-color: #333;
+    padding: 40px;
+}
+.footer ul li button:hover {
+    background-color: #2C7F86;
+}
+.legal {
+    text-align: center;
+    padding: 15px;
+    background-color: #000;
+    border-top: 1px solid rgb(63, 62, 62);
+    color: white;
+}
+.legal p {
+    opacity: 0.5;
+}
+/* Login and SignUp */
+.login .formation-control {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.link {
+    font-size: 19px;
+    text-decoration: none;
+}
+.login .formation-control input {
+    margin: 5px 0;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #060B26;
+    border-radius: 10px;
+    width: 50vw;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+   
+}
+.signup-link{
+    color: #060B26;
+}
+.linkp {
+    color: #946d00;
+}
+.login .formation-control button {
+    background-color: #060B26;
+    padding: 8px;
+    border: 2px solid #060B26;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.login .formation-control button:hover {
+    background-color: #fff;
+  
+    color: #060B26;
+}
+.my-footer{
+    margin-top: 300px;
+}
+.dp-title{
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: medium;
+}
+@media (min-width: 768px) {
+    .showcase {
+        background-position: top;
+    }
+    .showcase .showcase-overlay h1 {
+        font-size: 64px;
+    }
+    .showcase .showcase-overlay p {
+        font-size: 18px;
+    }
+    .destinations .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .destinations .grid div img {
+        height: 150px;
+        width: 300px;
+    }
+    .footer ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .login .formation-control input {
+        width: 30vw;
+        margin-top: 5px;
+    }
+}

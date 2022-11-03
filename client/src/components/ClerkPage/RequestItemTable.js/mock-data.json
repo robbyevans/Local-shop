@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Tungli",
+    "item":"iphone 14",
+    "quantity": 300,
+    "date":null  
+  },
+  {
+    "id": 2,
+    "name": "Moja",
+    "item":"iphone x",
+    "quantity": 40,
+    "date":null
+  }
+
+]
